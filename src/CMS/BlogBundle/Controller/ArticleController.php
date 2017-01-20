@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use CMS\BlogBundle\Entity\Article;
 
 class ArticleController extends Controller
 {
@@ -57,13 +58,18 @@ class ArticleController extends Controller
      */
     public function ficheAction($id)
     {
-        $article = array(
-            'title' => 'Recherche développpeur Symfony2',
-            'author' => 'Alexandre',
-            'id' => $id,
-            'content' => 'Nous recherchons un développeur Symfony2 débutant sur Lyon. Blabla…',
-            'date' => new \Datetime()
-        );
+
+        // Récup le repository
+        $repository = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('CMSBlogBundle:Article');
+
+        // Récup l'entit éntité correspondant à l'id
+        $article = $repository->find($id);
+
+        if ($article === null) {
+            throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");
+        }
 
         return $this->render(
             "CMSBlogBundle:Article:fiche.html.twig",
@@ -75,25 +81,44 @@ class ArticleController extends Controller
 
     }
 
+
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function addAction(Request $request)
     {
+
+        // Création de l'entité
+        $article = new Article();
+        $article->setTitle('Recherche développeur Symfony.');
+        $article->setAuthor('Alexandre');
+        $article->setContent("Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…");
+
+        // On récupère l'EntityManager
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($article);
+        $em->flush();
+
         if ($request->isMethod('POST')) {
             $request->getSession()->getFlashBag()->add('info', 'Annonce bien enregistréed');
 
             return $this->redirectToRoute(
                 'cms_blog_fiche',
                 [
-                    'id' => 5
+                    'id' => $article->getId()
                 ]
             );
         }
 
-        return $this->render('CMSBlogBundle:Article:add.html.twig');
+        return $this->render(
+            'CMSBlogBundle:Article:add.html.twig',
+            [
+                'article' => $article
+            ]
+        );
     }
+
 
     /**
      * @param $id
@@ -110,7 +135,6 @@ class ArticleController extends Controller
             'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
             'date' => new \Datetime()
         );
-
 
 
         return $this->render(
