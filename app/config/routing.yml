@@ -2,3 +2,5 @@ cms_blog:
     resource: "@CMSBlogBundle/Resources/config/routing.yml"
     prefix:   /blog
 
+cms_core:
+    resource: "@CMSCoreBundle/Resources/config/routing.yml"
