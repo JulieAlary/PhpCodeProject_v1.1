@@ -1,3 +1,7 @@
+cms_blog:
+    resource: "@CMSBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
