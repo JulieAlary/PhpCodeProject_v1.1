@@ -19,7 +19,35 @@ class ArticleController extends Controller
             throw new NotFoundHttpException('Page "' . $page . '" inexistante.');
         }
 
-        return $this->render('CMSBlogBundle:Article:index.html.twig');
+        // Notre liste d'annonce en dur
+        $listArticles = array(
+            array(
+                'title' => 'Recherche développpeur Symfony',
+                'id' => 1,
+                'author' => 'Alexandre',
+                'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
+                'date' => new \Datetime()),
+            array(
+                'title' => 'Mission de webmaster',
+                'id' => 2,
+                'author' => 'Hugo',
+                'content' => 'Nous recherchons un webmaster capable de maintenir notre site internet. Blabla…',
+                'date' => new \Datetime()),
+            array(
+                'title' => 'Offre de stage webdesigner',
+                'id' => 3,
+                'author' => 'Mathieu',
+                'content' => 'Nous proposons un poste pour webdesigner. Blabla…',
+                'date' => new \Datetime())
+        );
+
+
+        return $this->render(
+            'CMSBlogBundle:Article:index.html.twig',
+            [
+                'listArticles' => $listArticles
+            ]
+        );
 
     }
 
@@ -29,10 +57,19 @@ class ArticleController extends Controller
      */
     public function ficheAction($id)
     {
+        $article = array(
+            'title' => 'Recherche développpeur Symfony2',
+            'author' => 'Alexandre',
+            'id' => $id,
+            'content' => 'Nous recherchons un développeur Symfony2 débutant sur Lyon. Blabla…',
+            'date' => new \Datetime()
+        );
+
         return $this->render(
             "CMSBlogBundle:Article:fiche.html.twig",
             [
-                'id' => $id
+                'article' => $article
+
             ]
         );
 
@@ -40,7 +77,7 @@ class ArticleController extends Controller
 
     /**
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function addAction(Request $request)
     {
@@ -66,20 +103,21 @@ class ArticleController extends Controller
     public function editAction($id, Request $request)
     {
 
-        if ($request->isMethod('POST')) {
-            $request->getSession()->getFlashbag()->add('notice', 'Annonce bien modifiée');
+        $article = array(
+            'title' => 'Recherche développpeur Symfony',
+            'id' => $id,
+            'author' => 'Alexandre',
+            'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
+            'date' => new \Datetime()
+        );
 
-            return $this->redirectToRoute(
-                'cms_blog_edit',
-                [
-                    'id' => 5
-                ]
-            );
 
-        }
 
         return $this->render(
-            'CMSBlogBundle:Article:edit.html.twig'
+            'CMSBlogBundle:Article:edit.html.twig',
+            [
+                'article' => $article
+            ]
         );
     }
 
@@ -92,4 +130,27 @@ class ArticleController extends Controller
 
         return $this->render('CMSBlogBundle:Article:delete.html.twig');
     }
+
+    /**
+     * @param $limit
+     * @return Response
+     */
+    public function menuAction($limit)
+    {
+
+        $listArticles = array(
+            array('id' => 2, 'title' => 'Histoire de Symfony'),
+            array('id' => 5, 'title' => 'Controller'),
+            array('id' => 9, 'title' => 'Doctrine')
+        );
+
+        return $this->render(
+            'CMSBlogBundle:Article:menu.html.twig',
+            [
+                'listArticles' => $listArticles
+            ]
+        );
+    }
+
+
 }

@@ -1,0 +1,25 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Modifier un artcile - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Modifier un article</h2>
+
+    {{ include("CMSBlogBundle:Article:form.html.twig") }}
+
+    <p>
+        Vous éditez une annonce déjà existante, merci de ne pas changer
+        l'esprit général de l'annonce déjà publiée.
+    </p>
+
+    <p>
+        <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à l'annonce
+        </a>
+    </p>
+
+{% endblock %}

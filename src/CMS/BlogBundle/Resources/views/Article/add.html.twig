@@ -1,0 +1,24 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Ajouter un artcile - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Modifier un article</h2>
+
+    {{ include("CMSBlogBundle:Article:form.html.twig") }}
+
+    <p>
+        Ici on pourra ajouter un article
+    </p>
+
+    <p>
+        <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à l'article
+        </a>
+    </p>
+
+{% endblock %}
