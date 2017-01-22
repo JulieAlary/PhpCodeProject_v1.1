@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new CMS\BlogBundle\CMSBlogBundle(),
             new CMS\CoreBundle\CMSCoreBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new CMS\UserBundle\CMSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

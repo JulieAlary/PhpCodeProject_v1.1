@@ -6,6 +6,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+
 /**
  * Article
  *
@@ -13,6 +18,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Entity(repositoryClass="CMS\BlogBundle\Repository\ArticleRepository")
  *
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity(fields="title", message="Ceci titre existe déjà, veuillez en choisir un autre")
  */
 class Article
 {
@@ -29,13 +35,15 @@ class Article
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
+     * @Assert\DateTime()
      */
     private $date;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255, unique=true)
+     * @Assert\Length(min=10, minMessage="Le titre doit faire au moins {{ limit }} caractères.")
      */
     private $title;
 
@@ -43,6 +51,7 @@ class Article
      * @var string
      *
      * @ORM\Column(name="author", type="string", length=255)
+     * @Assert\Length(min=2,  minMessage="Le nom d'auteur doit faire au moins {{ limit }} caractères.")
      */
     private $author;
 
@@ -50,6 +59,7 @@ class Article
      * @var string
      *
      * @ORM\Column(name="content", type="string", length=255)
+     * @Assert\NotBlank())
      */
     private $content;
 
@@ -60,6 +70,7 @@ class Article
 
     /**
      * @ORM\OneToOne(targetEntity="CMS\BlogBundle\Entity\Image", cascade={"persist", "remove"})
+     * @Assert\Valid()
      */
     private $image;
 
@@ -84,100 +95,29 @@ class Article
      *
      * Par défaut la date de l'annonce est celle du jour
      */
-    public function __construct()
+    public
+    function __construct()
     {
         $this->date = new \Datetime();
         $this->categories = new ArrayCollection();
     }
 
     /**
-     * @ORM\PreUpdate
+     * @Assert\Callback
      */
-    public function updateDate()
+    public function isContentValid(ExecutionContextInterface $context)
     {
-        $this->setUpdatedAt(new \DateTime());
-    }
+        $forbiddenWords = array('sexe', 'cul');
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Get date
-     *
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * Set date
-     *
-     * @param \DateTime $date
-     *
-     * @return Article
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     *
-     * @return Article
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    /**
-     * Get author
-     *
-     * @return string
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
-     * Set author
-     *
-     * @param string $author
-     *
-     * @return Article
-     */
-    public function setAuthor($author)
-    {
-        $this->author = $author;
-
-        return $this;
+        // On vérifie que le contenu ne contient pas l'un des mots
+        if (preg_match('#' . implode('|', $forbiddenWords) . '#', $this->getContent())) {
+            // La règle est violée, on définit l'erreur
+            $context
+                ->buildViolation('Contenu invalide car il contient un mot interdit.')// message
+                ->atPath('content')// attribut de l'objet qui est violé
+                ->addViolation() // ceci déclenche l'erreur, ne l'oubliez pas
+            ;
+        }
     }
 
     /**
@@ -185,7 +125,8 @@ class Article
      *
      * @return string
      */
-    public function getContent()
+    public
+    function getContent()
     {
         return $this->content;
     }
@@ -197,9 +138,108 @@ class Article
      *
      * @return Article
      */
-    public function setContent($content)
+    public
+    function setContent($content)
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public
+    function updateDate()
+    {
+        $this->setUpdatedAt(new \DateTime());
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public
+    function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public
+    function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Article
+     */
+    public
+    function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public
+    function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Article
+     */
+    public
+    function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return string
+     */
+    public
+    function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set author
+     *
+     * @param string $author
+     *
+     * @return Article
+     */
+    public
+    function setAuthor($author)
+    {
+        $this->author = $author;
 
         return $this;
     }
@@ -209,7 +249,8 @@ class Article
      *
      * @return boolean
      */
-    public function getPublished()
+    public
+    function getPublished()
     {
         return $this->published;
     }
@@ -221,7 +262,8 @@ class Article
      *
      * @return Article
      */
-    public function setPublished($published)
+    public
+    function setPublished($published)
     {
         $this->published = $published;
 
@@ -233,7 +275,8 @@ class Article
      *
      * @return \CMS\BlogBundle\Entity\Image
      */
-    public function getImage()
+    public
+    function getImage()
     {
         return $this->image;
     }
@@ -242,7 +285,8 @@ class Article
      * @param Image|null $image
      * @return $this
      */
-    public function setImage(\CMS\BlogBundle\Entity\Image $image = null)
+    public
+    function setImage(\CMS\BlogBundle\Entity\Image $image = null)
     {
         $this->image = $image;
 
@@ -252,7 +296,8 @@ class Article
     /**
      * @param Category $category
      */
-    public function addCategory(Category $category)
+    public
+    function addCategory(Category $category)
     {
         $this->categories[] = $category;
     }
@@ -260,7 +305,8 @@ class Article
     /**
      * @param Category $category
      */
-    public function removeCategory(Category $category)
+    public
+    function removeCategory(Category $category)
     {
         $this->categories->removeElement($category);
     }
@@ -268,7 +314,8 @@ class Article
     /**
      * @return ArrayCollection
      */
-    public function getCategories()
+    public
+    function getCategories()
     {
         return $this->categories;
     }
@@ -278,7 +325,8 @@ class Article
      *
      * @return \DateTime
      */
-    public function getUpdatedAt()
+    public
+    function getUpdatedAt()
     {
         return $this->updatedAt;
     }
@@ -290,7 +338,8 @@ class Article
      *
      * @return Article
      */
-    public function setUpdatedAt(\Datetime $updatedAt = null)
+    public
+    function setUpdatedAt(\Datetime $updatedAt = null)
     {
         $this->updatedAt = $updatedAt;
 
@@ -302,7 +351,8 @@ class Article
      *
      * @return string
      */
-    public function getSlug()
+    public
+    function getSlug()
     {
         return $this->slug;
     }
@@ -314,7 +364,8 @@ class Article
      *
      * @return Article
      */
-    public function setSlug($slug)
+    public
+    function setSlug($slug)
     {
         $this->slug = $slug;
 

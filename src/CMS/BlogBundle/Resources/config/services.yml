@@ -2,3 +2,11 @@ services:
 #    cms_blog.example:
 #        class: CMS\BlogBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+
+#AntifloodValidator
+    cms_blog.validatpr.antiflood:
+        class: CMS\BlogBundle\Validator\AntifloodValidator
+        arguments: ["@request_stack", "@doctrine.orm.entity_manager"]
+        tags:
+            - { name: validator.constraint_validator, alias: cms_blog_antiflood}

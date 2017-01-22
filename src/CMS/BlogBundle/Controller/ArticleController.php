@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use CMS\BlogBundle\Entity\Article;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 class ArticleController extends Controller
 {
@@ -79,6 +81,8 @@ class ArticleController extends Controller
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     *
+     * @Security("has_role('ROLE_AUTEUR')")
      */
     public function addAction(Request $request)
     {
