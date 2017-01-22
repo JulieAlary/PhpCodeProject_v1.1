@@ -3,12 +3,15 @@
 namespace CMS\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Image
  *
  * @ORM\Table(name="image")
  * @ORM\Entity(repositoryClass="CMS\BlogBundle\Repository\ImageRepository")
+ *
+ * @ORM\HasLifecycleCallbacks
  */
 class Image
 {
@@ -37,6 +40,99 @@ class Image
 
 
     /**
+     * @var UploadedFile
+     */
+    private $file;
+
+    // on ajoute une mémoire tampon
+    private $tempFilename;
+
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function preUpload()
+    {
+
+        // si il n'y a pas de fichier on fait rien
+        if ($this->file === null) {
+            return;
+        }
+
+        // le nom du fichier est son id, on doit juste stocker son extensino
+        $this->url = $this->file->guessExtension();
+
+        // on attriut a alt, la valeur du nom de fichier sur le pc de l'util
+        $this->alt = $this->file->getClientOriginalName();
+    }
+
+    /**
+     * Début fonction upload
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+
+        // si pas de fichier on ne fait rien
+        if (null === $this->file) {
+            return;
+        }
+
+        // Si on a un ancien fichier on le supprime
+        if ($this->tempFilename !== null) {
+            $oldFile = $this->getUploadRootDir() . '/' . $this->id . '.' . $this->tempFilename;
+            if (file_exists($oldFile)) {
+                unlink($oldFile);
+            }
+        }
+
+        // On déplace le fichier envoyé dans le répertoire de notre choxi
+        $this->file->move(
+            $this->getUploadRootDir(),
+            $this->id . '.' . $this->url
+        );
+    }
+
+    /**
+     * Retourne le chemin relatif vers l'image pour notre code php
+     */
+    public function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
+    /**
+     * Retourne le chemin relatif
+     */
+    public function getUploadDir()
+    {
+        return 'uploads/img';
+    }
+
+    /**
+     * @ORM\PreRemove()
+     */
+    public function preRemoveUpload()
+    {
+        // On sauvegarde temporairement le nom du fichier, car il dépend de l'id
+        $this->tempFilename = $this->getUploadRootDir() . '/' . $this->id . '.' . $this->url;
+    }
+
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        // En PostRemove, on n'a pas accès à l'id, on utilise notre nom sauvegardé
+        if (file_exists($this->tempFilename)) {
+            // On supprime le fichier
+            unlink($this->tempFilename);
+        }
+    }
+
+    /**
      * Get id
      *
      * @return int
@@ -44,6 +140,16 @@ class Image
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 
     /**
@@ -61,13 +167,13 @@ class Image
     }
 
     /**
-     * Get url
+     * Get alt
      *
      * @return string
      */
-    public function getUrl()
+    public function getAlt()
     {
-        return $this->url;
+        return $this->alt;
     }
 
     /**
@@ -85,12 +191,29 @@ class Image
     }
 
     /**
-     * Get alt
-     *
-     * @return string
+     * @return UploadedFile
      */
-    public function getAlt()
+    public function getFile()
     {
-        return $this->alt;
+        return $this->file;
     }
+
+    /**
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file)
+    {
+        $this->file = $file;
+
+        // Vérification si on a déjà un fichier pour cette entité
+        if ($this->url === null) {
+            $this->tempFilename = $this->url;
+
+            // Réinitialisation des ttribut url et alt
+            $this->url = null;
+            $this->alt = null;
+        }
+    }
+
+
 }

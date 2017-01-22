@@ -59,8 +59,7 @@ class Article
     private $published = true;
 
     /**
-     * @ORM\OneToOne(targetEntity="CMS\BlogBundle\Entity\Image", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\OneToOne(targetEntity="CMS\BlogBundle\Entity\Image", cascade={"persist", "remove"})
      */
     private $image;
 
@@ -275,6 +274,16 @@ class Article
     }
 
     /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
@@ -289,13 +298,13 @@ class Article
     }
 
     /**
-     * Get updatedAt
+     * Get slug
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getUpdatedAt()
+    public function getSlug()
     {
-        return $this->updatedAt;
+        return $this->slug;
     }
 
     /**
@@ -310,15 +319,5 @@ class Article
         $this->slug = $slug;
 
         return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 }

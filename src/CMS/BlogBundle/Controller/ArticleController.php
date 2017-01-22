@@ -2,6 +2,8 @@
 
 namespace CMS\BlogBundle\Controller;
 
+use CMS\BlogBundle\Form\ArticleEditType;
+use CMS\BlogBundle\Form\ArticleType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -80,11 +82,18 @@ class ArticleController extends Controller
      */
     public function addAction(Request $request)
     {
-        // On récupère l'EntityManager
-        $em = $this->getDoctrine()->getManager();
+        $article = new Article();
 
-        if ($request->isMethod('POST')) {
-            $request->getSession()->getFlashbag()->add('notice', 'Article bien enregistré.');
+        $form = $this->get('form.factory')->create(ArticleType::class, $article);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($article);
+            $em->flush();
+
+
+            $request->getSession()->getFlashBag()->add('notice', 'Article bien aenregistrée.');
 
             return $this->redirectToRoute(
                 'cms_blog_fiche',
@@ -94,7 +103,12 @@ class ArticleController extends Controller
             );
         }
 
-        return $this->render('CMSBlogBundle:Article:add.html.twig');
+        return $this->render(
+            'CMSBlogBundle:Article:add.html.twig',
+            [
+                'form' => $form->createView()
+            ]
+        );
 
     }
 
@@ -116,7 +130,12 @@ class ArticleController extends Controller
             throw new NotFoundHttpException("L'article d'id " . $id . " n'existe pas.");
         }
 
-        if ($request->isMethod('POST')) {
+        $form = $this->get('form.factory')->create(ArticleEditType::class, $article);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+
+            $em->flush();
+
             $request->getSession()->getFlashBag()->add('notice', 'Article bien modifé.');
 
             return $this->redirectToRoute(
@@ -130,7 +149,8 @@ class ArticleController extends Controller
         return $this->render(
             'CMSBlogBundle:Article:edit.html.twig',
             [
-                'article' => $article
+                'article' => $article,
+                'form' => $form->createView()
             ]
         );
     }
@@ -139,7 +159,7 @@ class ArticleController extends Controller
      * @param $id
      * @return Response
      */
-    public function deleteAction($id)
+    public function deleteAction($id, Request $request)
     {
 
         // Initializing Entity Manager
@@ -152,14 +172,26 @@ class ArticleController extends Controller
             throw new NotFoundHttpException("L'article d'id : " . $id . " n'existe pas .");
         }
 
-        // On blouccle sur les catégories pour les supprimer
-        foreach ($article->getCategories() as $category) {
-            $article->removeCategory($category);
+        // On crée un formulaire vide, qui ne contiendra que le champ CSRF
+        // Cela permet de protéger la suppression d'annonce contre cette faille
+        $form = $this->get('form.factory')->create();
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em->remove($article);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('info', "L'article a bien été supprimé.");
+
+            return $this->redirectToRoute('cms_blog_home');
         }
 
-        $em->flush();
-
-        return $this->render('CMSBlogBundle:Article:delete.html.twig');
+        return $this->render(
+            'CMSBlogBundle:Article:delete.html.twig',
+            [
+                'article' => $article,
+                'form' => $form->createView()
+            ]
+        );
     }
 
     /**

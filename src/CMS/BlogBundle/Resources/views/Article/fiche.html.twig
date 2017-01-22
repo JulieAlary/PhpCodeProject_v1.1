@@ -9,9 +9,10 @@
     <h2>{{ article.title }}</h2>
     <i>Par {{ article.author }}, le {{ article.date|date('d/m/Y') }}</i>
 
-    {% if article.image is not null %}
-        <img src="{{ article.image.url }}" alt="{{ article.image.alt }}">
-    {% endif %}
+    <img
+            src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
+            alt="{{ article.image.alt }}"
+    />
     <div class="well">
         {{ article.content }}
     </div>
