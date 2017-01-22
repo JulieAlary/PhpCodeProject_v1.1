@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use CMS\BlogBundle\Entity\Article;
 
+use CMS\BlogBundle\Event\PlatformEvents;
+use CMS\BlogBundle\Event\MessagePostEvent;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 
@@ -91,6 +94,15 @@ class ArticleController extends Controller
         $form = $this->get('form.factory')->create(ArticleType::class, $article);
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+
+//            //ajout de l'évenement
+//            $event = new MessagePostEvent($article->getContent(), $article->getUser());
+//
+//            // déclenchage de l'événement
+//            $this->get('event_dispatcher')->dispatch(PlatformEvents::POST_MESSAGE, $event);
+//
+//            // on récup ce qui a ét modifié par le lou les listeners
+//            $article->setContent($event->getMessage());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);

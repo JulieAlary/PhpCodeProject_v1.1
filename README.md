@@ -16,11 +16,24 @@ _php bin/console doctrine:fixtures:load_
 
 /-----------------------------------------/
 
-GENERER LA CREATION D UN FORMULAIRE
+**GENERER LA CREATION D UN FORMULAIRE**
 
 _php bin/console doctrine:generate:form CMSBlogBundle:Article_
 
 /-----------------------------------------/
+
+role user bdd
+a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}
+
+/-----------------------------------------/
+
+**COMMANDE POUR ROUTE PRECREE FOSUSER**
+
+_php bin/console debug:router_
+
+/-----------------------------------------/
+
+
 
 
 

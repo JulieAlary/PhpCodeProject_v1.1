@@ -11,4 +11,31 @@ _Mise en place de divers outils sans utiliser_
 
 - probleme condition page 1 a régler au login et logout.
 
+- page de gestion des utils : 
+
+ . diverses commandes a voir : 
+ 
+ // Pour récupérer le service UserManager du bundle
+ $userManager = $this->get('fos_user.user_manager');
+ 
+ // Pour charger un utilisateur
+ $user = $userManager->findUserBy(array('username' => 'winzou'));
+ 
+ // Pour modifier un utilisateur
+ $user->setEmail('cetemail@nexiste.pas');
+ $userManager->updateUser($user); // Pas besoin de faire un flush avec l'EntityManager, cette méthode le fait toute seule !
+ 
+ // Pour supprimer un utilisateur
+ $userManager->deleteUser($user);
+ 
+ // Pour récupérer la liste de tous les utilisateurs
+ $users = $userManager->findUsers();
+ 
+ - module antispam
+ 
+ - module ckeditor
+ 
+ - gestionnaire d'évenment , bigbrother ...
+ 
+
 
