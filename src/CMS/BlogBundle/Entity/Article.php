@@ -4,12 +4,15 @@ namespace CMS\BlogBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Article
  *
  * @ORM\Table(name="article")
  * @ORM\Entity(repositoryClass="CMS\BlogBundle\Repository\ArticleRepository")
+ *
+ * @ORM\HasLifecycleCallbacks()
  */
 class Article
 {
@@ -57,7 +60,7 @@ class Article
 
     /**
      * @ORM\OneToOne(targetEntity="CMS\BlogBundle\Entity\Image", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $image;
 
@@ -65,6 +68,17 @@ class Article
      * @ORM\ManyToMany(targetEntity="CMS\BlogBundle\Entity\Category", cascade={"persist"})
      */
     private $categories;
+
+    /**
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+    /**
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(name="slug", type="string", length=255, nullable=true)
+     */
+    private $slug;
 
     /**
      * Article constructor.
@@ -77,6 +91,13 @@ class Article
         $this->categories = new ArrayCollection();
     }
 
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setUpdatedAt(new \DateTime());
+    }
 
     /**
      * Get id
@@ -185,6 +206,16 @@ class Article
     }
 
     /**
+     * Get published
+     *
+     * @return boolean
+     */
+    public function getPublished()
+    {
+        return $this->published;
+    }
+
+    /**
      * Set published
      *
      * @param boolean $published
@@ -199,13 +230,13 @@ class Article
     }
 
     /**
-     * Get published
+     * Get image
      *
-     * @return boolean
+     * @return \CMS\BlogBundle\Entity\Image
      */
-    public function getPublished()
+    public function getImage()
     {
-        return $this->published;
+        return $this->image;
     }
 
     /**
@@ -217,16 +248,6 @@ class Article
         $this->image = $image;
 
         return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \CMS\BlogBundle\Entity\Image
-     */
-    public function getImage()
-    {
-        return $this->image;
     }
 
     /**
@@ -251,5 +272,53 @@ class Article
     public function getCategories()
     {
         return $this->categories;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Article
+     */
+    public function setUpdatedAt(\Datetime $updatedAt = null)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Article
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

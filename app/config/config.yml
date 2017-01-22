@@ -68,3 +68,9 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+ # stof configuration pour les slug des adresses url
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true
