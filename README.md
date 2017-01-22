@@ -33,6 +33,11 @@ _php bin/console debug:router_
 
 /-----------------------------------------/
 
+**POUR CONNAITRE LES SERVICES IMPLEMENTANT UN TAG**
+
+_php bin/console debug:container --tag=twig.extension_
+/-----------------------------------------/
+
 
 
 

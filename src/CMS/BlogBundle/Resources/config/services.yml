@@ -3,9 +3,17 @@ services:
 #        class: CMS\BlogBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
 
+# Service Antispam
+    cms_blog.antispam:
+        class: CMS\BlogBundle\Antispam\BlogAntispam
+        arguments:
+         - "@mailer"
+         - 50
+        calls:
+         - [ setLocale, [%locale%]]
 
 #AntifloodValidator
-    cms_blog.validatpr.antiflood:
+    cms_blog.validator.antiflood:
         class: CMS\BlogBundle\Validator\AntifloodValidator
         arguments: ["@request_stack", "@doctrine.orm.entity_manager"]
         tags:
@@ -22,3 +30,12 @@ services:
          - "2017-03-24"
         tags:
          - { name: kernel.event_listener, event: kernel.response, method: processBeta }
+
+# Service Twig spam Extension
+
+    cms_blog.twig.antispam_extension:
+        class: CMS\BlogBundle\Twig\AntispamExtension
+        arguments:
+         - "@cms_blog.antispam"
+        tags:
+         - {name: twig.extension }

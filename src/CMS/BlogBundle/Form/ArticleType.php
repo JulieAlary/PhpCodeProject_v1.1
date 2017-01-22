@@ -2,11 +2,9 @@
 
 namespace CMS\BlogBundle\Form;
 
-use CMS\BlogBundle\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -32,7 +30,7 @@ class ArticleType extends AbstractType
             ->add('image', ImageType::class)
             ->add('categories', EntityType::class,
                 [
-                    'class' => 'CMS\BlogBundle\Entity\Category',
+                    'class' => 'CMSBlogBundle:Category',
                     'choice_label' => 'name',
                     'multiple' => true
                 ]
@@ -50,7 +48,7 @@ class ArticleType extends AbstractType
                 }
                 // si l'annonce n'est pas publiée ou si elle n'xiste pas encore
                 if (!$article->getPublished() || null === $article->getId()) {
-                    $event->getForm()->add('published', CheckboxType::class, array('required'=>false));
+                    $event->getForm()->add('published', CheckboxType::class, array('required' => false));
                 } else {
                     // sinon on le supprime
                     $event->getForm()->remove('published');
@@ -68,14 +66,5 @@ class ArticleType extends AbstractType
             'data_class' => 'CMS\BlogBundle\Entity\Article'
         ));
     }
-
-    /**
-     * @return string
-     */
-    public function getBlockPrefix()
-    {
-        return 'cms_blogbundle_article';
-    }
-
 
 }

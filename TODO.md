@@ -5,7 +5,7 @@ _Mise en place de divers outils sans utiliser_
 
 
 - Fonction sluggable en place: reste à l'utiliser.
-- fonction isFlood a utiliser pour les services commentaire
+- fonction isFlood a utiliser pour les services commentaire + a rajouter les ip en bdd pour faire fonctionner le service
 
 - pb mofication et ajout d'image sous chrome est obligatoire alors que nedevrait pas : solution définir une image par défault??
 

@@ -16,7 +16,7 @@ class ImageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-           ->add('file', FileType::class);
+            ->add('file', FileType::class);
     }
 
     /**
@@ -28,14 +28,4 @@ class ImageType extends AbstractType
             'data_class' => 'CMS\BlogBundle\Entity\Image'
         ));
     }
-
-    /**
-     * @return string
-     */
-    public function getBlockPrefix()
-    {
-        return 'cms_blogbundle_image';
-    }
-
-
 }

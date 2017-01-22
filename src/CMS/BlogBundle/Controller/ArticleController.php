@@ -11,9 +11,10 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use CMS\BlogBundle\Entity\Article;
 
 use CMS\BlogBundle\Event\PlatformEvents;
+// grisés mais utilisés en annotations //
 use CMS\BlogBundle\Event\MessagePostEvent;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 
 class ArticleController extends Controller

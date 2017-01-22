@@ -47,6 +47,23 @@ class Image
     // on ajoute une mémoire tampon
     private $tempFilename;
 
+    /**
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file)
+    {
+        $this->file = $file;
+
+        // Vérification si on a déjà un fichier pour cette entité
+        if ($this->url !== null) {
+            $this->tempFilename = $this->url;
+
+            // Réinitialisation des ttribut url et alt
+            $this->url = null;
+            $this->alt = null;
+        }
+    }
+
 
     /**
      * @ORM\PrePersist()
@@ -96,22 +113,6 @@ class Image
     }
 
     /**
-     * Retourne le chemin relatif vers l'image pour notre code php
-     */
-    public function getUploadRootDir()
-    {
-        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
-    }
-
-    /**
-     * Retourne le chemin relatif
-     */
-    public function getUploadDir()
-    {
-        return 'uploads/img';
-    }
-
-    /**
      * @ORM\PreRemove()
      */
     public function preRemoveUpload()
@@ -131,6 +132,23 @@ class Image
             unlink($this->tempFilename);
         }
     }
+
+    /**
+     * Retourne le chemin relatif
+     */
+    public function getUploadDir()
+    {
+        return 'uploads/img';
+    }
+
+    /**
+     * Retourne le chemin relatif vers l'image pour notre code php
+     */
+    public function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
 
     /**
      * Get id
@@ -196,23 +214,6 @@ class Image
     public function getFile()
     {
         return $this->file;
-    }
-
-    /**
-     * @param UploadedFile $file
-     */
-    public function setFile(UploadedFile $file)
-    {
-        $this->file = $file;
-
-        // Vérification si on a déjà un fichier pour cette entité
-        if ($this->url === null) {
-            $this->tempFilename = $this->url;
-
-            // Réinitialisation des ttribut url et alt
-            $this->url = null;
-            $this->alt = null;
-        }
     }
 
 
