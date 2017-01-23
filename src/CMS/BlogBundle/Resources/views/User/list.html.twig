@@ -1,0 +1,68 @@
+{% extends "CMSCoreBundle::layout.html.twig" %}
+
+{% block stylesheets %}{{ parent() }}
+    <link rel="stylesheet" src="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+{% endblock %}
+{% block title %}
+    Liste des Users
+{% endblock %}
+
+{% block body %}
+
+    <h2>Tableau des Users</h2>
+
+    <table cellpadding="0" cellspacing="0" border="0" class="display" id="myTable">
+        <thead>
+        <tr>
+            <th>Pseudo</th>
+            <th>Email</th>
+            <th>Actif/inactif</th>
+            <th>Dernière Connexion</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for util in users %}
+            <tr>
+                <td>{{ util.username }}</td>
+                <td>{{ util.email }}</td>
+                <td>{{ util.enabled }}</td>
+                <td>{{ util.lastlogin|date('d/m/Y') }}</td>
+                <td>{{ util.roles|join(',') }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+
+
+{% block javascripts %}{{ parent() }}
+    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "language": {
+                    "sProcessing": "Traitement en cours ...",
+                    "sLengthMenu": "Afficher _MENU_ lignes",
+                    "sZeroRecords": "Aucun résultat trouvé",
+                    "sEmptyTable": "Aucune donnée disponible",
+                    "sInfo": "Lignes _START_ à _END_ sur _TOTAL_",
+                    "sInfoEmpty": "Aucune ligne affichée",
+                    "sInfoFiltered": "(Filtrer un maximum de_MAX_)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Chercher:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Chargement...",
+                    "oPaginate": {
+                        "sFirst": "Premier", "sLast": "Dernier", "sNext": "Suivant", "sPrevious": "Précédent"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Trier par ordre croissant",
+                        "sSortDescending": ": Trier par ordre décroissant"
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}

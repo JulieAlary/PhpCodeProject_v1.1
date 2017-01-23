@@ -31,6 +31,9 @@ cms_blog_delete:
     defaults:
         _controller: CMSBlogBundle:Article:delete
 
-
+cms_user_list:
+    path: /list
+    defaults:
+        _controller: CMSBlogBundle:User:list
 
 

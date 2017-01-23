@@ -8,10 +8,11 @@
 
     {% block stylesheets %}
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
         {% stylesheets filter="cssrewrite, ?scssphp"
         'bundles/cmsblog/css/main.css'
         'bundles/cmsblog/css/blog.css' %}
-        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
         {% endstylesheets %}
     {% endblock %}
 </head>
@@ -29,6 +30,7 @@
                 <li><a href="{{ path('cms_blog_home') }}">Accueil</a></li>
                 {% if is_granted('ROLE_AUTEUR') %}
                     <li><a href="{{ path('cms_blog_add') }}">Ajouter une article</a></li>
+                    <li><a href="{{ path('cms_user_list') }}">Gestion des Users</a></li>
                 {% endif %}
             </ul>
 
@@ -62,6 +64,7 @@
     {# bootstrap Twitter #}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 {% endblock %}
 
 </body>
