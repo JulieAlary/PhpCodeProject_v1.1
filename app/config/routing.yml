@@ -1,7 +1,9 @@
 
 cms_blog:
     resource: "@CMSBlogBundle/Resources/config/routing.yml"
-    prefix:   /blog
+    prefix:   /blog #/{_locale}
+#    requirements:
+#      _locale: en|fr #unquement accessible avec ces préfixes
 
 cms_core:
     resource: "@CMSCoreBundle/Resources/config/routing.yml"

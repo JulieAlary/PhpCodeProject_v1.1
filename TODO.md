@@ -37,5 +37,8 @@ _Mise en place de divers outils sans utiliser_
  
  - gestionnaire d'évenment , bigbrother ...
  
+ - finir les translations
+ 
+ - creer d'autres pages d'erreur en plus de la 404 et personnaliser
 
 

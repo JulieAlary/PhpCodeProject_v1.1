@@ -11,10 +11,11 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use CMS\BlogBundle\Entity\Article;
 
 use CMS\BlogBundle\Event\PlatformEvents;
+
 // grisés mais utilisés en annotations //
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use CMS\BlogBundle\Event\MessagePostEvent;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
 
 
 class ArticleController extends Controller
@@ -259,6 +260,34 @@ class ArticleController extends Controller
         $em->flush();
 
         return new Response('OK');
+    }
+
+    /**
+     * Fonction de translation
+     *
+     * @param $name
+     * @return Response
+     */
+    public function translationAction($name)
+    {
+
+        return $this->render(
+            'CMSBlogBundle:Article:translation.html.twig',
+            [
+                'name' => $name
+            ]
+        );
+    }
+
+    /**
+     * @ParamConverter("json")
+     *
+     * @param $json
+     * @return Response
+     */
+    public function ParamConverterAction($json)
+    {
+        return new Response(print_r($json, true));
     }
 
 

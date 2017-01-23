@@ -39,6 +39,23 @@ _php bin/console debug:container --tag=twig.extension_
 /-----------------------------------------/
 
 
+**METTRE AJOUR LES TRANSLATIONS**
+
+_php bin/console translation:update --force fr CMSBlogBundle_
+/-----------------------------------------/
+
+**INSTALLER LES ASSETS**
+
+_php bin/console assets:install --symlink_
+
+/-----------------------------------------/
+
+**ROUTE POUR LA CORESPHERE CONSOLE**
+
+_http://localhost/PhpCodeProject_v1.1/web/app_dev.php/_console_
+
+/-----------------------------------------/
+
 
 
 

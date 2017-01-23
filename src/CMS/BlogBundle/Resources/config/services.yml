@@ -32,10 +32,16 @@ services:
          - { name: kernel.event_listener, event: kernel.response, method: processBeta }
 
 # Service Twig spam Extension
-
     cms_blog.twig.antispam_extension:
         class: CMS\BlogBundle\Twig\AntispamExtension
         arguments:
          - "@cms_blog.antispam"
         tags:
          - {name: twig.extension }
+
+# Service ParamConverter
+
+    cms_blog.paramconverter.json:
+        class: CMS\BlogBundle\ParamConverter\JsonParamConverter
+        tags:
+         - { name: request.param_converter }
