@@ -36,4 +36,15 @@ cms_user_list:
     defaults:
         _controller: CMSBlogBundle:User:list
 
+cms_user_fiche:
+    path: /fiche/{id}
+    defaults:
+        _controller: CMSBlogBundle:User:fiche
+    requirements:
+        id: \d+
+
+cms_user_del:
+    path:    /user/delete/{id}
+    defaults: { _controller: CMSBlogBundle:User:deleteUser, id: 0}
+
 
