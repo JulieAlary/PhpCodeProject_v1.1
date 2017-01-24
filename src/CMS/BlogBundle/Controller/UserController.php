@@ -3,9 +3,11 @@
 namespace CMS\BlogBundle\Controller;
 
 
+use CMS\BlogBundle\Form\UserRoleEditType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use CMS\UserBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
 class UserController extends Controller
@@ -52,19 +54,66 @@ class UserController extends Controller
 
     /**
      * @param User $user
-     * @param $id
+     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteUserAction(User $user, $id)
+    public function deleteUserAction(User $user, Request $request)
+    {
+        if (!$user) {
+            throw new NotFoundHttpException("l'user n'existe pas");
+        }
+
+        try {
+            $userManager = $this->get('fos_user.user_manager');
+
+            $userManager->deleteUser($user);
+
+            $request->getSession()->getFlashBag()->add('notice', 'User supprimé avec succès.');
+
+            return $this->redirectToRoute('cms_user_list');
+        } catch (\Exception $e) {
+
+        }
+    }
+
+    /**
+     * @param User $user
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function updateUserRoleAction(User $user, Request $request)
     {
 
+        // TODO CHANGEMENT SUR L'USER SELECTIONNE ET NON MOI-MEME
+        $user = $this->getUser();
+
         $userManager = $this->get('fos_user.user_manager');
-        $users = $userManager->findUserBy(['id' => $id]);
 
-        $users->setEnabled($users);
-        $users->flush();
+        $userManager->updateUser($user);
 
-        return $this->redirectToRoute('cms_user_list');
+        $form = $this->get('form.factory')->create(UserRoleEditType::class, $user);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+
+            $userManager->updateUser($user);
+            $request->getSession()->getFlashBag()->add('notice', 'User bien modifé.');
+
+
+            return $this->redirectToRoute(
+                'cms_user_fiche',
+                [
+                    'id' => $user->getId(),
+                ]
+            );
+        }
+
+        return $this->render(
+            'CMSBlogBundle:User:edit.html.twig',
+            [
+                'user' => $user,
+                'form' => $form->createView()
+            ]
+        );
     }
 
 }

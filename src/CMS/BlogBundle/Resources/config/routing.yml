@@ -44,7 +44,12 @@ cms_user_fiche:
         id: \d+
 
 cms_user_del:
-    path:    /user/delete/{id}
+    path:    /fiche/delete/{id}
     defaults: { _controller: CMSBlogBundle:User:deleteUser, id: 0}
 
-
+cms_user_edit:
+    path: /fiche/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:User:updateUserRole
+    requirements:
+        id: \d+

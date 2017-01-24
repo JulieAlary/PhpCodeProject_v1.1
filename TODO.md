@@ -19,7 +19,7 @@ _Mise en place de divers outils sans utiliser_
  $userManager = $this->get('fos_user.user_manager');
  
  // Pour charger un utilisateur
- $user = $userManager->findUserBy(array('username' => 'winzou'));
+ $user = $userManager->findUserBy(array('username' => 'julie'));
  
  // Pour modifier un utilisateur
  $user->setEmail('cetemail@nexiste.pas');
