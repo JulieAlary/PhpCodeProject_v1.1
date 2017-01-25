@@ -93,6 +93,12 @@ class Article
     private $slug;
 
     /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="article")
+     *
+     */
+    protected $comments;
+
+    /**
      * Article constructor.
      *
      * Par défaut la date de l'annonce est celle du jour
@@ -102,6 +108,7 @@ class Article
     {
         $this->date = new \Datetime();
         $this->categories = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     /**
@@ -372,5 +379,39 @@ class Article
         $this->slug = $slug;
 
         return $this;
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \CMS\BlogBundle\Entity\Comment $comment
+     *
+     * @return Article
+     */
+    public function addComment(\CMS\BlogBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \CMS\BlogBundle\Entity\Comment $comment
+     */
+    public function removeComment(\CMS\BlogBundle\Entity\Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

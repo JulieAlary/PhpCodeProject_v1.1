@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use CMS\BlogBundle\Entity\Article;
+use CMS\BlogBundle\Entity\Comment;
 
 use CMS\BlogBundle\Event\PlatformEvents;
 
@@ -69,6 +70,9 @@ class ArticleController extends Controller
         // Pour récup l'article par son ID
         $article = $em->getRepository('CMSBlogBundle:Article')->find($id);
 
+        $comments = $em->getRepository('CMSBlogBundle:Comment')
+            ->getCommentForArticle($article->getId());
+
         if ($article === null) {
             throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");
         }
@@ -76,7 +80,8 @@ class ArticleController extends Controller
         return $this->render(
             "CMSBlogBundle:Article:fiche.html.twig",
             [
-                'article' => $article
+                'article' => $article,
+                'comment' => $comments
             ]
         );
 

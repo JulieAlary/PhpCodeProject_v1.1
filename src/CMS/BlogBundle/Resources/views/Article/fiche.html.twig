@@ -7,13 +7,13 @@
 {% block cms_body %}
 
     <div style="float: left; margin-right: 1em;">
-    {% if article.image is not null %}
-        <img
-                src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
-                alt="{{ article.image.alt }}"
-                height="60"
-        />
-    {% endif %}
+        {% if article.image is not null %}
+            <img
+                    src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
+                    alt="{{ article.image.alt }}"
+                    height="60"
+            />
+        {% endif %}
     </div>
 
     <h2>{{ article.title }}</h2>
@@ -22,6 +22,10 @@
     <div class="well">
         {{ article.content }}
     </div>
+
+    {% for comment in comment %}
+        <li>{{ comment.comment }}</li>
+    {% endfor %}
 
 
     <div class="well">

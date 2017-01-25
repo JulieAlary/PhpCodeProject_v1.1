@@ -92,4 +92,3 @@ assetic:
         jsqueeze:   ~
         scssphp:
             formatter: 'Leafo\ScssPhp\Formatter\Compressed'
-
