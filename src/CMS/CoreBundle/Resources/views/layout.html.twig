@@ -9,9 +9,12 @@
     {% block stylesheets %}
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.min.css') }}"/>
         {% stylesheets filter="cssrewrite, ?scssphp"
         'bundles/cmsblog/css/main.css'
         'bundles/cmsblog/css/blog.css' %}
+
         <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
         {% endstylesheets %}
     {% endblock %}
