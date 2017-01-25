@@ -84,9 +84,6 @@ class UserController extends Controller
     public function updateUserRoleAction(User $user, Request $request)
     {
 
-        // TODO CHANGEMENT SUR L'USER SELECTIONNE ET NON MOI-MEME
-        $user = $this->getUser();
-
         $userManager = $this->get('fos_user.user_manager');
 
         $userManager->updateUser($user);
