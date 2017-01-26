@@ -2,6 +2,7 @@
 
 namespace CMS\BlogBundle\Entity;
 
+use CMS\UserBundle\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -49,9 +50,11 @@ class Article
     private $title;
 
     /**
-     * @var string
+     * @var User
      *
-     * @ORM\Column(name="author", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="CMS\UserBundle\Entity\User")
+     *
+     * @ORM\JoinColumn(nullable=false)
      * @Assert\Length(min=2,  minMessage="Le nom d'auteur doit faire au moins {{ limit }} caractères.")
      */
     private $author;
@@ -93,10 +96,11 @@ class Article
     private $slug;
 
     /**
+     * @var Comment[]|ArrayCollection
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="article")
      *
      */
-    protected $comments;
+    private $comments;
 
     /**
      * Article constructor.
@@ -230,7 +234,7 @@ class Article
     /**
      * Get author
      *
-     * @return string
+     * @return User
      */
     public
     function getAuthor()
@@ -241,12 +245,12 @@ class Article
     /**
      * Set author
      *
-     * @param string $author
+     * @param User $author
      *
      * @return Article
      */
     public
-    function setAuthor($author)
+    function setAuthor(User $author)
     {
         $this->author = $author;
 

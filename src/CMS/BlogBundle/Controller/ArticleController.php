@@ -70,8 +70,8 @@ class ArticleController extends Controller
         // Pour récup l'article par son ID
         $article = $em->getRepository('CMSBlogBundle:Article')->find($id);
 
-        $comments = $em->getRepository('CMSBlogBundle:Comment')
-            ->getCommentForArticle($article->getId());
+//        $comments = $em->getRepository('CMSBlogBundle:Comment')
+//            ->getCommentForArticle($article->getId());
 
         if ($article === null) {
             throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");
@@ -81,7 +81,7 @@ class ArticleController extends Controller
             "CMSBlogBundle:Article:fiche.html.twig",
             [
                 'article' => $article,
-                'comment' => $comments
+//                'comment' => $comments
             ]
         );
 
@@ -96,10 +96,16 @@ class ArticleController extends Controller
      */
     public function addAction(Request $request)
     {
+        // Création d'une nouvelle entité article
         $article = new Article();
 
+        // Attribution de l'user courant à l'article crée
+        $article->setAuthor($this->getUser());
+
+        // Récupération du form
         $form = $this->get('form.factory')->create(ArticleType::class, $article);
 
+        // Validation
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
 //            //ajout de l'évenement
