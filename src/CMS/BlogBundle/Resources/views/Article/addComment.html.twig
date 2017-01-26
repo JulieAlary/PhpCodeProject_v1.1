@@ -1,0 +1,14 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Ajouter un commentaire - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Ajouter un commentaire</h2>
+
+    {{ include("CMSBlogBundle:Article:form.html.twig") }}
+
+
+{% endblock %}

@@ -119,7 +119,6 @@ class Comment
     {
         $this->publishedAt = $publishedAt;
 
-        return $this;
     }
 
     /**
@@ -151,4 +150,3 @@ class Comment
         $this->article = $article;
     }
 }
-

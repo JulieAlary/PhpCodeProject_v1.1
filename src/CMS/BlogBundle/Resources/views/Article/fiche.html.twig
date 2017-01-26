@@ -23,10 +23,10 @@
         {{ article.content }}
     </div>
 
-    {#{% for comment in comment %}#}
-        {#<li>{{ comment.comment }}</li>#}
-    {#{% endfor %}#}
-
+    {% for content in comment %}
+        <li>{{ content.content }}</li>
+    {% endfor %}
+    {{ form(form) }}
 
     <div class="well">
         {% if not article.categories.empty %}

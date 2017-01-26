@@ -4,6 +4,7 @@ namespace CMS\BlogBundle\Controller;
 
 use CMS\BlogBundle\Form\ArticleEditType;
 use CMS\BlogBundle\Form\ArticleType;
+use CMS\BlogBundle\Form\CommentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -59,9 +60,10 @@ class ArticleController extends Controller
 
     /**
      * @param $id
-     * @return Response
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function ficheAction($id)
+    public function ficheAction($id, Request $request)
     {
 
         // Initializing Entity Manager
@@ -70,18 +72,43 @@ class ArticleController extends Controller
         // Pour récup l'article par son ID
         $article = $em->getRepository('CMSBlogBundle:Article')->find($id);
 
-//        $comments = $em->getRepository('CMSBlogBundle:Comment')
-//            ->getCommentForArticle($article->getId());
+        // Récupération des commentaires par article
+        $comments = $em->getRepository('CMSBlogBundle:Comment')
+            ->getCommentForArticle($article->getId());
 
         if ($article === null) {
             throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");
+        }
+
+        // Création du formulaire de commentaire
+        $form = $this->createForm(CommentType::class);
+
+        // Vérification des données du formulaire
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+
+            $comment = $form->getData();
+            $comment->setAuthor($this->getUser());
+            $comment->setArticle($article);
+            $comment->setPublishedAt(new \DateTime());
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comment);
+            $em->flush();
+
+            return $this->redirectToRoute(
+                'cms_blog_fiche',
+                [
+                    'id' => $article->getId()
+                ]
+            );
         }
 
         return $this->render(
             "CMSBlogBundle:Article:fiche.html.twig",
             [
                 'article' => $article,
-//                'comment' => $comments
+                'form' => $form->createView(),
+                'comment' => $comments
             ]
         );
 
@@ -99,13 +126,11 @@ class ArticleController extends Controller
         // Création d'une nouvelle entité article
         $article = new Article();
 
-        // Attribution de l'user courant à l'article crée
+        // Attribution de l'user courant
         $article->setAuthor($this->getUser());
 
-        // Récupération du form
         $form = $this->get('form.factory')->create(ArticleType::class, $article);
 
-        // Validation
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
 //            //ajout de l'évenement

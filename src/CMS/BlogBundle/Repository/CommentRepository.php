@@ -2,6 +2,7 @@
 
 namespace CMS\BlogBundle\Repository;
 
+
 /**
  * CommentRepository
  *
@@ -10,4 +11,22 @@ namespace CMS\BlogBundle\Repository;
  */
 class CommentRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * Method to get the comment's article
+     *
+     * @param $articleId
+     * @return array
+     */
+    public function getCommentForArticle($articleId)
+    {
+
+        $qb = $this->createQueryBuilder('c')
+            ->select('c')
+            ->where('c.article = :article_id')
+            ->addOrderBy('c.publishedAt')
+            ->setParameter('article_id', $articleId);
+
+        return $qb->getQuery()
+            ->getResult();
+    }
 }
