@@ -35,6 +35,10 @@
                     <li><a href="{{ path('cms_blog_add') }}">Ajouter une article</a></li>
                     <li><a href="{{ path('cms_user_list') }}">Gestion des Users</a></li>
                 {% endif %}
+                {% if is_granted('ROLE_USER') %}
+                    <li><a href="{{ path('cms_compte_index', {id: app.user.id}) }}">Mon compte</a></li>
+                {% endif %}
+
             </ul>
 
             <h4>Dernières annonces</h4>

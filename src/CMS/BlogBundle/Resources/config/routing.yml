@@ -53,3 +53,10 @@ cms_user_edit:
         _controller: CMSBlogBundle:User:updateUserRole
     requirements:
         id: \d+
+
+cms_compte_index:
+    path: /compte/index/{id}
+    defaults:
+        _controller: CMSBlogBundle:Compte:index
+    requirements:
+        id: \d+
