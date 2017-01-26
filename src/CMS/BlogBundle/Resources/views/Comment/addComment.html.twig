@@ -1,0 +1,5 @@
+{% if is_granted('ROLE_USER') %}
+    {{ form(form) }}
+{% else %}
+    <p>Enregistrez vous pour publier un commentaire</p>
+{% endif %}

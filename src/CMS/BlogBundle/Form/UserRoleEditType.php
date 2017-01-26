@@ -16,22 +16,19 @@ class UserRoleEditType extends AbstractType
     {
         $builder
             ->add('roles', ChoiceType::class, array(
-                'choices' => array('ROLE_USER' => 'ROLE_USER', 'ROLE_ADMIN' => 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN' =>'ROLE_SUPER_ADMIN'),
-                'multiple' => true
-            ))
-           /* ->add('roles', CollectionType::class, array(
-                    'entry_type' => ChoiceType::class,
-                    'entry_options' => array(
-                        'label' => false,
-                        'choices' => array(
-                            'ROLE_ADMIN' => 'Admin',
-                            'ROLE_USER' => 'User',
-
-                        ),
-                    ),
+                    'choices' => array('ROLE_USER' => 'ROLE_USER', 'ROLE_ADMIN' => 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN' => 'ROLE_SUPER_ADMIN'),
+                    'choice_label' => function ($value) {
+                        if ($value === 'ROLE_USER') {
+                            return 'User';
+                        } elseif ($value === "ROLE_ADMIN") {
+                            return 'Admin';
+                        } else {
+                            return 'Super Admin';
+                        }
+                    },
+                    'multiple' => true
                 )
-
-            )*/
+            )
             ->add('save', SubmitType::class);
     }
 
@@ -46,3 +43,18 @@ class UserRoleEditType extends AbstractType
     }
 
 }
+
+/* Liste a choix mais moins bien */
+/* ->add('roles', CollectionType::class, array(
+                    'entry_type' => ChoiceType::class,
+                    'entry_options' => array(
+                        'label' => false,
+                        'choices' => array(
+                            'ROLE_ADMIN' => 'Admin',
+                            'ROLE_USER' => 'User',
+
+                        ),
+                    ),
+                )
+
+            )*/

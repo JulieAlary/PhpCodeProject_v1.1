@@ -59,6 +59,8 @@ class ArticleController extends Controller
     }
 
     /**
+     * Display View by article with theirs comments
+     *
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
