@@ -36,7 +36,7 @@
                     <li><a href="{{ path('cms_user_list') }}">Gestion des Users</a></li>
                 {% endif %}
                 {% if is_granted('ROLE_USER') %}
-                    <li><a href="{{ path('cms_compte_index', {id: app.user.id}) }}">Mon compte</a></li>
+                    <li><a href="{{ path('fos_user_profile_show') }}">Mon compte</a></li>
                 {% endif %}
 
             </ul>

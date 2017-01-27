@@ -1,0 +1,42 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block body %}
+    <div class="fos_user_user_show">
+        <h2>Fiche User</h2>
+        <div class="container-fluid well span6">
+            <div class="row-fluid">
+                <div class="col-md-4">
+                    <img src="http://s9.postimg.org/uylsxjghr/people_dialer_photo.png" class="img-circle">
+                </div>
+
+                <div class="col-md-8">
+                    <h3>{{ user.username|capitalize }}</h3>
+                    <h6>Email: {{ user.email }}</h6>
+                    <h6>Role: {{ user.roles|join(' , ') }}</h6>
+                    <h6>Ville</h6>
+                    <h6>Inscrit le</h6>
+                    <h6>Dernière connexion le: {{ user.lastlogin|date('d/m/Y') }}</h6>
+                    <h6>Participation</h6>
+                    <h6><a href="#">Lien</a></h6>
+                </div>
+
+                <div class="span2">
+                    <div class="btn-group">
+                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                            Action
+                            <span class="icon-cog icon-white"></span><span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('fos_user_profile_edit') }}">Edition du profil</a></li>
+                            <li><a href="{{ path('cms_user_del', {'id': user.id}) }}">Supprimer le profil</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+            </div>
+        </div>
+    </div>
+{% endblock %}
