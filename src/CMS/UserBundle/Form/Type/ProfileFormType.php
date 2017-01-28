@@ -22,6 +22,7 @@ class ProfileFormType extends AbstractType
         $builder
             ->add('email')
             ->add('age', TextType::class)
+            ->add('avatar', FileType::class, array('data_class' => null))
             ;
     }
 
