@@ -1,0 +1,6 @@
+# PROFILE
+fos_user_profile_edit:
+    path:     /settings/profile/edit
+    defaults: { _controller: FOSUserBundle:Profile:edit }
+    options:
+        expose: true

@@ -83,6 +83,10 @@ fos_user:
     firewall_name: main #le nom du firewall utilisé
     user_class: CMS\UserBundle\Entity\User #l'entité qu'on utilise
 
+    profile:
+        form:
+            type: CMS\UserBundle\Form\Type\ProfileFormType
+
 # Assetic configuration
 assetic:
     debug:          '%kernel.debug%'
@@ -92,3 +96,4 @@ assetic:
         jsqueeze:   ~
         scssphp:
             formatter: 'Leafo\ScssPhp\Formatter\Compressed'
+

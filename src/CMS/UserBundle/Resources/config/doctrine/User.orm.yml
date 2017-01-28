@@ -9,5 +9,6 @@ CMS\UserBundle\Entity\User:
             generator:
                 strategy: AUTO
     fields:
-
+        age:
+            type: integer
     lifecycleCallbacks: {  }

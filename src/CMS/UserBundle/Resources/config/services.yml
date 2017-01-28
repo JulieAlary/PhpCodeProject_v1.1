@@ -2,3 +2,9 @@ services:
 #    cms_user.example:
 #        class: CMS\UserBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+
+    cms.profile.form.type:
+            class: CMS\UserBundle\Form\Type\ProfileFormType
+            tags:
+                - { name: form.type, alias: cms_user_profile }
