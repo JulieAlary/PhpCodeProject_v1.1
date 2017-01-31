@@ -19,3 +19,7 @@
     </p>
 
 {% endblock %}
+
+{% block javascripts %}{{ parent() }}
+    {{ tinymce_init() }}
+{% endblock %}

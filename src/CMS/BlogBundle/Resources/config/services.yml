@@ -45,3 +45,8 @@ services:
         class: CMS\BlogBundle\ParamConverter\JsonParamConverter
         tags:
          - { name: request.param_converter }
+# Tinymce
+    cms_blog.form.tinymce:
+        class: CMS\BlogBundle\Form\TinymceType
+        tags:
+         - { name: form.type, alias: tinymce }
