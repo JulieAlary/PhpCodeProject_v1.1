@@ -6,7 +6,7 @@
 
 {% block body %}
 
-    <h2>Page d'accueil de notre site</h2>
+    <h2>Actualités</h2>
 
     {# On affiche tous les messages flash dont le nom est « info » #}
     {% for message in app.session.flashbag.get('info') %}
@@ -14,7 +14,7 @@
     {% endfor %}
 
     {# Pour afficher les dernières annonces, on réutilise le contrôleur menu du PlatformBundle #}
-    <h3>Dernières annonces</h3>
+    <h3>Derniers articles</h3>
     {{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}
 
     <h3>Derniers messages sur le forum (hypothétique)</h3>

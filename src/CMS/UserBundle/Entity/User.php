@@ -26,12 +26,12 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\Column(name="age", type="integer")
+     * @ORM\Column(name="age", type="integer", nullable=true)
      */
     protected $age;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $avatar;
 

@@ -12,7 +12,9 @@ class TinymceType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'attr' => array('class' => 'tinymce')
+            'attr' => array(
+                'class' => 'tinymce'
+                )
         ));
     }
 

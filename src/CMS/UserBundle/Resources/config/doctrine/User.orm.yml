@@ -11,6 +11,8 @@ CMS\UserBundle\Entity\User:
     fields:
         age:
             type: integer
+            nullable: true
         avatar:
             type: string
+            nullable: true
     lifecycleCallbacks: {  }

@@ -1,5 +1,5 @@
 {% if is_granted('ROLE_USER') %}
     {{ form(form) }}
 {% else %}
-    <p>Enregistrez vous pour publier un commentaire</p>
+    <p>Enregistrez vous pour publier un commentaire <a href="{{  path('fos_user_registration_register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></p>
 {% endif %}
