@@ -102,6 +102,7 @@ class Article
      */
     private $comments;
 
+
     /**
      * Article constructor.
      *
@@ -113,7 +114,9 @@ class Article
         $this->date = new \Datetime();
         $this->categories = new ArrayCollection();
         $this->comments = new ArrayCollection();
+
     }
+
 
     /**
      * @Assert\Callback
@@ -299,7 +302,7 @@ class Article
      * @return $this
      */
     public
-    function setImage(\CMS\BlogBundle\Entity\Image $image = null)
+    function setImage(Image $image = null)
     {
         $this->image = $image;
 
@@ -418,4 +421,5 @@ class Article
     {
         return $this->comments;
     }
+
 }

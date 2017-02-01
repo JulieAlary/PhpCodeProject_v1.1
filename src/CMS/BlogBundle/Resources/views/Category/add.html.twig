@@ -1,0 +1,14 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Ajouter une catégorie - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Ajouter une catgéorie</h2>
+
+    {{ include("CMSBlogBundle:Category:form.html.twig") }}
+
+{% endblock %}
+

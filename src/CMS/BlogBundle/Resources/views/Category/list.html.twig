@@ -1,0 +1,62 @@
+{% extends 'CMSBlogBundle::layout.html.twig' %}
+
+{% block stylesheets %}{{ parent() }}
+    <link rel="stylesheet" src="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block cms_body %}
+    <h2>Toutes les catégories </h2>
+
+    <table cellpadding="0" cellspacing="0" border="0" class="display" id="myTable">
+        <thead>
+        <tr>
+            <th>Nom</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in listCategories %}
+            <tr>
+                <td><a href="{{ path('cms_category_delete', {'id': category.id}) }}"><i class="fa fa-trash-o pointer text-left" aria-hidden="true"></i></a>{{ category.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cms_category_add') }}"><button class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i>Ajouter une catégorie</button></a>
+
+{% endblock %}
+
+
+
+{% block javascripts %}{{ parent() }}
+    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "language": {
+                    "sProcessing": "Traitement en cours ...",
+                    "sLengthMenu": "Afficher _MENU_ lignes",
+                    "sZeroRecords": "Aucun résultat trouvé",
+                    "sEmptyTable": "Aucune donnée disponible",
+                    "sInfo": "Lignes _START_ à _END_ sur _TOTAL_",
+                    "sInfoEmpty": "Aucune ligne affichée",
+                    "sInfoFiltered": "(Filtrer un maximum de_MAX_)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Chercher:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Chargement...",
+                    "oPaginate": {
+                        "sFirst": "Premier", "sLast": "Dernier", "sNext": "Suivant", "sPrevious": "Précédent"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Trier par ordre croissant",
+                        "sSortDescending": ": Trier par ordre décroissant"
+                    }
+                }
+            });
+        });
+
+
+    </script>
+{% endblock %}

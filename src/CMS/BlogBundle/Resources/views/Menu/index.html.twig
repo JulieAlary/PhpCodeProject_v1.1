@@ -1,0 +1,24 @@
+{% extends 'CMSBlogBundle::layout.html.twig' %}
+
+{% block cms_body %}
+    <h2>Gestion des Menus</h2>
+
+
+
+    <div class="col-md-6">
+        <h4>Liste des menus existants</h4>
+
+        {% for menu in listMenus %}
+            {{ menu.nom }}
+        {% endfor %}
+    </div>
+
+
+    <div class="col-md-6">
+        <a href="{{ path('cms_menu_add') }}">
+            <button>Créer un menu</button>
+        </a>
+    </div>
+
+
+{% endblock %}

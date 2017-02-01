@@ -60,3 +60,28 @@ cms_compte_index:
         _controller: CMSBlogBundle:Compte:index
     requirements:
         id: \d+
+
+cms_category_list:
+    path: /category/list
+    defaults:
+        _controller: CMSBlogBundle:Category:list
+
+cms_category_add:
+    path: /category/add
+    defaults:
+        _controller: CMSBlogBundle:Category:add
+
+cms_category_delete:
+    path: /category/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Category:delete
+
+cms_menu_index:
+    path: /menu/index
+    defaults:
+        _controller: CMSBlogBundle:Menu:index
+
+cms_menu_add:
+    path: /menu/addname
+    defaults:
+        _controller: CMSBlogBundle:Menu:addName

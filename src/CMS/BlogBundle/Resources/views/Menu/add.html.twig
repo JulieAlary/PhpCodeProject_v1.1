@@ -1,0 +1,16 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Définir un nouveau menu - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Définir un nouveau menu</h2>
+    <h4>Pour ce faire attibuer lui un nom de votre choix (qui n'a aucune importance)</h4>
+    <h4>Ainsi que les catégories au préalables crées que vous voudrez comme onglet de votre Menu</h4>
+
+    {{ include("CMSBlogBundle:Menu:form.html.twig") }}
+
+{% endblock %}
+

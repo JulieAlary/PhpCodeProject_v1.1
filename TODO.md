@@ -32,12 +32,12 @@ _Mise en place de divers outils sans utiliser_
  
  - module antispam
  
- - module ckeditor
  
  - gestionnaire d'évenment , bigbrother ...
  
  - finir les translations
  
- - creer d'autres pages d'erreur en plus de la 404 et personnaliser
-
+ - refaire l'entité page qui n'est pas bonne... 
+ sinon obligé de la lier a un article... 
+ ce n'est ps le but... dans un premier temps...
 
