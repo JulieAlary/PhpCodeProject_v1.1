@@ -90,3 +90,8 @@ cms_menu_listcate:
     path: /menu/listcate/{id}
     defaults:
         _controller: CMSBlogBundle:Menu:listCateByMenu
+
+#cms_menu_menu:
+#    path: /menu/menu
+#    defaults:
+#        _controller: CMSBlogBundle:Menu:isPublished

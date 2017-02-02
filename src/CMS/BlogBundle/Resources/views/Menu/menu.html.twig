@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <ul class="nav navbar-nav">
+        {% for m in listM %}
+            {% if m.published == true %}
+                {% for i in m.categories %}
+                    <li><a href="#">{{ i.name }}</a></li>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+</nav>

@@ -11,6 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 class MenuController extends Controller
 {
 
+    /**
+     * Liste les menus existants
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -26,6 +32,12 @@ class MenuController extends Controller
         );
     }
 
+    /**
+     * Ajout de menu, choix du nom, des catgéories liées, et de la function isPublished
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     public function addNameAction(Request $request)
     {
         $menu = new Menu();
@@ -51,7 +63,16 @@ class MenuController extends Controller
             ]
         );
     }
-    public function listCateByMenuAction($id, Request $request) {
+
+    /**
+     * Liste les catégories par menu
+     *
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function listCateByMenuAction($id, Request $request)
+    {
 
         $em = $this->getDoctrine()->getManager();
 
@@ -64,6 +85,26 @@ class MenuController extends Controller
                 'id' => $id
             ]
         );
+
+    }
+
+    /**
+     * Create the menu user if is published
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function isPublishedAction(Request $request) {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $listM = $em->getRepository('CMSBlogBundle:Menu')->findBy(
+            array('published' => true),
+            array()
+        );
+        return $this->render(
+            'CMSBlogBundle:Menu:menu.html.twig',
+            array('listM' => $listM));
 
     }
 }

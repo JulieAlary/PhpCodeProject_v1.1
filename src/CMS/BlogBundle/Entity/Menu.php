@@ -34,6 +34,11 @@ class Menu
      */
     private $categories;
 
+    /**
+     * @ORM\Column(name="published", type="boolean")
+     */
+    private $published;
+
 
     /**
      * Get id
@@ -108,5 +113,29 @@ class Menu
     public function getCategories()
     {
         return $this->categories;
+    }
+
+    /**
+     * Set published
+     *
+     * @param boolean $published
+     *
+     * @return Menu
+     */
+    public function setPublished($published)
+    {
+        $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * Get published
+     *
+     * @return boolean
+     */
+    public function getPublished()
+    {
+        return $this->published;
     }
 }
