@@ -85,3 +85,8 @@ cms_menu_add:
     path: /menu/addname
     defaults:
         _controller: CMSBlogBundle:Menu:addName
+
+cms_menu_listcate:
+    path: /menu/listcate/{id}
+    defaults:
+        _controller: CMSBlogBundle:Menu:listCateByMenu

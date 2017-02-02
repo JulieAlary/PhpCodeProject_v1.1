@@ -26,7 +26,7 @@ class MenuController extends Controller
         );
     }
 
-    public function addNameAction(Request $request, Category $category)
+    public function addNameAction(Request $request)
     {
         $menu = new Menu();
 
@@ -47,9 +47,23 @@ class MenuController extends Controller
         return $this->render(
             'CMSBlogBundle:Menu:add.html.twig',
             [
-                'category' => $category,
                 'form' => $form->createView()
             ]
         );
+    }
+    public function listCateByMenuAction($id, Request $request) {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
+
+        return $this->render(
+            "CMSBlogBundle:Menu:list.html.twig",
+            [
+                'menu' => $menu,
+                'id' => $id
+            ]
+        );
+
     }
 }

@@ -9,7 +9,7 @@
         <h4>Liste des menus existants</h4>
 
         {% for menu in listMenus %}
-            {{ menu.nom }}
+            <li><a href="{{ path('cms_menu_listcate', {'id': menu.id}) }}">{{ menu.nom }}</li></a>
         {% endfor %}
     </div>
 

@@ -1,0 +1,25 @@
+{% extends 'CMSBlogBundle::layout.html.twig' %}
+
+{% block cms_body %}
+    <h2>Gestion des Menus</h2>
+
+
+
+    <div class="col-md-6">
+        <h4>Liste des catégories dans le menu <br>{{ menu.nom }}</h4>
+
+        <p>
+            {% for category in menu.categories %}
+
+                {{ category.name }}{% if not loop.last %}, {% endif %}
+
+            {% endfor %}
+        </p>
+        <hr>
+    </div>
+
+
+
+
+
+{% endblock %}
