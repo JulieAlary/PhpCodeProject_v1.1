@@ -94,7 +94,8 @@ class MenuController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function isPublishedAction(Request $request) {
+    public function isPublishedAction(Request $request)
+    {
 
         $em = $this->getDoctrine()->getManager();
 
@@ -105,6 +106,39 @@ class MenuController extends Controller
         return $this->render(
             'CMSBlogBundle:Menu:menu.html.twig',
             array('listM' => $listM));
+
+    }
+
+
+    public function showArticleByMenuAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
+
+        $repo = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('CMSBlogBundle:Article')
+        ;
+
+        $listArticles = $repo->findAll();
+
+        $listM = $em->getRepository('CMSBlogBundle:Menu')->findBy(
+            array('published' => true),
+            array()
+        );
+
+
+        return $this->render(
+            'CMSBlogBundle:Menu:show.html.twig',
+            [
+                'listArticles' => $listArticles,
+                'menu' => $menu,
+                'id' =>$id,
+                'listM' => $listM
+            ]
+        );
 
     }
 }

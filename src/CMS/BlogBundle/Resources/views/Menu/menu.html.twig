@@ -4,7 +4,7 @@
         {% for m in listM %}
             {% if m.published == true %}
                 {% for i in m.categories %}
-                    <li><a href="#">{{ i.name }}</a></li>
+                    <li><a href="{{ path('cms_menu_show_article', {'id': i.id} ) }}">{{ i.name }}</a></li>
                 {% endfor %}
             {% endif %}
         {% endfor %}

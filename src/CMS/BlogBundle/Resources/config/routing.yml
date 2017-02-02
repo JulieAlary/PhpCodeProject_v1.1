@@ -95,3 +95,8 @@ cms_menu_listcate:
 #    path: /menu/menu
 #    defaults:
 #        _controller: CMSBlogBundle:Menu:isPublished
+
+cms_menu_show_article:
+    path: /menu/show/article/{id}
+    defaults:
+        _controller: CMSBlogBundle:Menu:showArticleByMenu
