@@ -6,9 +6,15 @@
 
 {% block cms_body %}
 
-    <h2>Ajouter une catgéorie</h2>
+    <h2>Ajouter une catégorie</h2>
 
     {{ include("CMSBlogBundle:Category:form.html.twig") }}
 
+    <p>
+        <a href="{{ path('cms_category_list') }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste
+        </a>
+    </p>
 {% endblock %}
 

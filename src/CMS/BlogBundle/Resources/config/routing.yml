@@ -31,6 +31,12 @@ cms_blog_delete:
     defaults:
         _controller: CMSBlogBundle:Article:delete
 
+cms_article_list:
+    path: /article/liste
+    defaults:
+        _controller: CMSBlogBundle:Article:list
+
+
 cms_user_list:
     path: /list
     defaults:
@@ -45,7 +51,8 @@ cms_user_fiche:
 
 cms_user_del:
     path:    /fiche/delete/{id}
-    defaults: { _controller: CMSBlogBundle:User:deleteUser, id: 0}
+    defaults:
+        _controller: CMSBlogBundle:User:deleteUser
 
 cms_user_edit:
     path: /fiche/edit/{id}

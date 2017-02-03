@@ -1,17 +1,9 @@
-{% extends "CMSCoreBundle::layout.html.twig" %}
+{% extends 'CMSBlogBundle::layout.html.twig' %}
 
-{% block stylesheets %}{{ parent() }}
-    <link rel="stylesheet" src="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
-{% endblock %}
+{% block cms_body %}
 
-{% block title %}
-    Liste des Users
-{% endblock %}
-
-{% block body %}
-
-    <h2>Tableau des Users</h2>
-
+    <h2>Tableau des Articles</h2>
+    <br>
     <div class="row">
         <div class="flip">
             <h3>
@@ -19,38 +11,51 @@
                 </button>
             </h3>
         </div>
-
         <div class="panel-flip">
-            <p class="bg-info">Ici en cliquant sur un des utilsateurs vous allez avoir accès à sa fiche profil,
-                possibilité de supprimer un profil ou tout simplement changer ses droits, attention la suppression est irréversible</p>
+            <p class="bg-info">Ici vous pouvez gérer vos article en cliquant dessus ou bien en créer de nouveau
+            </p>
         </div>
+
+        <a href="{{ path('cms_blog_add') }}">
+            <button class="btn btn-primary pull-left"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Créer
+                un article
+            </button>
+        </a>
+
     </div>
     <br><br>
     <table cellpadding="0" cellspacing="0" border="0" class="display" id="myTable">
         <thead>
         <tr>
-            <th>Pseudo</th>
-            <th>Email</th>
-            <th>Actif/inactif</th>
-            <th>Dernière Connexion</th>
-            <th>Role</th>
+            <th>Titre</th>
+            <th>Contenu</th>
+            <th>Auteur</th>
+            <th>Date de publication</th>
+            <th>Etat</th>
+            <th>Catégories</th>
         </tr>
         </thead>
         <tbody>
-        {% for util in users %}
-            <tr href="{{ path('cms_user_fiche', {'id': util.id}) }}" class="pointer">
-                <td>{{ util.username|title }}</td>
-                <td>{{ util.email }}</td>
-                <td>{{ util.enabled }}</td>
-                <td>{{ util.lastlogin|date('d/m/Y') }}</td>
-                <td>{{ util.roles|join(' , ') }}</td>
-            </tr>
-        {% endfor %}
+        {% for article in listArticles %}
+        <tr href="{{ path('cms_blog_fiche', {'id': article.id}) }}" title="Accèder à l'article" class="pointer">
+            <td>{{ article.title }}</td>
+            <td>{{ article.content|striptags|truncate(55)|raw }}</td>
+            <td>{{ article.author }}</td>
+            <td>{{ article.date|date('d/m/Y') }}</td>
+            {% if article.published %}
+                <td>Publié</td>
+            {% else %}
+                <td>Non publié</td>
+            {% endif %}
+            <td>
+                {% for categorie in article.categories %}
+                    {{ categorie.name }}
+                {% endfor %}
+            </td>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}
-
-
 
 {% block javascripts %}{{ parent() }}
     <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
@@ -84,5 +89,6 @@
         $('#myTable').on('click', 'tbody tr', function () {
             window.location.href = $(this).attr('href');
         });
+
     </script>
 {% endblock %}

@@ -18,10 +18,10 @@ a {
 
 /*********** 2 - MODAL ***********/
 
-.panel, .flip {
+.panel-flip, .flip {
      padding: 5px;
  }
-.panel {
+.panel-flip {
     display: none;
 }
 

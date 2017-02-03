@@ -11,7 +11,10 @@
     {{ include("CMSBlogBundle:User:form.html.twig") }}
 
     <p>
-
+        <a href="{{ path('cms_user_fiche', {'id': user.id}) }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la fiche utilisateur
+        </a>
     </p>
 
 {% endblock %}

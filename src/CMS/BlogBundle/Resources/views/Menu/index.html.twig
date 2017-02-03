@@ -11,8 +11,10 @@
             </h3>
         </div>
 
-        <div class="panel">
+        <div class="panel-flip">
             <p class="bg-info">Ici vous allez pouvoir consulter les menus déjà crées, et en créer</p>
+            <p class="bg-info">Attention un seul menu peu etre géré pour l'instant, pensez a bien suppimer votre menu
+                avant d'en mettre en ligne un nouveau</p>
         </div>
 
         <a href="{{ path('cms_menu_add') }}">
@@ -26,12 +28,14 @@
 
     {% for menu in listMenus %}
         <li>
-            <a href="{{ path('cms_menu_listcate', {'id': menu.id}) }}" title="Cliquez pour voir le menu en détail">{{ menu.nom }}&nbsp;&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+            <a href="{{ path('cms_menu_listcate', {'id': menu.id}) }}"
+               title="Cliquez pour voir le menu en détail">{{ menu.nom }}&nbsp;&nbsp;<i
+                        class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
         </li>
     {% endfor %}
 
+{% endblock %}
 
-
-
+{% block javascripts %}{{ parent() }}
 {% endblock %}
 

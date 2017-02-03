@@ -26,7 +26,10 @@ class MenuType extends AbstractType
                     'multiple' => true
                 ]
             )
-            ->add('published', CheckboxType::class, array('label'=>'Cochez pour publier'))
+            ->add('published', CheckboxType::class, array(
+                'label'=>'Cochez pour publier',
+                'required' => false
+            ))
         ;
     }
 

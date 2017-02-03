@@ -33,7 +33,7 @@ class ArticleType extends AbstractType
                     'multiple' => true
                 ]
             )
-            ->add('save', SubmitType::class);
+            ->add('save', SubmitType::class, array('label' => 'Sauvegarder'));
 
         // ajout d'un focntion qui va écouter un événement
         $builder->addEventListener(
@@ -46,7 +46,7 @@ class ArticleType extends AbstractType
                 }
                 // si l'annonce n'est pas publiée ou si elle n'xiste pas encore
                 if (!$article->getPublished() || null === $article->getId()) {
-                    $event->getForm()->add('published', CheckboxType::class, array('required' => false));
+                    $event->getForm()->add('published', CheckboxType::class, array('required' => false, 'label' => 'Cochez pour publier'));
                 } else {
                     // sinon on le supprime
                     $event->getForm()->remove('published');

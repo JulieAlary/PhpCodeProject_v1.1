@@ -55,7 +55,7 @@ class UserController extends Controller
     /**
      * @param User $user
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function deleteUserAction(User $user, Request $request)
     {
@@ -63,17 +63,25 @@ class UserController extends Controller
             throw new NotFoundHttpException("l'user n'existe pas");
         }
 
-        try {
-            $userManager = $this->get('fos_user.user_manager');
+        $userManager = $this->get('fos_user.user_manager');
 
+        $form = $this->get('form.factory')->create();
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $userManager->deleteUser($user);
-
             $request->getSession()->getFlashBag()->add('notice', 'User supprimé avec succès.');
 
             return $this->redirectToRoute('cms_user_list');
-        } catch (\Exception $e) {
-
         }
+
+        return $this->render(
+            'CMSBlogBundle:User:delete.html.twig',
+            [
+                'user' => $user,
+                'form' => $form->createView()
+            ]
+        );
+
     }
 
     /**

@@ -328,5 +328,24 @@ class ArticleController extends Controller
         return new Response(print_r($json, true));
     }
 
+    /**
+     * List all articles in one datatable one page
+     * @return Response
+     */
+    public function listAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $listArticles = $em->getRepository('CMSBlogBundle:Article')->myFindAll();
+
+        return $this->render(
+            'CMSBlogBundle:Article:list.html.twig',
+            [
+                'listArticles' => $listArticles
+            ]
+        );
+    }
+
 
 }

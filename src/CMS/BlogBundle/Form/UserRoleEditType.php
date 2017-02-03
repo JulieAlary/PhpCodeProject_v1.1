@@ -28,8 +28,7 @@ class UserRoleEditType extends AbstractType
                     },
                     'multiple' => true
                 )
-            )
-            ->add('save', SubmitType::class);
+            );
     }
 
     /**

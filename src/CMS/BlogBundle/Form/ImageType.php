@@ -17,8 +17,9 @@ class ImageType extends AbstractType
     {
         $builder
             ->add('file', FileType::class, array(
-                'attr' =>array('class' =>'btn btn btn-default btn-file'),
-                'required' => false
+                'attr' =>array('class' =>'btn btn-file'),
+                'required' => false,
+                'label' => false
             ));
     }
 

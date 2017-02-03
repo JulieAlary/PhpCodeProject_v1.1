@@ -1,4 +1,4 @@
 /*Modal*/
 $(".flip").click(function () {
-    $(".panel").slideToggle("slow");
+    $(".panel-flip").slideToggle("slow");
 });

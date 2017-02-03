@@ -36,6 +36,8 @@ _Mise en place de divers outils sans utiliser_
  
  - finir les translations
  
+- probleme de redirection fiche article vers retour liste
 
+- bien gérer les dernières date de connexion, renvoie toujours date du jour
 
 - - great tips ;http://craftcms.stackexchange.com/a/5220

@@ -38,6 +38,11 @@ services:
          - "@cms_blog.antispam"
         tags:
          - {name: twig.extension }
+# Service Twig permettant l'utilisation de truncate et slice
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
 
 # Service ParamConverter
 

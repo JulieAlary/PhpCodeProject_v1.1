@@ -36,7 +36,7 @@
                                     <div class="col-md-8 col-md-offset-4">
                                         {% if article.content not in newArray %}
                                             {% set newArray = newArray|merge([article.content]) %}
-                                            {{ article.content|raw }}
+                                            {{ article.content|striptags|truncate(400)|raw}}
                                         {% endif %}
                                         {# fin de si #}
                                     </div>
