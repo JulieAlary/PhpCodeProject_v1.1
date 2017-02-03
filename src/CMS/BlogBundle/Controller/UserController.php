@@ -71,7 +71,12 @@ class UserController extends Controller
             $userManager->deleteUser($user);
             $request->getSession()->getFlashBag()->add('notice', 'User supprimé avec succès.');
 
-            return $this->redirectToRoute('cms_user_list');
+            if ($user->hasRole('ROLE_ADMIN') || $user->hasRole('SUPER_ADMIN')) {
+                return $this->redirectToRoute('cms_user_list');
+            } else {
+                return $this->redirectToRoute('cms_blog_home');
+            }
+
         }
 
         return $this->render(

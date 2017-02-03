@@ -28,8 +28,8 @@
                             <span class="icon-cog icon-white"></span><span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('fos_user_profile_edit') }}">Edition du profil</a></li>
-                            <li><a href="{{ path('cms_user_del', {'id': user.id}) }}">Supprimer le profil</a></li>
+                            <li><a href="{{ path('fos_user_profile_edit') }}"><span class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Edition du profil</span></a></li>
+                            <li><a href="{{ path('cms_user_del', {'id': user.id}) }}"><span class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;Supprimer le profil</span></a></li>
                         </ul>
                     </div>
                 </div>
