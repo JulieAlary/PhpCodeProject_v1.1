@@ -7,10 +7,27 @@
 {% block cms_body %}
 
     <h2>Définir un nouveau menu</h2>
-    <h4>Pour ce faire attibuer lui un nom de votre choix (qui n'a aucune importance)</h4>
-    <h4>Ainsi que les catégories au préalables crées que vous voudrez comme onglet de votre Menu</h4>
+
+    <div class="row">
+        <div class="flip">
+            <h3>
+                <button class="btn btn-info pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                </button>
+            </h3>
+        </div>
+
+        <div class="panel">
+            <p class="bg-info">Pour ce faire attibuer lui un nom de votre choix (qui n'a aucune importance)
+            Ainsi que les catégories au préalables crées que vous voudrez comme onglet de votre Menu.
+            </p>
+        </div>
+
+    </div>
+
+    <br>
 
     {{ include("CMSBlogBundle:Menu:form.html.twig") }}
 
 {% endblock %}
-
+{% block javascripts %}{{ parent() }}
+{% endblock %}

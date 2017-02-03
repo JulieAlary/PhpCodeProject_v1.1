@@ -11,14 +11,9 @@
     {{ include("CMSBlogBundle:Article:form.html.twig") }}
 
     <p>
-        Vous éditez une annonce déjà existante, merci de ne pas changer
-        l'esprit général de l'annonce déjà publiée.
-    </p>
-
-    <p>
-        <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" class="btn btn-default">
+        <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" class="btn btn-succes">
             <i class="glyphicon glyphicon-chevron-left"></i>
-            Retour à l'annonce
+            Retour à l'article
         </a>
     </p>
 

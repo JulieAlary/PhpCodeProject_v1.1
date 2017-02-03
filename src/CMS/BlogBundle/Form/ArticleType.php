@@ -25,7 +25,7 @@ class ArticleType extends AbstractType
             ->add('date', DateTimeType::class)
             ->add('title', TextType::class)
             ->add('content', TinymceType::class)
-            ->add('image', ImageType::class)
+            ->add('image', ImageType::class, array('required' => false))
             ->add('categories', EntityType::class,
                 [
                     'class' => 'CMSBlogBundle:Category',

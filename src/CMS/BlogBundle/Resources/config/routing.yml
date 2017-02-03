@@ -100,3 +100,13 @@ cms_menu_show_article:
     path: /menu/show/article/{id}
     defaults:
         _controller: CMSBlogBundle:Menu:showArticleByMenu
+
+cms_menu_delete:
+    path: /menu/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Menu:deleteMenu
+
+cms_menu_edit:
+    path: /menu/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:Menu:edit

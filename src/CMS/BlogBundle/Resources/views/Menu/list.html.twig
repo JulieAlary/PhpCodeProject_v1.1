@@ -3,24 +3,32 @@
 {% block cms_body %}
     <h2>Gestion des Menus</h2>
 
+    <h4>Liste des catégories dans le menu : {{ menu.nom|capitalize }}</h4>
+    <div class="col-md-8 col-md-offset-2">
 
-
-    <div class="col-md-6">
-        <h4>Liste des catégories dans le menu <br>{{ menu.nom }}</h4>
-
-        <p>
+        <div class="well" style="margin-top: 20px;">
             {% for category in menu.categories %}
-
                 {{ category.name }}{% if not loop.last %}, {% endif %}
-
             {% endfor %}
-
-        </p>
+        </div>
         <hr>
     </div>
 
-
-
-
+    <p>
+        <a href="{{ path('cms_menu_index') }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste
+        </a>
+        {% if is_granted('ROLE_AUTEUR') %}
+            <a href="{{ path('cms_menu_edit', {'id': menu.id}) }}" class="btn btn-warning">
+                <i class="glyphicon glyphicon-edit"></i>
+                Modifier le menu
+            </a>
+            <a href="{{ path('cms_menu_delete', {'id': menu.id}) }}" class="btn btn-danger">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Supprimer le menu
+            </a>
+        {% endif %}
+    </p>
 
 {% endblock %}

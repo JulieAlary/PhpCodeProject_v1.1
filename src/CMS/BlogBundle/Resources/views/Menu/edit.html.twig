@@ -1,0 +1,21 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Modifier un menu - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Modifier un menu</h2>
+
+    {{ include("CMSBlogBundle:Menu:form.html.twig") }}
+
+    <p>
+        <a href="{{ path('cms_menu_listcate', {'id': menu.id}) }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour au menu
+        </a>
+    </p>
+
+{% endblock %}
+

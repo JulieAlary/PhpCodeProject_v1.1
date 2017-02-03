@@ -3,32 +3,53 @@
 
 
 {% block cms_body %}
-    <ul>
+    <div class="row">
+        {# Déclaration d'un tableau vide pour éviter les doublons #}
         {% set newArray = [] %}
+
         {% for article in listArticles %}
             {% for a in article.categories %}
                 {% for m in listM %}
                     {% if m.published == true %}
                         {% for i in m.categories %}
                             {% if a.id == id %}
-
-                                {% if article.title not in newArray %}
-                                    {% set newArray = newArray|merge([article.title]) %}
-                                    {{ article.title }}
-                                {% endif %}
-                                {% if article.content not in newArray %}
-                                    {% set newArray = newArray|merge([article.content]) %}
-                                    {{ article.content|raw }}
-                                {% endif %}
-
+                                <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" title="Lire la suite"
+                                   style="text-decoration: none;color:black;">
+                                    <div class="col-md-4">
+                                        {# si l'élement n'est pas dans le tableau alors on rajoute #}
+                                        {% if article.image is not null %}
+                                            {% if article.image not in newArray %}
+                                                {% set newArray = newArray|merge([article.image]) %}
+                                                <img src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
+                                                     alt="{{ article.image.alt }}"
+                                                     height="100"
+                                                />
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-8">
+                                        {% if article.title not in newArray %}
+                                            {% set newArray = newArray|merge([article.title]) %}
+                                            <h2>{{ article.title|capitalize }}</h2>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-8 col-md-offset-4">
+                                        {% if article.content not in newArray %}
+                                            {% set newArray = newArray|merge([article.content]) %}
+                                            {{ article.content|raw }}
+                                        {% endif %}
+                                        {# fin de si #}
+                                    </div>
+                                </a>
                             {% endif %}
                         {% endfor %}
                     {% endif %}
                 {% endfor %}
             {% endfor %}
-        {% endfor %}
-    </ul>
 
+        {% endfor %}
+
+    </div>
 
 {% endblock %}
 
