@@ -4,17 +4,22 @@
 
 {% block cms_body %}
     <ul>
-
+        {% set newArray = [] %}
         {% for article in listArticles %}
             {% for a in article.categories %}
                 {% for m in listM %}
                     {% if m.published == true %}
-
                         {% for i in m.categories %}
-
                             {% if a.id == id %}
-                                {{ article.title }}
-                                {{ article.content|raw }}
+
+                                {% if article.title not in newArray %}
+                                    {% set newArray = newArray|merge([article.title]) %}
+                                    {{ article.title }}
+                                {% endif %}
+                                {% if article.content not in newArray %}
+                                    {% set newArray = newArray|merge([article.content]) %}
+                                    {{ article.content|raw }}
+                                {% endif %}
 
                             {% endif %}
                         {% endfor %}
