@@ -65,6 +65,14 @@ class MenuController extends Controller
         );
     }
 
+
+    /**
+     * Delete the menu action
+     *
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     public function deleteMenuAction($id, Request $request) {
 
             // Initializing Entity Manager
@@ -200,6 +208,7 @@ class MenuController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
+
 
         $repo = $this
             ->getDoctrine()

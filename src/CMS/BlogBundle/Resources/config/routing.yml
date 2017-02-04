@@ -117,3 +117,8 @@ cms_menu_edit:
     path: /menu/edit/{id}
     defaults:
         _controller: CMSBlogBundle:Menu:edit
+
+cms_comment_delete:
+    path: article/comment/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Comment:delete

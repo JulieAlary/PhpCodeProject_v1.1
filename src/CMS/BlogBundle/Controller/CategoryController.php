@@ -13,7 +13,6 @@ class CategoryController extends Controller
 
     public function listAction(Request $request)
     {
-
         $em = $this->getDoctrine()->getManager();
 
         $listCategories = $em->getRepository('CMSBlogBundle:Category')->findAll();

@@ -1,5 +1,16 @@
 {% if is_granted('ROLE_USER') %}
-    {{ form(form) }}
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    {{ form_errors(form) }}
+
+    {% if form.save is defined %}
+        {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+    {% endif %}
+    {{ form_rest(form) }}
+
+    <button class="btn btn-primary btn-xs" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Publier</button>
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    {{ form_end(form) }}
 {% else %}
     <p>Enregistrez vous pour publier un commentaire <a href="{{  path('fos_user_registration_register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></p>
 {% endif %}
