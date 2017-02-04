@@ -5,57 +5,57 @@
 {% endblock %}
 
 {% block cms_body %}
-
-    <div style="float: left; margin-right: 1em;">
-        {% if article.image is not null %}
-            <img
-                    src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
-                    alt="{{ article.image.alt }}"
-                    height="60"
-            />
-        {% endif %}
-    </div>
-
-    <h2>{{ article.title }}</h2>
-    <i>Par {{ article.author }}, le {{ article.date|date('d/m/Y') }}</i>
-
-    <div class="well">
-        {{ article.content|raw }}
-    </div>
-
-    <div class="well">
-        {{ include("CMSBlogBundle:Comment:listComment.html.twig") }}
-    </div>
-
-    <div class="well">
-        {{ include("CMSBlogBundle:Comment:addComment.html.twig") }}
-    </div>
-    {% if not article.categories.empty %}
-        <div class="well">
-            <p>Cet article est paru dans les catégories suivantes:
-                {% for category in article.categories %}
-                    {{ category.name }}{% if not loop.last %}, {% endif %}
-                {% endfor %}
-            </p>
+    {% if article.published == true or is_granted('ROLE_AUTEUR')  %}
+        <div style="float: left; margin-right: 1em;">
+            {% if article.image is not null %}
+                <img
+                        src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
+                        alt="{{ article.image.alt }}"
+                        height="60"
+                />
+            {% endif %}
         </div>
-    {% endif %}
 
+        <h2>{{ article.title }}</h2>
+        <i>Par {{ article.author }}, le {{ article.date|date('d/m/Y') }}</i>
 
-    <p>
-        <a href="{{ path('cms_blog_home') }}" class="btn btn-success">
-            <i class="glyphicon glyphicon-chevron-left"></i>
-            Retour à la liste
-        </a>
-        {% if is_granted('ROLE_AUTEUR') %}
-            <a href="{{ path('cms_blog_edit', {'id': article.id}) }}" class="btn btn-warning">
-                <i class="glyphicon glyphicon-edit"></i>
-                Modifier l'article
-            </a>
-            <a href="{{ path('cms_blog_delete', {'id': article.id}) }}" class="btn btn-danger">
-                <i class="glyphicon glyphicon-trash"></i>
-                Supprimer l'article
-            </a>
+        <div class="well">
+            {{ article.content|raw }}
+        </div>
+
+        <div class="well">
+            {{ include("CMSBlogBundle:Comment:listComment.html.twig") }}
+        </div>
+
+        <div class="well">
+            {{ include("CMSBlogBundle:Comment:addComment.html.twig") }}
+        </div>
+        {% if not article.categories.empty %}
+            <div class="well">
+                <p>Cet article est paru dans les catégories suivantes:
+                    {% for category in article.categories %}
+                        {{ category.name }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
         {% endif %}
-    </p>
 
+
+        <p>
+            <a href="{{ path('cms_blog_home') }}" class="btn btn-success">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour à la liste
+            </a>
+            {% if is_granted('ROLE_AUTEUR') %}
+                <a href="{{ path('cms_blog_edit', {'id': article.id}) }}" class="btn btn-warning">
+                    <i class="glyphicon glyphicon-edit"></i>
+                    Modifier l'article
+                </a>
+                <a href="{{ path('cms_blog_delete', {'id': article.id}) }}" class="btn btn-danger">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    Supprimer l'article
+                </a>
+            {% endif %}
+        </p>
+    {% endif %}
 {% endblock %}

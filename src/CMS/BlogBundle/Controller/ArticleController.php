@@ -74,47 +74,47 @@ class ArticleController extends Controller
         // Pour récup l'article par son ID
         $article = $em->getRepository('CMSBlogBundle:Article')->find($id);
 
-        // Récupération des commentaires par article
-        $comments = $em->getRepository('CMSBlogBundle:Comment')
-            ->getCommentForArticle($article->getId());
+            // Récupération des commentaires par article
+            $comments = $em->getRepository('CMSBlogBundle:Comment')
+                ->getCommentForArticle($article->getId());
 
-        if ($article === null) {
-            throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");
-        }
+            if ($article === null) {
+                throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");
+            }
 
-        // Création du formulaire de commentaire
-        $form = $this->createForm(CommentType::class);
+            // Création du formulaire de commentaire
+            $form = $this->createForm(CommentType::class);
 
-        // Vérification des données du formulaire
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            // Vérification des données du formulaire
+            if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
-            $comment = $form->getData();
-            $comment->setAuthor($this->getUser());
-            $comment->setArticle($article);
-            $comment->setPublishedAt(new \DateTime());
+                $comment = $form->getData();
+                $comment->setAuthor($this->getUser());
+                $comment->setArticle($article);
+                $comment->setPublishedAt(new \DateTime());
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($comment);
-            $em->flush();
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($comment);
+                $em->flush();
 
-            return $this->redirectToRoute(
-                'cms_blog_fiche',
+                return $this->redirectToRoute(
+                    'cms_blog_fiche',
+                    [
+                        'id' => $article->getId()
+                    ]
+                );
+            }
+
+            return $this->render(
+                "CMSBlogBundle:Article:fiche.html.twig",
                 [
-                    'id' => $article->getId()
+                    'article' => $article,
+                    'form' => $form->createView(),
+                    'comment' => $comments
                 ]
             );
         }
 
-        return $this->render(
-            "CMSBlogBundle:Article:fiche.html.twig",
-            [
-                'article' => $article,
-                'form' => $form->createView(),
-                'comment' => $comments
-            ]
-        );
-
-    }
 
 
     /**

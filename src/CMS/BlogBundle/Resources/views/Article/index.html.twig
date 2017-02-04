@@ -9,16 +9,20 @@
     <h2>Liste des articles</h2>
 
     <ul>
+
         {% for article in listArticles %}
-            <li>
-                <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}">
-                    {{ article.title }}
-                </a>
-                par {{ article.author }},
-                le {{ article.date|date('d/m/Y') }}
-            </li>
+            {% if article.published == true %}
+                <li>
+                    <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}">
+                        {{ article.title }}
+                    </a>
+                    par {{ article.author }},
+                    le {{ article.date|date('d/m/Y') }}
+                </li>
+            {% endif %}
         {% else %}
             <li>Pas (encore !) d'articles</li>
+
         {% endfor %}
     </ul>
 
@@ -29,6 +33,7 @@
                 <a href="{{ path('cms_blog_home', {'page': p}) }}">{{ p }}</a>
             </li>
         {% endfor %}
+
     </ul>
 
 {% endblock %}

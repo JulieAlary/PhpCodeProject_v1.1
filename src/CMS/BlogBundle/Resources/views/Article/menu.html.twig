@@ -3,10 +3,12 @@
 
 <ul class="nav nav-pills nav-stacked">
     {% for article in listArticles %}
-        <li>
-            <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}">
-                {{ article.title }}
-            </a>
-        </li>
+        {% if article.published == true %}
+            <li>
+                <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}">
+                    {{ article.title }}
+                </a>
+            </li>
+        {% endif %}
     {% endfor %}
 </ul>

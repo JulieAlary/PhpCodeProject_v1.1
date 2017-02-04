@@ -38,7 +38,7 @@
         <tbody>
         {% for article in listArticles %}
         <tr href="{{ path('cms_blog_fiche', {'id': article.id}) }}" title="Accèder à l'article" class="pointer">
-            <td>{{ article.title }}</td>
+            <td>{{ article.title|striptags|truncate(40) }}</td>
             <td>{{ article.content|striptags|truncate(55)|raw }}</td>
             <td>{{ article.author }}</td>
             <td>{{ article.date|date('d/m/Y') }}</td>
