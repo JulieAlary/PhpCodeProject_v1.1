@@ -8,13 +8,14 @@
 
     <h2>Supprimer un commentaire</h2>
 
+
     <p>
         Etes-vous certain de vouloir supprimer le commentaire "{{ comment.content }}" ?
     </p>
 
     {# On met l'id de l'annonce dans la route de l'action du formulaire #}
     <form action="{{ path('cms_comment_delete', {'id': comment.id}) }}" method="post">
-        <a href="{{ path('cms_blog_home') }}" class="btn btn-default">
+        <a href="{{ path('cms_blog_fiche', {'id': comment.article.id}) }}" class="btn btn-default">
             <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à la liste des menus
         </a>

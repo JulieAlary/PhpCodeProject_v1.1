@@ -6,9 +6,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * L'affichage et l'ajout de comment a été intégré avec le controller
+ * Article, TODO tout basculer ici....
+ *
+ * Class CommentController
+ * @package CMS\BlogBundle\Controller
+ */
 class CommentController extends Controller {
 
     /**
+     * Supprime le commentaire et renvoie vers la bonne route
+     *
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -25,6 +34,10 @@ class CommentController extends Controller {
             throw new NotFoundHttpException("Le commentaire d'id : " . $id . " n'existe pas .");
         }
 
+        // Permet de passer l'id de l'article concerné pour le redirectToRoute
+        $article = $comment->getArticle()->getId();
+
+
         // On crée un formulaire vide, qui ne contiendra que le champ CSRF
         // Cela permet de protéger la suppression d'annonce contre cette faille
         $form = $this->get('form.factory')->create();
@@ -35,7 +48,7 @@ class CommentController extends Controller {
 
             $request->getSession()->getFlashBag()->add('info', "Le commentaire a bien été supprimé.");
 
-            return $this->redirectToRoute('cms_blog_home');
+            return $this->redirectToRoute('cms_blog_fiche', array('id'=> $article));
         }
 
         return $this->render(
