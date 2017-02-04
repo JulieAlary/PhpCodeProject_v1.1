@@ -16,7 +16,7 @@
     <form action="{{ path('cms_comment_delete', {'id': comment.id}) }}" method="post">
         <a href="{{ path('cms_blog_fiche', {'id': comment.article.id}) }}" class="btn btn-success">
             <i class="glyphicon glyphicon-chevron-left"></i>
-            Retour à la liste des menus
+            Retour à l'article
         </a>
         {# Ici j'ai écrit le bouton de soumission à la main #}
         <input type="submit" value="Supprimer" class="btn btn-danger"/>

@@ -122,3 +122,9 @@ cms_comment_delete:
     path: article/comment/delete/{id}
     defaults:
         _controller: CMSBlogBundle:Comment:delete
+
+#contact
+cms_contact_index:
+    path: blog/contact
+    defaults:
+        _controller: CMSBlogBundle:Contact:index

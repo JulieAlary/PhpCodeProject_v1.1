@@ -42,6 +42,10 @@
 {#{{ dump(ArticleBycateId) }}#}
         <p>
             {% if is_granted('ROLE_AUTEUR') %}
+                <a href="{{ path('cms_article_list') }}" class="btn btn-success">
+                    <i class="glyphicon glyphicon-edit"></i>
+                   Retour à la liste
+                </a>
                 <a href="{{ path('cms_blog_edit', {'id': article.id}) }}" class="btn btn-warning">
                     <i class="glyphicon glyphicon-edit"></i>
                     Modifier l'article

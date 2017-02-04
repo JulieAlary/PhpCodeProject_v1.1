@@ -18,20 +18,17 @@
                                    style="text-decoration: none;color:black;">
                                     <div class="col-md-4">
                                         {# si l'élement n'est pas dans le tableau alors on rajoute #}
+
                                         {% if article.image is not null %}
                                             {% if article.image not in newArray %}
                                                 {% set newArray = newArray|merge([article.image]) %}
                                                 <img src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                                                      alt="{{ article.image.alt }}"
                                                      height="100"
+                                                     class="center-block"
                                                 />
                                             {% endif %}
                                         {% endif %}
-                                        {% if article.date not in newArray %}
-                                            {% set newArray = newArray|merge([article.date]) %}
-                                            <p>{{ article.date|date('d/m/Y') }}</p>
-                                        {% endif %}
-
                                     </div>
                                     <div class="col-md-8">
                                         {% if article.title not in newArray %}
@@ -42,7 +39,7 @@
                                     <div class="col-md-8 col-md-offset-4">
                                         {% if article.content not in newArray %}
                                             {% set newArray = newArray|merge([article.content]) %}
-                                            {{ article.content|striptags|truncate(400)|raw}}
+                                            {{ article.content|striptags|truncate(400)|raw }}
                                         {% endif %}
                                         {# fin de si #}
                                     </div>
