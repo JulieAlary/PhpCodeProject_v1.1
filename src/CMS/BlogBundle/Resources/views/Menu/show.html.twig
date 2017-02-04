@@ -27,6 +27,11 @@
                                                 />
                                             {% endif %}
                                         {% endif %}
+                                        {% if article.date not in newArray %}
+                                            {% set newArray = newArray|merge([article.date]) %}
+                                            <p>{{ article.date|date('d/m/Y') }}</p>
+                                        {% endif %}
+
                                     </div>
                                     <div class="col-md-8">
                                         {% if article.title not in newArray %}

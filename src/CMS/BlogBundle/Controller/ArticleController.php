@@ -74,47 +74,62 @@ class ArticleController extends Controller
         // Pour récup l'article par son ID
         $article = $em->getRepository('CMSBlogBundle:Article')->find($id);
 
-            // Récupération des commentaires par article
-            $comments = $em->getRepository('CMSBlogBundle:Comment')
-                ->getCommentForArticle($article->getId());
+        // Récuperation de l'id du menu publié
+        $listM = $em->getRepository('CMSBlogBundle:Menu')->findBy(
+            array('published' => true),
+            array()
+        );
+//        $idMenu = $listM[0]->getId();
 
-            if ($article === null) {
-                throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");
-            }
+//        // Pour Redirection de article vers liste des article / catégories
+//        $listArticles = $listM[0]->getCategories()->getValues();
+//        $ArticleBycateId = $listArticles[0]->getId();
+//        dump($listArticles);
 
-            // Création du formulaire de commentaire
-            $form = $this->createForm(CommentType::class);
 
-            // Vérification des données du formulaire
-            if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+        // Récupération des commentaires par article
+        $comments = $em->getRepository('CMSBlogBundle:Comment')
+            ->getCommentForArticle($article->getId());
 
-                $comment = $form->getData();
-                $comment->setAuthor($this->getUser());
-                $comment->setArticle($article);
-                $comment->setPublishedAt(new \DateTime());
+        if ($article === null) {
+            throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");
+        }
 
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($comment);
-                $em->flush();
+        // Création du formulaire de commentaire
+        $form = $this->createForm(CommentType::class);
 
-                return $this->redirectToRoute(
-                    'cms_blog_fiche',
-                    [
-                        'id' => $article->getId()
-                    ]
-                );
-            }
+        // Vérification des données du formulaire
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
-            return $this->render(
-                "CMSBlogBundle:Article:fiche.html.twig",
+            $comment = $form->getData();
+            $comment->setAuthor($this->getUser());
+            $comment->setArticle($article);
+            $comment->setPublishedAt(new \DateTime());
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comment);
+            $em->flush();
+
+            return $this->redirectToRoute(
+                'cms_blog_fiche',
                 [
-                    'article' => $article,
-                    'form' => $form->createView(),
-                    'comment' => $comments
+                    'id' => $article->getId()
                 ]
             );
         }
 
+        return $this->render(
+            "CMSBlogBundle:Article:fiche.html.twig",
+            [
+                'article' => $article,
+//                'idMenu' => $idMenu,
+                'form' => $form->createView(),
+                'comment' => $comments,
+//                'ArticleBycateId' => $ArticleBycateId
+
+            ]
+        );
+    }
 
 
     /**

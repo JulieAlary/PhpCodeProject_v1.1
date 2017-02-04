@@ -73,39 +73,40 @@ class MenuController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function deleteMenuAction($id, Request $request) {
+    public function deleteMenuAction($id, Request $request)
+    {
 
-            // Initializing Entity Manager
-            $em = $this->getDoctrine()->getManager();
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
 
-            // On récupérère l'article par son id
-            $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
+        // On récupérère l'article par son id
+        $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
 
-            if ($menu === null) {
-                throw new NotFoundHttpException("Le menu d'id : " . $id . " n'existe pas .");
-            }
-
-            // On crée un formulaire vide, qui ne contiendra que le champ CSRF
-            // Cela permet de protéger la suppression d'annonce contre cette faille
-            $form = $this->get('form.factory')->create();
-
-            if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-                $em->remove($menu);
-                $em->flush();
-
-                $request->getSession()->getFlashBag()->add('info', "Le menu a bien été supprimé.");
-
-                return $this->redirectToRoute('cms_menu_index');
-            }
-
-            return $this->render(
-                'CMSBlogBundle:Menu:delete.html.twig',
-                [
-                    'menu' => $menu,
-                    'form' => $form->createView()
-                ]
-            );
+        if ($menu === null) {
+            throw new NotFoundHttpException("Le menu d'id : " . $id . " n'existe pas .");
         }
+
+        // On crée un formulaire vide, qui ne contiendra que le champ CSRF
+        // Cela permet de protéger la suppression d'annonce contre cette faille
+        $form = $this->get('form.factory')->create();
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em->remove($menu);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('info', "Le menu a bien été supprimé.");
+
+            return $this->redirectToRoute('cms_menu_index');
+        }
+
+        return $this->render(
+            'CMSBlogBundle:Menu:delete.html.twig',
+            [
+                'menu' => $menu,
+                'form' => $form->createView()
+            ]
+        );
+    }
 
     /**
      * @param $id
@@ -210,27 +211,35 @@ class MenuController extends Controller
         $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
 
 
-        $repo = $this
+        $listArticles = $this
             ->getDoctrine()
             ->getManager()
             ->getRepository('CMSBlogBundle:Article')
+            ->findBy(array(), array('date' => 'desc'))
         ;
 
-        $listArticles = $repo->findAll();
+        dump($listArticles);
 
         $listM = $em->getRepository('CMSBlogBundle:Menu')->findBy(
             array('published' => true),
             array()
         );
 
+        $idMenu = $listM[0]->getId();
+//        dump($idMenu);
+
+        $list = $em->getRepository('CMSBlogBundle:Article')->getArticlesLessPage();
+//dump($list);
 
         return $this->render(
             'CMSBlogBundle:Menu:show.html.twig',
             [
                 'listArticles' => $listArticles,
                 'menu' => $menu,
-                'id' =>$id,
-                'listM' => $listM
+                'id' => $id,
+                'listM' => $listM,
+                'list' => $list,
+                'idMenu' =>$idMenu
             ]
         );
     }

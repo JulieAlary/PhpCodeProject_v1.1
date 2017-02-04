@@ -16,6 +16,8 @@ class ArticleRepository extends EntityRepository
 {
 
     /**
+     * Get article with paginator
+     *
      * @param $page
      * @param $nbPerPage
      * @return Paginator
@@ -24,18 +26,17 @@ class ArticleRepository extends EntityRepository
     {
 
         $query = $this->createQueryBuilder('a')
-
             //jointure avec les images
-                ->leftJoin('a.image', 'i')
+            ->leftJoin('a.image', 'i')
             ->addSelect('i')
             //jointure sur les catégories
-                ->leftJoin('a.categories', 'c')
+            ->leftJoin('a.categories', 'c')
             ->addSelect('c')
             ->orderBy('a.date', 'DESC')
             ->getQuery();
 
         $query
-            ->setFirstResult(($page - 1)* $nbPerPage)
+            ->setFirstResult(($page - 1) * $nbPerPage)
             ->setMaxResults($nbPerPage);
 
         return new Paginator($query, true);
@@ -90,5 +91,27 @@ class ArticleRepository extends EntityRepository
             ->andWhere('a.date BETWEEN =start AND :end')
             ->setParameter('start', new \DateTime(date('Y') . '-01-01'))
             ->setParameter('end', new \DateTime(date('Y') . '-12-31'));
+    }
+
+    /**
+     * Test affiche article par categories
+     *
+     * @return array
+     */
+    public function getArticlesLessPage()
+    {
+
+        $query = $this->createQueryBuilder('a')
+            //jointure avec les images
+            ->leftJoin('a.image', 'i')
+            ->addSelect('i')
+            //jointure sur les catégories
+            ->leftJoin('a.categories', 'c')
+            ->addSelect('c')
+            ->orderBy('a.date', 'DESC');
+
+        return $query
+            ->getQuery()
+            ->getResult();
     }
 }

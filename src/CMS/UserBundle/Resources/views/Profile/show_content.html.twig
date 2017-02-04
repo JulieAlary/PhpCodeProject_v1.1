@@ -10,6 +10,23 @@
                     <img src="http://s9.postimg.org/uylsxjghr/people_dialer_photo.png" class="img-circle">
                 </div>
 
+                <div class="span2 pull-right" style="margin-right: 150px;">
+                    <div class="btn-group">
+                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                            Action
+                            <span class="icon-cog icon-white"></span><span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('fos_user_profile_edit') }}"><span class="btn btn-warning"><i
+                                                class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Edition du profil</span></a>
+                            </li>
+                            <li><a href="{{ path('cms_user_del', {'id': user.id}) }}"><span class="btn btn-danger"><i
+                                                class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;Supprimer le profil</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="col-md-8">
                     <h3>{{ user.username|capitalize }}</h3>
                     <h6>Email: {{ user.email }}</h6>
@@ -19,19 +36,6 @@
                     <h6>Dernière connexion le: {{ user.lastlogin|date('d/m/Y') }}</h6>
                     <h6>Participation</h6>
                     <h6><a href="#">Lien</a></h6>
-                </div>
-
-                <div class="span2">
-                    <div class="btn-group">
-                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                            Action
-                            <span class="icon-cog icon-white"></span><span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ path('fos_user_profile_edit') }}"><span class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Edition du profil</span></a></li>
-                            <li><a href="{{ path('cms_user_del', {'id': user.id}) }}"><span class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;Supprimer le profil</span></a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
 
