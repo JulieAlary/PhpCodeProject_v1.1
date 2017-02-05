@@ -7,6 +7,22 @@
 {% block cms_body %}
     <h1>Personnalisation de votre page de contact</h1>
 
+    {% for key, fa in pageContact %}
+        <div class="well">
+
+            <p>Page de contact active : {{ fa.name }} &nbsp;&nbsp;
+                <a href="#" class="btn btn-warning btn-xs">
+                    <i class="glyphicon glyphicon-edit"></i>
+                    Editez la page de contact
+                </a>
+                <a href="" class="btn btn-danger btn-xs">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    Supprimer la page de contact
+                </a>
+            </p>
+        </div>
+    {% endfor %}
+
     <div class="well text-center">
         <h2>Souhaitez-vous créer une page de contact?</h2>
         <h3>Plusieurs options vont s'offrir à vous</h3>
@@ -14,9 +30,11 @@
 
     <div class="row">
         <div class="col-md-4">
-            <h4>Icone prédéfinies pour vos réseaux sociaux</h4>
-            <p>Il faudra juste choisir celle que vous préférez</p>
-            <a href="{{ path('cms_contact_add_fa') }}"><button class="btn btn-primary">Icônes FontAwesome &nbsp;&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></button></a>
+            <h4>Créez Votre Page de Contact avec les icônes FontAwesome</h4>
+            <a href="{{ path('cms_contact_add_fa') }}">
+                <button class="btn btn-primary">Icônes FontAwesome &nbsp;&nbsp;<i class="fa fa-arrow-circle-o-right"
+                                                                                  aria-hidden="true"></i></button>
+            </a>
         </div>
     </div>
 

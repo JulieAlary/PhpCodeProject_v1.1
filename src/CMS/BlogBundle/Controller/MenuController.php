@@ -183,16 +183,26 @@ class MenuController extends Controller
      */
     public function isPublishedAction(Request $request)
     {
-
         $em = $this->getDoctrine()->getManager();
 
+        // To display name of categories if menu is true
         $listM = $em->getRepository('CMSBlogBundle:Menu')->findBy(
             array('published' => true),
             array()
         );
+
+        // To display contact page awesome if true is coched
+        $pageContact = $em->getRepository('CMSBlogBundle:Contact')->findBy(
+            array('published' => true),
+            array()
+        );
+
         return $this->render(
             'CMSBlogBundle:Menu:menu.html.twig',
-            array('listM' => $listM));
+            array(
+                'listM' => $listM,
+                'pageContact' => $pageContact
+            ));
 
     }
 
@@ -215,8 +225,7 @@ class MenuController extends Controller
             ->getDoctrine()
             ->getManager()
             ->getRepository('CMSBlogBundle:Article')
-            ->findBy(array(), array('date' => 'desc'))
-        ;
+            ->findBy(array(), array('date' => 'desc'));
 
         dump($listArticles);
 
@@ -239,7 +248,7 @@ class MenuController extends Controller
                 'id' => $id,
                 'listM' => $listM,
                 'list' => $list,
-                'idMenu' =>$idMenu
+                'idMenu' => $idMenu
             ]
         );
     }

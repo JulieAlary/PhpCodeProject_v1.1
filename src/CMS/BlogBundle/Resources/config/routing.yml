@@ -133,3 +133,8 @@ cms_contact_add_fa:
     path: blog/contact/fa
     defaults:
         _controller: CMSBlogBundle:Contact:fontAwesome
+
+cms_contact_page_fa:
+    path: blog/page/contact
+    defaults:
+        _controller: CMSBlogBundle:Contact:viewFontAwesomePage

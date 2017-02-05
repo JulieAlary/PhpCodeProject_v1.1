@@ -10,11 +10,12 @@
 
     <div class="panel-flip bg-info">
         <ul>
+            <li>Attention le nom de votre page est important car c'est celui qui aparaitra dans votre menu</li>
             <li>Coller dans les champs l'url de vos profils de réseaux sociaux</li>
             <li>Ceci est une liste non exhaustive des possibilités, en fonction du nombre de demandes, la liste pourra
                 être étendue
             </li>
-            <li>L'un des nombreuse qualité de ce type d'icônes est la possibilité de personnalisation notamment des
+            <li>L'une des nombreuses qualités de ce type d'icônes est la possibilité de personnalisation notamment des
                 couleurs (à venir)
             </li>
         </ul>
@@ -28,6 +29,11 @@
 
     {# Les erreurs générales du formulaire. #}
     {{ form_errors(form) }}
+
+    <div class="form-group">
+        {{ form_label(form.name, "Nom de votre Page") }}
+        {{ form_widget(form.name) }}
+    </div>
 
     <div class="form-group">
         <i class="fa fa-facebook-official fa-4x"
@@ -115,12 +121,10 @@
     {#{{ form_row(form.published) }}#}
     {#{% endif %}#}
 
-
     {# Génération automatique des champs pas encore écrits.
        Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
        et tous les champs cachés (type « hidden »). #}
     {{ form_rest(form) }}
-
     {# Fermeture de la balise <form> du formulaire HTML #}
     {{ form_end(form) }}
 </div>
