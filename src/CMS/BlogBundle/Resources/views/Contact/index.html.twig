@@ -5,17 +5,18 @@
 {% endblock %}
 
 {% block cms_body %}
-    <h1>Personnalisation de votre page de contact</h1>
+    <h2 class="text-center">Personnalisation de votre page de contact</h2>
 
     {% for key, fa in pageContact %}
         <div class="well">
 
             <p>Page de contact active : {{ fa.name }} &nbsp;&nbsp;
-                <a href="#" class="btn btn-warning btn-xs">
+                <a href="{{ path('cms_contact_page_fa_edit', {'id': fa.id}) }}" class="btn btn-warning btn-xs">
                     <i class="glyphicon glyphicon-edit"></i>
                     Editez la page de contact
                 </a>
-                <a href="" class="btn btn-danger btn-xs">
+
+                <a href="{{ path('cms_contact_page_fa_delete', {'id': fa.id}) }}" class="btn btn-danger btn-xs">
                     <i class="glyphicon glyphicon-trash"></i>
                     Supprimer la page de contact
                 </a>

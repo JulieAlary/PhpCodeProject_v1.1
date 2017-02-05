@@ -138,3 +138,13 @@ cms_contact_page_fa:
     path: blog/page/contact
     defaults:
         _controller: CMSBlogBundle:Contact:viewFontAwesomePage
+
+cms_contact_page_fa_edit:
+    path: blog/page/fa/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:Contact:editContactFa
+
+cms_contact_page_fa_delete:
+    path: blog/page/fa/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Contact:deleteContactFa

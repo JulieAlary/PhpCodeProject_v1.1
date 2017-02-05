@@ -1,0 +1,24 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Modifier la page de contact - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Modifier le page de contact</h2>
+
+    {{ include("CMSBlogBundle:Contact:form.html.twig") }}
+
+    <p>
+        <a href="{{ path('cms_contact_index') }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la rubrique
+        </a>
+    </p>
+
+{% endblock %}
+
+{% block javascripts %}{{ parent() }}
+    {{ tinymce_init() }}
+{% endblock %}
