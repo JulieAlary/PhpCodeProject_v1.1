@@ -1,0 +1,11 @@
+{% extends('CMSBlogBundle::layout.html.twig') %}
+
+{% block title %}
+    Icônes page de contact - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    {% include('CMSBlogBundle:Contact:form.html.twig') %}
+
+{% endblock %}

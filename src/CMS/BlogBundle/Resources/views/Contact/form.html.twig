@@ -1,0 +1,127 @@
+<h2>Personnalisation de votre page d'accueil avec les icônes FontAwesome</h2>
+
+<div class="row">
+    <div class="flip">
+        <h3>
+            <button class="btn btn-info pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+            </button>
+        </h3>
+    </div>
+
+    <div class="panel-flip bg-info">
+        <ul>
+            <li>Coller dans les champs l'url de vos profils de réseaux sociaux</li>
+            <li>Ceci est une liste non exhaustive des possibilités, en fonction du nombre de demandes, la liste pourra
+                être étendue
+            </li>
+            <li>L'un des nombreuse qualité de ce type d'icônes est la possibilité de personnalisation notamment des
+                couleurs (à venir)
+            </li>
+        </ul>
+    </div>
+</div>
+
+<br><br>
+
+<div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+
+    <div class="form-group">
+        <i class="fa fa-facebook-official fa-4x"
+           aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faFacebook, "Facebook") }}
+        <div class="input-icon">
+            {{ form_widget(form.faFacebook) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-twitter fa-4x" aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faTwitter, "Twitter") }}
+        <div class="input-icon">
+            {{ form_widget(form.faTwitter) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-envelope fa-4x" aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faMail, "Email") }}
+        <div class="input-icon">
+            {{ form_widget(form.faMail) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-linkedin-square fa-4x"
+           aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faLinkedin, "LinkedIn") }}
+        <div class="input-icon">
+            {{ form_widget(form.faLinkedin) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-flickr fa-4x" aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faFlickr, "Flickr") }}
+        <div class="input-icon">
+            {{ form_widget(form.faFlickr) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-google-plus-square fa-4x"
+           aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faGooglePlus, "Google+") }}
+        <div class="input-icon">
+            {{ form_widget(form.faGooglePlus) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-instagram fa-4x"
+           aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faInstagram, "Instagram") }}
+        <div class="input-icon">
+            {{ form_widget(form.faInstagram) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-reddit-square fa-4x"
+           aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faReddit, "Reddit") }}
+        <div class="input-icon">
+            {{ form_widget(form.faReddit) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-pinterest-square fa-4x"
+           aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faPinterest, "Pinterest") }}
+        <div class="input-icon">
+            {{ form_widget(form.faPinterest) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-snapchat-square fa-4x"
+           aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faSnapchat, "Snapchat") }}
+        <div class="input-icon">
+            {{ form_widget(form.faSnapchat) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-youtube-square fa-4x"
+           aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faYoutube, "Youtube") }}
+        <div class="input-icon">
+            {{ form_widget(form.faYoutube) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-soundcloud fa-4x"
+           aria-hidden="true"></i>&nbsp;&nbsp;{{ form_label(form.faSoundcloud, "SoundCloud") }}
+        <div class="input-icon">
+            {{ form_widget(form.faSoundcloud) }}
+        </div>
+    </div>
+
+    {#{% if form.published is defined %}#}
+    {#{{ form_row(form.published) }}#}
+    {#{% endif %}#}
+
+
+    {# Génération automatique des champs pas encore écrits.
+       Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+       et tous les champs cachés (type « hidden »). #}
+    {{ form_rest(form) }}
+
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    {{ form_end(form) }}
+</div>
+

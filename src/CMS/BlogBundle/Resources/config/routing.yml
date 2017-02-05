@@ -128,3 +128,8 @@ cms_contact_index:
     path: blog/contact
     defaults:
         _controller: CMSBlogBundle:Contact:index
+
+cms_contact_add_fa:
+    path: blog/contact/fa
+    defaults:
+        _controller: CMSBlogBundle:Contact:fontAwesome

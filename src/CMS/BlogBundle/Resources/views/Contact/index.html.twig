@@ -1,6 +1,23 @@
 {% extends('CMSBlogBundle::layout.html.twig') %}
 
+{% block title %}
+    Création page de contact- {{ parent() }}
+{% endblock %}
 
 {% block cms_body %}
-    <h1>Personnalisation page de contact</h1>
+    <h1>Personnalisation de votre page de contact</h1>
+
+    <div class="well text-center">
+        <h2>Souhaitez-vous créer une page de contact?</h2>
+        <h3>Plusieurs options vont s'offrir à vous</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Icone prédéfinies pour vos réseaux sociaux</h4>
+            <p>Il faudra juste choisir celle que vous préférez</p>
+            <a href="{{ path('cms_contact_add_fa') }}"><button class="btn btn-primary">Icônes FontAwesome &nbsp;&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></button></a>
+        </div>
+    </div>
+
 {% endblock %}
