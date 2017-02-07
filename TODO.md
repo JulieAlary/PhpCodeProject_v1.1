@@ -19,4 +19,12 @@ _Mise en place de divers outils sans utiliser_
 
 - formulaire FontAwesome -> probleme button save au dessus de cochez...
 
+- amélioration beaucoup de répétions dans l'affichage des fa, possiblité d'optimiser en tamplate par exemple
+
+- amélioration page de contact dans corebundle
+
+- requete affichage des articles par catgéories
+
+- route cms_blog_home ne matche plus vers rien c le core qui prend le relais a travaailler
+
 - - great tips : http://craftcms.stackexchange.com/a/5220

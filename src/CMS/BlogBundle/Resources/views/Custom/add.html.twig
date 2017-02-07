@@ -1,0 +1,31 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Nom de votre blog - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Définir un nom pour votre blog</h2>
+
+    <div class="row">
+        <div class="flip">
+            <h3>
+                <button class="btn btn-info pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                </button>
+            </h3>
+        </div>
+
+        <div class="panel-flip">
+            <p class="bg-info">Vous pourrez biensur le modifier plus tard, mais ce n'est pas très conseillée pour vos
+                lecteurs, alors pensez-le bien</p>
+        </div>
+
+    </div>
+
+    <br>
+
+    {{ include("CMSBlogBundle:Custom:form.html.twig") }}
+
+{% endblock %}
+

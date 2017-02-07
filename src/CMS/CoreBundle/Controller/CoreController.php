@@ -3,7 +3,6 @@
 namespace CMS\CoreBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -11,12 +10,15 @@ class CoreController extends Controller
 {
 
     /**
+     * To display th main index
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction()
     {
-
-        return $this->render('CMSCoreBundle:Core:index.html.twig');
+        return $this->render(
+            'CMSCoreBundle:Core:index.html.twig'
+        );
     }
 
     /**

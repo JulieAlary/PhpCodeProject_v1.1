@@ -117,5 +117,115 @@
         {% endfor %}
 
 
+        {# VISUALISATION BROUILLON#}
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faFacebook is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faFacebook }}" target="_blank"><i class="fa fa-facebook-official fa-5x"
+                                                                     aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faTwitter is not null %}
+                <div class="col-md-3 col-xs-2 text-center">
+                    <a href="{{ fa.faTwitter }}" target="_blank"><i class="fa fa-twitter fa-5x"
+                                                                    aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faMail is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faMail }}" target="_blank"><i class="fa fa-envelope fa-5x"
+                                                                 aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faLinkedin is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faLinkedin }}" target="_blank"><i class="fa fa-linkedin-square fa-5x"
+                                                                     aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faFlickr is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faFlickr }}" target="_blank"><i class="fa fa-flickr fa-5x"
+                                                                   aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faGooglePlus is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faGooglePlus }}" target="_blank"><i class="fa fa-google-plus-square fa-5x"
+                                                                       aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faInstagram is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faInstagram }}" target="_blank"><i class="fa fa-instagram fa-5x"
+                                                                      aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faReddit is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faReddit }}" target="_blank"><i class="fa fa-reddit-square fa-5x"
+                                                                   aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faPinterest is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faPinterest }}" target="_blank"><i class="fa fa-pinterest-square fa-5x"
+                                                                      aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faSnapchat is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faSnapchat }}" target="_blank"><i class="fa fa-snapchat-square fa-5x"
+                                                                     aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faYoutube is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faYoutube }}" target="_blank"><i class="fa fa-youtube-square fa-5x"
+                                                                    aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for key, fa in pageContactFalse %}
+            {% if fa.faSoundcloud is not null %}
+                <div class="col-md-3 col-xs-4 text-center">
+                    <a href="{{ fa.faSoundcloud }}" target="_blank"><i class="fa fa-soundcloud fa-5x"
+                                                                       aria-hidden="true"></i></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+
     </div>
 {% endblock %}

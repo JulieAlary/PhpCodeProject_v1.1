@@ -1,0 +1,26 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Supprimer les paramètres - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Supprimer les paramètres</h2>
+
+    <p>
+        Etes-vous certain de vouloir supprimer les paramètres "{{ blogNames.titre }}" ?
+    </p>
+
+    <form action="{{ path('cms_custom_names_delete', {'id': blogNames.id}) }}" method="post">
+        <a href="{{ path('cms_custom_index') }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour aux paramètres
+        </a>
+        {# Ici j'ai écrit le bouton de soumission à la main #}
+        <input type="submit" value="Supprimer" class="btn btn-danger"/>
+        {# Ceci va générer le champ CSRF #}
+        {{ form_rest(form) }}
+    </form>
+
+{% endblock %}

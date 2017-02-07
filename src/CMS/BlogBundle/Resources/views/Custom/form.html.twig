@@ -1,0 +1,36 @@
+{# cette vue n'herite de presonne car elle sera incluse dans d'autres vue #}
+
+<div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+
+    {% if form.titre is defined %}
+        {# Génération manuelle et éclatée : #}
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.titre, "Nom de votre blog", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.titre) }}
+
+            <div class="col-sm-10">
+                {# Génération de l'input. #}
+                {{ form_widget(form.titre, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+    {% endif %}
+
+    {# Génération automatique des champs pas encore écrits.
+       Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+       et tous les champs cachés (type « hidden »). #}
+    {{ form_rest(form) }}
+
+    <button type="submit" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Sauvegarder
+    </button>
+
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    {{ form_end(form) }}
+</div>
+

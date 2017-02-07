@@ -5,6 +5,7 @@ namespace CMS\BlogBundle\Controller;
 use CMS\BlogBundle\Entity\Contact;
 use CMS\BlogBundle\Form\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -27,10 +28,17 @@ class ContactController extends Controller
             array()
         );
 
+        // To display contact page awesome if true is published
+        $pageContactFalse = $em->getRepository('CMSBlogBundle:Contact')->findBy(
+            array('published' => false),
+            array()
+        );
+
         return $this->render(
             'CMSBlogBundle:Contact:index.html.twig',
             [
-                'pageContact' => $pageContact
+                'pageContact' => $pageContact,
+                'pageContactFalse' => $pageContactFalse
             ]
         );
     }
@@ -174,10 +182,18 @@ class ContactController extends Controller
             array()
         );
 
+        // To display contact page awesome if false is published
+        $pageContactFalse = $em->getRepository('CMSBlogBundle:Contact')->findBy(
+            array('published' => false),
+            array()
+        );
+
+
         return $this->render(
             'CMSBlogBundle:Contact:pageFA.html.twig',
             [
-                'pageContact' => $pageContact
+                'pageContact' => $pageContact,
+                'pageContactFalse' => $pageContactFalse
             ]
         );
     }

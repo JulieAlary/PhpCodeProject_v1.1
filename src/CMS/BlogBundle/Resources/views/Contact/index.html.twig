@@ -7,6 +7,51 @@
 {% block cms_body %}
     <h2 class="text-center">Personnalisation de votre page de contact</h2>
 
+    <div class="row">
+        <div class="flip">
+            <h3>
+                <button class="btn btn-info pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                </button>
+            </h3>
+        </div>
+
+        <div class="panel-flip bg-info">
+            <ul>
+                <li>Vous ne pouvez créer qu'une seule page de contact! Veillez bien à supprimer l'ancien avant d'en
+                    créer un nouveau
+                </li>
+                <li>Vous pouvez choisir de la publier directement ou non. Si vous choissisez la deuxième option, sur
+                    cette même page vous pourrez, visualiser le brouillon de votre page, la modifier ou la créer
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br><br>
+
+    {% for key, fa in pageContactFalse %}
+        <div class="well">
+
+            <p>Page de contact brouillon : {{ fa.name }} &nbsp;&nbsp;
+                <a href="{{ path('cms_contact_page_fa_edit', {'id': fa.id}) }}" class="btn btn-warning btn-xs">
+                    <i class="glyphicon glyphicon-edit"></i>
+                    Editez la page de contact
+                </a>
+
+                <a href="{{ path('cms_contact_page_fa_delete', {'id': fa.id}) }}" class="btn btn-danger btn-xs">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    Supprimer la page de contact
+                </a>
+
+                <a href="{{ path('cms_contact_page_fa', {'id': fa.id}) }}" class="btn btn-primary btn-xs">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    Simuler le rendu
+                </a>
+            </p>
+        </div>
+    {% endfor %}
+
+
     {% for key, fa in pageContact %}
         <div class="well">
 

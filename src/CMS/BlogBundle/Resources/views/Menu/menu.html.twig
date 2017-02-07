@@ -1,19 +1,13 @@
-<nav class="navbar navbar-default">
-    <div class="container">
-        <ul class="nav navbar-nav">
-            {% for m in listM %}
-                {% if m.published == true %}
-                    {% for i in m.categories %}
-                        <li><a href="{{ path('cms_menu_show_article', {'id': i.id} ) }}">{{ i.name }}</a></li>
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
+{% for m in listM %}
+    {% if m.published == true %}
+        {% for i in m.categories %}
+            <a href="{{ path('cms_menu_show_article', {'id': i.id} ) }}">{{ i.name }}</a>
+        {% endfor %}
+    {% endif %}
+{% endfor %}
 
-            {% for page in pageContact %}
-                {% if page.published %}
-                    <li><a href="{{ path('cms_contact_page_fa') }}">{{ page.name }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
-</nav>
+{% for page in pageContact %}
+    {% if page.published %}
+        <a href="{{ path('cms_contact_page_fa') }}">{{ page.name }}</a>
+    {% endif %}
+{% endfor %}

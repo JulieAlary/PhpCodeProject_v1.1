@@ -148,3 +148,27 @@ cms_contact_page_fa_delete:
     path: blog/page/fa/delete/{id}
     defaults:
         _controller: CMSBlogBundle:Contact:deleteContactFa
+
+
+# Custom
+
+cms_custom_index:
+    path: custom/index
+    defaults:
+        _controller: CMSBlogBundle:Custom:index
+
+cms_custom:
+    path: custom
+    defaults:
+        _controller: CMSBlogBundle:Custom:addCustom
+
+cms_custom_names_edit:
+    path: custom/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:Custom:editBlogNames
+
+cms_custom_names_delete:
+    path: custom/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Custom:delete
+
