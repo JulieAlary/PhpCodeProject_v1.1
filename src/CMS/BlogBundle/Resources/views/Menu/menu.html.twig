@@ -1,13 +1,13 @@
 {% for m in listM %}
     {% if m.published == true %}
         {% for i in m.categories %}
-            <a href="{{ path('cms_menu_show_article', {'id': i.id} ) }}">{{ i.name }}</a>
+            <a href="{{ path('cms_menu_show_article', {'id': i.id} ) }}">{{ i.name }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         {% endfor %}
     {% endif %}
 {% endfor %}
 
 {% for page in pageContact %}
     {% if page.published %}
-        <a href="{{ path('cms_contact_page_fa') }}">{{ page.name }}</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('cms_contact_page_fa') }}">{{ page.name }}</a>
     {% endif %}
 {% endfor %}

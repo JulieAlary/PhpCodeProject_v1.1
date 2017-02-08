@@ -44,6 +44,12 @@ class Custom
      */
     private $description;
 
+    /**
+     * @var string
+     * @ORM\Column(name = "theme", type = "string", nullable = true)
+     */
+    private $theme;
+
 
     /**
      * Get id
@@ -125,5 +131,29 @@ class Custom
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set theme
+     *
+     * @param string $theme
+     *
+     * @return Custom
+     */
+    public function setTheme($theme)
+    {
+        $this->theme = $theme;
+
+        return $this;
+    }
+
+    /**
+     * Get theme
+     *
+     * @return string
+     */
+    public function getTheme()
+    {
+        return $this->theme;
     }
 }

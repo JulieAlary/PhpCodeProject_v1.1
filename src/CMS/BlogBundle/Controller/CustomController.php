@@ -3,6 +3,7 @@
 namespace CMS\BlogBundle\Controller;
 
 use CMS\BlogBundle\Entity\Custom;
+use CMS\BlogBundle\Form\CustomThemeType;
 use CMS\BlogBundle\Form\CustomType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,10 +17,20 @@ class CustomController extends Controller
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
 
-        return $this->render('CMSBlogBundle:Custom:index.html.twig');
+        // o recup l'annonce en question
+        $theme = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+        dump($theme);
+
+        return $this->render(
+            'CMSBlogBundle:Custom:index.html.twig',
+            [
+                'theme' => $theme
+            ]
+        );
     }
 
     /**
