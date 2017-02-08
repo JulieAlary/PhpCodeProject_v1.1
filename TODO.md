@@ -17,7 +17,6 @@ _Mise en place de divers outils sans utiliser_
 - bien gérer les dernières date de connexion, renvoie toujours date du jour
  - surcharger les views formualaires de fosuserbundle pour hamoniser le tout
 
-- formulaire FontAwesome -> probleme button save au dessus de cochez...
 
 - amélioration beaucoup de répétions dans l'affichage des fa, possiblité d'optimiser en tamplate par exemple
 

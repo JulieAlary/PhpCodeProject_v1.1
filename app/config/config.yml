@@ -83,6 +83,9 @@ fos_user:
     db_driver: orm #le type de bdd a utiliser
     firewall_name: main #le nom du firewall utilisé
     user_class: CMS\UserBundle\Entity\User #l'entité qu'on utilise
+    from_email:
+            address: julie.alary@gmail.com
+            sender_name: Julie
 
     profile:
         form:

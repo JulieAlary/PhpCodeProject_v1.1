@@ -1,3 +1,4 @@
+# Articles
 cms_blog_home:
     path: /{page}
     defaults:
@@ -36,7 +37,7 @@ cms_article_list:
     defaults:
         _controller: CMSBlogBundle:Article:list
 
-
+# User
 cms_user_list:
     path: /list
     defaults:
@@ -68,6 +69,7 @@ cms_compte_index:
     requirements:
         id: \d+
 
+# Category
 cms_category_list:
     path: /category/list
     defaults:
@@ -83,6 +85,7 @@ cms_category_delete:
     defaults:
         _controller: CMSBlogBundle:Category:delete
 
+# Menu
 cms_menu_index:
     path: /menu/index
     defaults:
@@ -118,6 +121,7 @@ cms_menu_edit:
     defaults:
         _controller: CMSBlogBundle:Menu:edit
 
+# Commentaire
 cms_comment_delete:
     path: article/comment/delete/{id}
     defaults:

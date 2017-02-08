@@ -7,6 +7,7 @@ My first personnal CMS
 - Tinymce
 - Bootstrap
 - Fontawesome
+- select 2
 
 
 

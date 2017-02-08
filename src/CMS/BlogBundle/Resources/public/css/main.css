@@ -5,6 +5,7 @@
          1.2 - Modal
          1.3 - Menu
          1.4 - Header
+         1.5 - Thèmes
 */
 /*---------------------------------------------------------------*/
 
@@ -57,4 +58,26 @@ div.navbar-header > a {
 
 #header.jumbotron {
     background-color: lightgreen;
+}
+
+/*********** 1.5 - Thèmes **********/
+
+.color_red {
+    color: lightcoral;
+    font-weight: bold;
+}
+
+.color_yellow {
+    color: yellow;
+    font-weight: bold;
+}
+
+.color_grey {
+    color: grey;
+    font-weight: bold;
+}
+
+.color_green {
+    color: lightgreen;
+    font-weight: bold;
 }
