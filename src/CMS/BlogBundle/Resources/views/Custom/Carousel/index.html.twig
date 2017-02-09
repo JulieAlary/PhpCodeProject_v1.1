@@ -1,0 +1,36 @@
+{% extends 'CMSBlogBundle::layout.html.twig' %}
+
+{% block title %}
+    Création d'un carousel - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+    <h2>Création d'un carousel</h2>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="flip">
+                <h3>
+                    <button class="btn btn-info btn-xs pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                    </button>
+                </h3>
+            </div>
+
+            <div class="panel-flip bg-info">
+                <ul>
+                    <li>Ici vous pouvez créer un carousel</li>
+                </ul>
+            </div>
+            <ul>
+                <li><a href="{{ path('cms_custom_carousel_add') }}">Ajouter un Carousel &nbsp;&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></li>
+                <li><a href="{{ path('cms_custom_carousel_add_gallery') }}">Ajouter des photos&nbsp;&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></li>
+
+            </ul>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+

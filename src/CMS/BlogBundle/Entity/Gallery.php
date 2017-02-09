@@ -6,14 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
- * Image
+ * Gallery
  *
- * @ORM\Table(name="image")
- * @ORM\Entity(repositoryClass="CMS\BlogBundle\Repository\ImageRepository")
- *
+ * @ORM\Table(name="gallery")
+ * @ORM\Entity(repositoryClass="CMS\BlogBundle\Repository\GalleryRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class Image
+class Gallery
 {
     /**
      * @var int
@@ -38,6 +37,11 @@ class Image
      */
     private $alt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="CMS\BlogBundle\Entity\Carousel", inversedBy="galleries")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $carousel;
 
     /**
      * @var UploadedFile
@@ -64,7 +68,6 @@ class Image
         }
     }
 
-
     /**
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
@@ -83,7 +86,6 @@ class Image
         // on attriut a alt, la valeur du nom de fichier sur le pc de l'util
         $this->alt = $this->file->getClientOriginalName();
     }
-
 
     /**
      * Début fonction upload
@@ -139,7 +141,7 @@ class Image
      */
     public function getUploadDir()
     {
-        return 'uploads/img';
+        return 'uploads/gallery';
     }
 
     /**
@@ -162,6 +164,28 @@ class Image
     }
 
     /**
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     *
+     * @return Gallery
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
      * Get url
      *
      * @return string
@@ -172,15 +196,15 @@ class Image
     }
 
     /**
-     * Set url
+     * Set alt
      *
-     * @param string $url
+     * @param string $alt
      *
-     * @return Image
+     * @return Gallery
      */
-    public function setUrl($url)
+    public function setAlt($alt)
     {
-        $this->url = $url;
+        $this->alt = $alt;
 
         return $this;
     }
@@ -196,26 +220,26 @@ class Image
     }
 
     /**
-     * Set alt
+     * Set carousel
      *
-     * @param string $alt
+     * @param \CMS\BlogBundle\Entity\Carousel $carousel
      *
-     * @return Image
+     * @return Gallery
      */
-    public function setAlt($alt)
+    public function setCarousel(\CMS\BlogBundle\Entity\Carousel $carousel)
     {
-        $this->alt = $alt;
+        $this->carousel = $carousel;
 
         return $this;
     }
 
     /**
-     * @return UploadedFile
+     * Get carousel
+     *
+     * @return \CMS\BlogBundle\Entity\Carousel
      */
-    public function getFile()
+    public function getCarousel()
     {
-        return $this->file;
+        return $this->carousel;
     }
-
-
 }

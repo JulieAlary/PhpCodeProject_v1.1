@@ -176,4 +176,20 @@ cms_custom_names_delete:
     defaults:
         _controller: CMSBlogBundle:Custom:delete
 
+# Custom Carousel
+cms_custom_carousel:
+    path: custom/carousel
+    defaults:
+        _controller: CMSBlogBundle:Carousel:index
+
+cms_custom_carousel_add:
+    path: custom/carousel/add
+    defaults:
+        _controller: CMSBlogBundle:Carousel:add
+
+cms_custom_carousel_add_gallery:
+    path: custom/carousel/gallery/add
+    defaults:
+        _controller: CMSBlogBundle:Carousel:addGallery
+
 
