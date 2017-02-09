@@ -14,7 +14,7 @@
 
     {# On met l'id de l'annonce dans la route de l'action du formulaire #}
     <form action="{{ path('cms_blog_delete', {'id': article.id}) }}" method="post">
-        <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" class="btn btn-default">
+        <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" class="btn btn-success">
             <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à l'article
         </a>

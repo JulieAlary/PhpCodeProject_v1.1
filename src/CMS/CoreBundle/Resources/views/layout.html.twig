@@ -33,7 +33,9 @@
     <div class="row">
         <div id="menu" class="col-md-3">
             <h3>Mon Menu</h3>
-            <ul class="nav nav-pills nav-stacked">
+
+            <ul class="nav nav-pills nav-stacked {% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_bg{% endfor %}{% endif %}">
+
                 <li><a href="{{ path('cms_core_home') }}"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Accueil</a>
                 </li>
                 {% if is_granted('ROLE_AUTEUR') %}

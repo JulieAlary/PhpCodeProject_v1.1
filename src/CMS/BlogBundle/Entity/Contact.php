@@ -23,6 +23,11 @@ class Contact
     private $id;
 
     /**
+     * @ORM\OneToOne(targetEntity="CMS\BlogBundle\Entity\Custom")
+     */
+    private $custom;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="fa_facebook", type="string", length=255, nullable=true)
@@ -493,5 +498,30 @@ class Contact
     public function getName()
     {
         return $this->name;
+    }
+
+
+    /**
+     * Set custom
+     *
+     * @param \CMS\BlogBundle\Entity\Custom $custom
+     *
+     * @return Contact
+     */
+    public function setCustom(\CMS\BlogBundle\Entity\Custom $custom = null)
+    {
+        $this->custom = $custom;
+
+        return $this;
+    }
+
+    /**
+     * Get custom
+     *
+     * @return \CMS\BlogBundle\Entity\Custom
+     */
+    public function getCustom()
+    {
+        return $this->custom;
     }
 }

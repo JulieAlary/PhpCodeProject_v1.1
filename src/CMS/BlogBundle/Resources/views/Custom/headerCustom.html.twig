@@ -1,12 +1,15 @@
-<div id="header" class="jumbotron">
-    {% for key, name in blogName %}
+{% for key, name in blogName %}
+    <div id="header" class="jumbotron {{ name.theme }}_bg">
+
         <h1>{{ name.titre }}</h1>
         <p>{{ name.description }}</p>
 
         {% if is_granted('ROLE_AUTEUR') %}
-            <a href="{{ path('cms_custom_names_edit', {'id': name.id }) }}"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Editez
-                Votre header
-            </button></a>
+            <a href="{{ path('cms_custom_names_edit', {'id': name.id }) }}">
+                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Editez
+                    Vos paramètres
+                </button>
+            </a>
         {% endif %}
-    {% endfor %}
-</div>
+    </div>
+{% endfor %}

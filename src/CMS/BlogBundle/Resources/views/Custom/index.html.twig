@@ -6,7 +6,7 @@
 
     <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="flip">
                 <h3>
                     <button class="btn btn-info btn-xs pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
@@ -23,12 +23,12 @@
             </div>
 
             <ul>
-                <li><a href="{{ path('cms_custom') }}">Chosir un nom / une description pour votre blog &nbsp;&nbsp;<i
+                <li><a href="{{ path('cms_custom') }}">Identité du blog &nbsp;&nbsp;<i
                                 class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
             </ul>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="flip">
                 <h3>
                     <button class="btn btn-info btn-xs pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
@@ -43,10 +43,6 @@
             </div>
 
             <ul>
-                {% for key, t in theme %}
-                    {#<li><a href="{{ path('cms_custom_theme_edit', {'id': theme.id}) }}">Chosir un thème pour votre blog &nbsp;&nbsp;<i class="fa fa-arrow-circle-right"#}
-                                                                                  {#aria-hidden="true"></i></a></li>#}
-                {% endfor %}
             </ul>
 
         </div>

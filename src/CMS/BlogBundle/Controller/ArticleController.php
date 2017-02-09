@@ -29,6 +29,7 @@ class ArticleController extends Controller
     public function indexAction($page)
     {
 
+
         if ($page < 1) {
             throw new NotFoundHttpException('Page "' . $page . '" inexistante.');
         }
@@ -70,6 +71,9 @@ class ArticleController extends Controller
 
         // Initializing Entity Manager
         $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         // Pour récup l'article par son ID
         $article = $em->getRepository('CMSBlogBundle:Article')->find($id);
@@ -126,6 +130,7 @@ class ArticleController extends Controller
                 'form' => $form->createView(),
                 'comment' => $comments,
 //                'ArticleBycateId' => $ArticleBycateId
+                'custom' => $custom
 
             ]
         );
@@ -140,6 +145,12 @@ class ArticleController extends Controller
      */
     public function addAction(Request $request)
     {
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         // Création d'une nouvelle entité article
         $article = new Article();
 
@@ -177,7 +188,8 @@ class ArticleController extends Controller
         return $this->render(
             'CMSBlogBundle:Article:add.html.twig',
             [
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
 
@@ -193,6 +205,9 @@ class ArticleController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         // o recup l'annonce en question
         $article = $em->getRepository('CMSBlogBundle:Article')->find($id);
@@ -221,7 +236,8 @@ class ArticleController extends Controller
             'CMSBlogBundle:Article:edit.html.twig',
             [
                 'article' => $article,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -235,6 +251,9 @@ class ArticleController extends Controller
 
         // Initializing Entity Manager
         $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         // On récupérère l'article par son id
         $article = $em->getRepository('CMSBlogBundle:Article')->find($id);
@@ -260,7 +279,8 @@ class ArticleController extends Controller
             'CMSBlogBundle:Article:delete.html.twig',
             [
                 'article' => $article,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -352,12 +372,16 @@ class ArticleController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         $listArticles = $em->getRepository('CMSBlogBundle:Article')->myFindAll();
 
         return $this->render(
             'CMSBlogBundle:Article:list.html.twig',
             [
-                'listArticles' => $listArticles
+                'listArticles' => $listArticles,
+                'custom' => $custom
             ]
         );
     }

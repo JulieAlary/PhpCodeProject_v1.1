@@ -15,20 +15,31 @@ class CategoryController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         $listCategories = $em->getRepository('CMSBlogBundle:Category')->findAll();
 
         return $this->render(
             'CMSBlogBundle:Category:list.html.twig',
             [
-                'listCategories' => $listCategories
+                'listCategories' => $listCategories,
+                'custom' => $custom
 
             ]
         );
     }
 
-    public function addAction(Request $request) {
+    public function addAction(Request $request)
+    {
 
         $category = new Category();
+
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         $form = $this->get('form.factory')->create(CategoryType::class, $category);
 
@@ -47,32 +58,38 @@ class CategoryController extends Controller
         return $this->render(
             'CMSBlogBundle:Category:add.html.twig',
             [
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
 
-    public function deleteAction($id, Request $request) {
+    public function deleteAction($id, Request $request)
+    {
 
-            $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
 
-            $category = $em->getRepository('CMSBlogBundle:Category')->find($id);
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
-            $form = $this->get('form.factory')->create();
+        $category = $em->getRepository('CMSBlogBundle:Category')->find($id);
 
-            if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-                $em->remove($category);
-                $em->flush();
+        $form = $this->get('form.factory')->create();
 
-                $request->getSession()->getFlashBag()->add('info', "La catégorie a bien été supprimée.");
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em->remove($category);
+            $em->flush();
 
-                return $this->redirectToRoute('cms_category_list');
-            }
+            $request->getSession()->getFlashBag()->add('info', "La catégorie a bien été supprimée.");
+
+            return $this->redirectToRoute('cms_category_list');
+        }
         return $this->render(
             'CMSBlogBundle:Category:delete.html.twig',
             [
                 'category' => $category,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }

@@ -14,10 +14,18 @@ class CoreController extends Controller
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        // Pour le theme
+        $em = $this->getDoctrine()->getManager();
+
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         return $this->render(
-            'CMSCoreBundle:Core:index.html.twig'
+            'CMSCoreBundle:Core:index.html.twig',
+            [
+                'custom' => $custom
+            ]
         );
     }
 

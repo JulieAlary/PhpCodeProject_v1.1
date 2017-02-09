@@ -21,12 +21,19 @@ class UserController extends Controller
     {
         $userManager = $this->get('fos_user.user_manager');
 
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         $users = $userManager->findUsers();
 
         return $this->render(
             'CMSBlogBundle:User:list.html.twig',
             [
                 'users' => $users,
+                'custom' => $custom
             ]
         );
     }
@@ -41,13 +48,20 @@ class UserController extends Controller
 
         $userManager = $this->get('fos_user.user_manager');
 
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         $users = $userManager->findUserBy(['id' => $id]);
 
         return $this->render(
             'CMSBlogBundle:User:fiche.html.twig',
             [
                 'id' => $id,
-                'users' => $users
+                'users' => $users,
+                'custom' => $custom
             ]
         );
     }
@@ -59,6 +73,12 @@ class UserController extends Controller
      */
     public function deleteUserAction(User $user, Request $request)
     {
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         if (!$user) {
             throw new NotFoundHttpException("l'user n'existe pas");
         }
@@ -83,7 +103,8 @@ class UserController extends Controller
             'CMSBlogBundle:User:delete.html.twig',
             [
                 'user' => $user,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
 
@@ -96,6 +117,11 @@ class UserController extends Controller
      */
     public function updateUserRoleAction(User $user, Request $request)
     {
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         $userManager = $this->get('fos_user.user_manager');
 
@@ -121,7 +147,8 @@ class UserController extends Controller
             'CMSBlogBundle:User:edit.html.twig',
             [
                 'user' => $user,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }

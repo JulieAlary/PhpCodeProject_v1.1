@@ -19,8 +19,10 @@ class ContactController extends Controller
      */
     public function indexAction(Request $request)
     {
-
         $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         // To display contact page awesome if true is published
         $pageContact = $em->getRepository('CMSBlogBundle:Contact')->findBy(
@@ -38,7 +40,8 @@ class ContactController extends Controller
             'CMSBlogBundle:Contact:index.html.twig',
             [
                 'pageContact' => $pageContact,
-                'pageContactFalse' => $pageContactFalse
+                'pageContactFalse' => $pageContactFalse,
+                'custom' => $custom
             ]
         );
     }
@@ -55,8 +58,13 @@ class ContactController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         // on recup la page créee en question
         $contactPage = $em->getRepository('CMSBlogBundle:Contact')->find($id);
+
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         if ($contactPage === null) {
             throw new NotFoundHttpException("La page de contact d'id " . $id . " n'existe pas.");
@@ -65,7 +73,6 @@ class ContactController extends Controller
         $form = $this->get('form.factory')->create(ContactType::class, $contactPage);
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-
             $em->flush();
 
             $request->getSession()->getFlashBag()->add('notice', 'Page de contact bien modifée.');
@@ -82,7 +89,8 @@ class ContactController extends Controller
             'CMSBlogBundle:Contact:editPageFA.html.twig',
             [
                 'contactPage' => $contactPage,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -99,6 +107,9 @@ class ContactController extends Controller
 
         // Initializing Entity Manager
         $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         // On récupérère la page contact par son id
         $pageContact = $em->getRepository('CMSBlogBundle:Contact')->find($id);
@@ -124,7 +135,8 @@ class ContactController extends Controller
             'CMSBlogBundle:Contact:deleteFa.html.twig',
             [
                 'pageContact' => $pageContact,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -139,6 +151,12 @@ class ContactController extends Controller
     {
 
         $contact_fa = new Contact();
+
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         $form = $this->get('form.factory')->create(ContactType::class, $contact_fa);
 
@@ -161,7 +179,8 @@ class ContactController extends Controller
         return $this->render(
             'CMSBlogBundle:Contact:addFontAwesome.html.twig',
             [
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -175,6 +194,9 @@ class ContactController extends Controller
     public function viewFontAwesomePageAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
 
         // To display contact page awesome if true is published
         $pageContact = $em->getRepository('CMSBlogBundle:Contact')->findBy(
@@ -193,7 +215,8 @@ class ContactController extends Controller
             'CMSBlogBundle:Contact:pageFA.html.twig',
             [
                 'pageContact' => $pageContact,
-                'pageContactFalse' => $pageContactFalse
+                'pageContactFalse' => $pageContactFalse,
+                'custom' => $custom
             ]
         );
     }

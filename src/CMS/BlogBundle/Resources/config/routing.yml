@@ -62,12 +62,12 @@ cms_user_edit:
     requirements:
         id: \d+
 
-cms_compte_index:
-    path: /compte/index/{id}
-    defaults:
-        _controller: CMSBlogBundle:Compte:index
-    requirements:
-        id: \d+
+#cms_compte_index:
+#    path: /compte/index/{id}
+#    defaults:
+#        _controller: CMSBlogBundle:Compte:index
+#    requirements:
+#        id: \d+
 
 # Category
 cms_category_list:

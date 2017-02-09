@@ -22,13 +22,17 @@ class MenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         $listMenus = $em->getRepository('CMSBlogBundle:Menu')->findAll();
 
 
         return $this->render(
             'CMSBlogBundle:Menu:index.html.twig',
             [
-                'listMenus' => $listMenus
+                'listMenus' => $listMenus,
+                'custom' => $custom
             ]
         );
     }
@@ -42,6 +46,12 @@ class MenuController extends Controller
     public function addNameAction(Request $request)
     {
         $menu = new Menu();
+
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         $form = $this->get('form.factory')->create(MenuType::class, $menu);
 
@@ -60,7 +70,8 @@ class MenuController extends Controller
         return $this->render(
             'CMSBlogBundle:Menu:add.html.twig',
             [
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -78,6 +89,9 @@ class MenuController extends Controller
 
         // Initializing Entity Manager
         $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         // On récupérère l'article par son id
         $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
@@ -103,7 +117,8 @@ class MenuController extends Controller
             'CMSBlogBundle:Menu:delete.html.twig',
             [
                 'menu' => $menu,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -117,6 +132,9 @@ class MenuController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         // o recup l'annonce en question
         $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
@@ -145,7 +163,8 @@ class MenuController extends Controller
             'CMSBlogBundle:Menu:edit.html.twig',
             [
                 'menu' => $menu,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -163,13 +182,17 @@ class MenuController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
 
         return $this->render(
             "CMSBlogBundle:Menu:list.html.twig",
             [
                 'menu' => $menu,
-                'id' => $id
+                'id' => $id,
+                'custom' => $custom
             ]
         );
 
@@ -218,8 +241,10 @@ class MenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
+        $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
 
         $listArticles = $this
             ->getDoctrine()
@@ -248,7 +273,8 @@ class MenuController extends Controller
                 'id' => $id,
                 'listM' => $listM,
                 'list' => $list,
-                'idMenu' => $idMenu
+                'idMenu' => $idMenu,
+                'custom' => $custom
             ]
         );
     }

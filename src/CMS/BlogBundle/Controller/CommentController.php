@@ -27,6 +27,9 @@ class CommentController extends Controller {
         // Initializing Entity Manager
         $em = $this->getDoctrine()->getManager();
 
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         // On récupérère le commentaire par son id
         $comment = $em->getRepository('CMSBlogBundle:Comment')->find($id);
 
@@ -55,7 +58,8 @@ class CommentController extends Controller {
             'CMSBlogBundle:Comment:delete.html.twig',
             [
                 'comment' => $comment,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
