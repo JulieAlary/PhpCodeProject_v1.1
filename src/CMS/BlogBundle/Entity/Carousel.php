@@ -35,6 +35,11 @@ class Carousel
     private $galleries;
 
     /**
+     * @ORM\Column(name="published", type="boolean")
+     */
+    private $published;
+
+    /**
      * Get id
      *
      * @return int
@@ -109,5 +114,29 @@ class Carousel
     public function getGalleries()
     {
         return $this->galleries;
+    }
+
+    /**
+     * Set published
+     *
+     * @param boolean $published
+     *
+     * @return Carousel
+     */
+    public function setPublished($published)
+    {
+        $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * Get published
+     *
+     * @return boolean
+     */
+    public function getPublished()
+    {
+        return $this->published;
     }
 }

@@ -1,0 +1,26 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Editez un carousel - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2> Editez un carousel</h2>
+
+    {{ include("CMSBlogBundle:Custom:form.html.twig") }}
+
+    <p>
+        <a href="{{ path('cms_custom_carousel') }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour au menu
+        </a>
+
+        {#<a href="{{ path('cms_custom_names_delete', {'id':blogNames.id}) }}" class="btn btn-danger">#}
+            {#<i class="glyphicon glyphicon-trash"></i>#}
+            {#Supprimer les paramètres#}
+        {#</a>#}
+    </p>
+
+{% endblock %}
+

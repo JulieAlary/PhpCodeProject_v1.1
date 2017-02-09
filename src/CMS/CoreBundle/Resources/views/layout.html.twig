@@ -63,8 +63,8 @@
 
             </ul>
 
-            <h4>Derniers articles</h4>
-            {{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}
+            {#<h4>Derniers articles</h4>#}
+            {#{{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}#}
         </div>
         <div id="content" class="col-md-9">
             {% block body %}
@@ -91,6 +91,7 @@
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="{{ asset('bundles/cmsblog/js/main.js') }}"></script>
+
 {% endblock %}
 
 </body>

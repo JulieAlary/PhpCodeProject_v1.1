@@ -21,6 +21,9 @@ class CustomController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         // o recup l'annonce en question
         $theme = $em->getRepository('CMSBlogBundle:Custom')->findAll();
         dump($theme);
@@ -28,7 +31,8 @@ class CustomController extends Controller
         return $this->render(
             'CMSBlogBundle:Custom:index.html.twig',
             [
-                'theme' => $theme
+                'theme' => $theme,
+                'custom' => $custom
             ]
         );
     }
@@ -41,6 +45,10 @@ class CustomController extends Controller
      */
     public function addCustomAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         // Création d'une nouvelle entité article
         $blogName = new Custom();
@@ -66,7 +74,8 @@ class CustomController extends Controller
         return $this->render(
             'CMSBlogBundle:Custom:add.html.twig',
             [
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -106,6 +115,9 @@ class CustomController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
         // on recup la page créee en question
         $blogNames = $em->getRepository('CMSBlogBundle:Custom')->find($id);
 
@@ -133,7 +145,8 @@ class CustomController extends Controller
             'CMSBlogBundle:Custom:edit.html.twig',
             [
                 'blogNames' => $blogNames,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
             ]
         );
     }
@@ -148,6 +161,9 @@ class CustomController extends Controller
 
         // Initializing Entity Manager
         $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         // On récupérère l'article par son id
         $blogNames = $em->getRepository('CMSBlogBundle:Custom')->find($id);
@@ -173,7 +189,9 @@ class CustomController extends Controller
             'CMSBlogBundle:Custom:delete.html.twig',
             [
                 'blogNames' => $blogNames,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'custom' => $custom
+
             ]
         );
     }

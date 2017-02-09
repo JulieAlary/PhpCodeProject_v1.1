@@ -1,35 +1,113 @@
 {% extends 'CMSBlogBundle::layout.html.twig' %}
 
 {% block title %}
-    Création d'un carousel - {{ parent() }}
+    Gestion d'un carousel - {{ parent() }}
 {% endblock %}
 
 {% block cms_body %}
-    <h2>Création d'un carousel</h2>
+    <h2>Gestion d'un carousel</h2>
 
     <div class="row">
 
-        <div class="col-md-6">
-            <div class="flip">
-                <h3>
-                    <button class="btn btn-info btn-xs pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
-                    </button>
-                </h3>
-            </div>
-
-            <div class="panel-flip bg-info">
-                <ul>
-                    <li>Ici vous pouvez créer un carousel</li>
-                </ul>
-            </div>
-            <ul>
-                <li><a href="{{ path('cms_custom_carousel_add') }}">Ajouter un Carousel &nbsp;&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></li>
-                <li><a href="{{ path('cms_custom_carousel_add_gallery') }}">Ajouter des photos&nbsp;&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></li>
-
-            </ul>
+        <div class="flip">
+            <h3>
+                <button class="btn btn-info btn-xs pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                </button>
+            </h3>
         </div>
 
+        <div class="panel-flip bg-info">
+            <ul>
+                <li>Ici vous pouvez créer un carousel</li>
+                <li>Dans un premier temps lui attribuer un nom</li>
+                <li>Dans un second temps lui attribuer des photos</li>
+                <li>Et pour finir le publier ou non...</li>
+                <li>Bientot possibilité sera faite de créer plusieurs carousels</li>
+            </ul>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-6 col-xs-6">
+            <a href="{{ path('cms_custom_carousel_add') }}">Ajouter un Carousel &nbsp;&nbsp;<i
+                        class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a><br>
+        </div>
+        <div class="col-md-6 col-xs-6">
+            <a href="{{ path('cms_custom_carousel_add_gallery') }}">Ajouter des photos&nbsp;&nbsp;<i
+                        class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-md-6 col-xs-6">
+            <a href="{{ path('cms_custom_carousel_show') }}">Test Slider&nbsp;&nbsp;<i
+                        class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+
+    {% for key, carousels in carousel %}
+        {% if carousels.published == true %}
+            <div class="row">
+            <h3>Carousel existant</h3>
+
+            {% set newArray = [] %}
+
+            {% for key, galleries in gallery %}
+                {% if galleries.carousel.nom not in newArray %}
+                    {% set newArray = newArray|merge([galleries.carousel.nom]) %}
+                    <h4>Nom du carousel : {{ galleries.carousel.nom|capitalize }}</h4>
+                {% endif %}
+            {% endfor %}
+
+
+            {% for key, galleries in gallery %}
+                <div class="col-md-3 col-xs-4">
+                    <div class="thumbnail">
+                        {% if galleries.carousel.id == carousels.id %}
+
+                            <img src="{{ asset(galleries.uploadDir ~ '/' ~ galleries.id ~ '.' ~ galleries.url) }}"
+                                 alt="{{ galleries.alt }}"/>
+
+                            <div class="caption">
+                                <p>
+                                    <a href="#" class="btn btn-primary btn-xs" role="button">Button</a>
+                                    <a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+                                </p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        {% endif %}
+        </div>
+        <div class="row">
+            <p>
+                {% if is_granted('ROLE_AUTEUR') %}
+                    <a href="{{ path('cms_custom_index') }}" class="btn btn-success">
+                        <i class="glyphicon glyphicon-edit"></i>
+                        Retour à la page précédente
+                    </a>
+                    {% if carousels.id not in newArray %}
+                        {% set newArray = newArray|merge([carousels.id]) %}
+                        <a href="{{ path('cms_custom_carousel_edit', { 'id': carousels.id } ) }}"
+                           class="btn btn-warning">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            Modifier le carousel
+                        </a>
+                        <a href="{{ path('cms_custom_carousel_delete', { 'id': carousels.id }) }}" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>
+                            Supprimer le carousel
+                        </a>
+                    {% endif %}
+
+
+
+
+                {% endif %}
+            </p>
+        </div>
+
+
+    {% endfor %}
 {% endblock %}
 
 

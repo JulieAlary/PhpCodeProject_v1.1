@@ -187,9 +187,25 @@ cms_custom_carousel_add:
     defaults:
         _controller: CMSBlogBundle:Carousel:add
 
+cms_custom_carousel_edit:
+    path: custom/carousel/gallery/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:Carousel:editCarousel
+
+cms_custom_carousel_delete:
+    path: custom/carousel/gallery/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Carousel:deleteCarousel
+
+
 cms_custom_carousel_add_gallery:
     path: custom/carousel/gallery/add
     defaults:
         _controller: CMSBlogBundle:Carousel:addGallery
+
+cms_custom_carousel_show:
+   path: custom/carousel/show
+   defaults:
+       _controller: CMSBlogBundle:Carousel:isPublished
 
 
