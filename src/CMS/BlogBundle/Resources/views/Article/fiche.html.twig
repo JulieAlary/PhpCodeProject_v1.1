@@ -1,18 +1,16 @@
 {% extends "CMSBlogBundle::layout.html.twig" %}
 
+
 {% block title %}
     Lecture d'un article - {{ parent() }}
 {% endblock %}
 
 {% block cms_body %}
-    {% if article.published == true or is_granted('ROLE_AUTEUR')  %}
+    {% if article.published == true or is_granted('ROLE_AUTEUR') %}
         <div style="float: left; margin-right: 1em;">
             {% if article.image is not null %}
-                <img
-                        src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
-                        alt="{{ article.image.alt }}"
-                        height="60"
-                />
+                <a href="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}" alt="{{ article.image.alt }}"
+                   class="html5lightbox"><img src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}" alt="{{ article.image.alt }}" height="60"></a>
             {% endif %}
         </div>
 
@@ -34,7 +32,8 @@
             <div class="well">
                 <p>Cet article est paru dans les catégories suivantes:
                     {% for category in article.categories %}
-                        <a href="{{ path('cms_menu_show_article', {'id': category.id} ) }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                        <a
+                        href="{{ path('cms_menu_show_article', {'id': category.id} ) }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 </p>
             </div>
@@ -43,7 +42,7 @@
             {% if is_granted('ROLE_AUTEUR') %}
                 <a href="{{ path('cms_article_list') }}" class="btn btn-success">
                     <i class="glyphicon glyphicon-edit"></i>
-                   Retour à la liste
+                    Retour à la liste
                 </a>
                 <a href="{{ path('cms_blog_edit', {'id': article.id}) }}" class="btn btn-warning">
                     <i class="glyphicon glyphicon-edit"></i>
@@ -57,3 +56,4 @@
         </p>
     {% endif %}
 {% endblock %}
+

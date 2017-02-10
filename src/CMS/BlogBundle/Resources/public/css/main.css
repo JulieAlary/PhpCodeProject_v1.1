@@ -19,6 +19,11 @@ a {
     color: black;
 }
 
+/*Pub lightbox*/
+#html5-watermark {
+    display: none !important;
+}
+
 /*********** 1.1 font awesome ****/
 
 /*logo de connection*/

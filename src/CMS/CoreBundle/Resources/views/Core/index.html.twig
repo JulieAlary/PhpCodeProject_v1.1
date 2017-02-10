@@ -10,13 +10,17 @@
 
     {# On affiche tous les messages flash dont le nom est « info » #}
     {#{% for message in app.session.flashbag.get('info') %}#}
-        {#<div class="alert alert-info">Message flash : {{ message }}</div>#}
+    {#<div class="alert alert-info">Message flash : {{ message }}</div>#}
     {#{% endfor %}#}
 
-     {#Pour afficher les dernières annonces, on réutilise le contrôleur menu du PlatformBundle#}
-    {#<h3>Derniers articles</h3>#}
-    {#{{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}#}
+    {#Pour afficher les dernières annonces, on réutilise le contrôleur menu du PlatformBundle#}
+    <hr>
+    <h3 class="text-center">Actus</h3>
+    <hr>
 
+    <div class="container-fluid">
+        {{ render(controller("CMSBlogBundle:Article:menu", {'limit': 4})) }}
+    </div>
 
 {% endblock %}
 

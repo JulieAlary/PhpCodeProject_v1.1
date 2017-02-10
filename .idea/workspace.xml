@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8e93321d-eb29-4745-84db-f52efa522f75" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/index.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/public/css/main.css" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/public/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/fiche.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/fiche.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/index.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/menu.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/menu.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/Core/index.html.twig" afterPath="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/Core/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/layout.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,62 +31,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig">
+      <file leaf-file-name="security.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="52" column="86" lean-forward="false" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
-              <folding>
-                <element signature="e#1150#1173#0#Twig" expanded="true" />
-                <element signature="e#1951#1982#0#Twig" expanded="true" />
-                <element signature="e#2510#2539#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="35" column="71" lean-forward="false" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
-              <folding>
-                <element signature="e#1185#1195#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CarouselController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Controller/CarouselController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="33" column="29" lean-forward="false" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-              <folding>
-                <element signature="e#720#742#1#PHP" expanded="true" />
-                <element signature="e#796#820#1#PHP" expanded="true" />
-                <element signature="e#886#909#1#PHP" expanded="true" />
-                <element signature="e#1602#1624#1#PHP" expanded="true" />
-                <element signature="e#2848#2870#1#PHP" expanded="true" />
-                <element signature="e#4077#4099#1#PHP" expanded="true" />
-                <element signature="e#4194#4218#1#PHP" expanded="true" />
-                <element signature="e#4804#4850#0#PHP" expanded="true" />
-                <element signature="e#5454#5476#1#PHP" expanded="true" />
-                <element signature="e#5576#5600#1#PHP" expanded="true" />
-                <element signature="e#6890#6914#1#PHP" expanded="true" />
-                <element signature="e#7035#7058#1#PHP" expanded="true" />
-                <element signature="e#7632#7654#1#PHP" expanded="true" />
-                <element signature="e#7743#7767#1#PHP" expanded="true" />
-                <element signature="e#7888#7911#1#PHP" expanded="true" />
-                <element signature="e#7968#8018#0#PHP" expanded="true" />
-                <element signature="e#8747#8770#1#PHP" expanded="true" />
-                <element signature="e#9419#9440#1#PHP" expanded="true" />
-                <element signature="e#9496#9543#0#PHP" expanded="true" />
-                <element signature="e#10115#10137#1#PHP" expanded="true" />
-                <element signature="e#10231#10254#1#PHP" expanded="true" />
-                <element signature="e#10752#10773#1#PHP" expanded="true" />
-                <element signature="e#10842#10887#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="410">
+              <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,9 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Form/CustomDescriptionType.php" />
-        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Form/CustomType.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/delete.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/layout.html.twig" />
@@ -122,7 +75,6 @@
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/add.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Entity/Contact.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Contact/pageFA.html.twig" />
-        <option value="$PROJECT_DIR$/web/bundles/cmsblog/css/main.css" />
         <option value="$PROJECT_DIR$/src/CMS/CoreBundle/Controller/CoreController.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Controller/ArticleController.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Controller/CategoryController.php" />
@@ -132,7 +84,6 @@
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/delete.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Category/delete.html.twig" />
-        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/index.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Entity/Image.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Repository/CarouselRepository.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/form.html.twig" />
@@ -141,10 +92,7 @@
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Controller/CustomController.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/delete.html.twig" />
-        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/fiche.html.twig" />
-        <option value="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Security/login_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/Core/index.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Entity/Gallery.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Form/GalleryType.php" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/form.html.twig" />
@@ -158,6 +106,14 @@
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/fiche.html.twig" />
+        <option value="$PROJECT_DIR$/web/bundles/cmsblog/css/main.css" />
+        <option value="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/menu.html.twig" />
+        <option value="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/Core/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
       </list>
     </option>
   </component>
@@ -226,9 +182,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="502" />
+    <option name="x" value="357" />
     <option name="y" value="23" />
-    <option name="width" value="778" />
+    <option name="width" value="923" />
     <option name="height" value="704" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -271,6 +227,38 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -375,45 +363,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Custom" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlogBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Custom" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Carousel" />
+              <option name="myItemId" value="Article" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -466,6 +416,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -600,7 +582,7 @@
       <workItem from="1486479417452" duration="6678000" />
       <workItem from="1486556027082" duration="7137000" />
       <workItem from="1486636442384" duration="26564000" />
-      <workItem from="1486712911471" duration="9752000" />
+      <workItem from="1486712911471" duration="15992000" />
     </task>
     <task id="LOCAL-00001" summary="before template twig&#10;">
       <created>1484934934170</created>
@@ -910,11 +892,18 @@
       <option name="project" value="LOCAL" />
       <updated>1486728626811</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="bridage affichage un theme, 1 carousel, 1 menu">
+      <created>1486732724557</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1486732724557</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300427000" />
+    <option name="totallyTimeSpent" value="306667000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -926,10 +915,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="502" y="23" width="778" height="704" extended-state="0" />
+    <frame x="357" y="23" width="923" height="704" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2459239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2508513" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.51223934" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -996,7 +985,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bdd Comment new + création relation currentUser /article&#10;&#10;" />
     <MESSAGE value="commit new entity comment abd article&#10;&#10;" />
     <MESSAGE value="ajout commentaire ok!&#10;&#10;" />
     <MESSAGE value="Surcharge entity and form FOSUserBundle ok!! test with fields age ok&#10;&#10;" />
@@ -1021,7 +1009,8 @@
     <MESSAGE value="entite gallery + carousel + form ok!" />
     <MESSAGE value="user can create carousel!! and display it!" />
     <MESSAGE value="quasi toutes fonctionnalités slider fonctionnent!" />
-    <option name="LAST_COMMIT_MESSAGE" value="quasi toutes fonctionnalités slider fonctionnent!" />
+    <MESSAGE value="bridage affichage un theme, 1 carousel, 1 menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="bridage affichage un theme, 1 carousel, 1 menu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1030,70 +1019,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Entity/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3255">
-          <caret line="218" column="0" lean-forward="false" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Form/ImageType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="15" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="22" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Form/ContactType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Form/CommentType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Form/CategoryType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Form/ArticleEditType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Form/CustomType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Repository/ArticleRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Repository/CarouselRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1204,47 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/menu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/fiche.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-130">
-          <caret line="13" column="40" lean-forward="false" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#43#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/cmsblog/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Menu/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1279,14 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="69" column="28" lean-forward="false" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CMS/CoreBundle/Controller/CoreController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1295,14 +1171,6 @@
             <element signature="e#476#498#1#PHP" expanded="false" />
             <element signature="e#555#591#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/Core/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1342,14 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="36" column="44" lean-forward="false" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Controller/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="270" column="25" lean-forward="true" selection-start-line="270" selection-start-column="25" selection-end-line="270" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1474,15 +1334,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="52" column="86" lean-forward="false" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
-          <folding>
-            <element signature="e#1150#1173#0#Twig" expanded="true" />
-            <element signature="e#1951#1982#0#Twig" expanded="true" />
-            <element signature="e#2510#2539#0#Twig" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/TODO.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1491,8 +1350,148 @@
         <state relative-caret-position="405">
           <caret line="35" column="71" lean-forward="false" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
           <folding>
-            <element signature="e#1185#1195#0#Twig" expanded="true" />
+            <element signature="e#1185#1195#0#Twig" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="52" column="86" lean-forward="false" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
+          <folding>
+            <element signature="e#1150#1173#0#Twig" expanded="false" />
+            <element signature="e#1951#1982#0#Twig" expanded="false" />
+            <element signature="e#2510#2539#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/html5lightbox/html5lightbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="319" column="0" lean-forward="false" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/cmsblog/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-985">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/UserBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Controller/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="300" column="13" lean-forward="true" selection-start-line="300" selection-start-column="13" selection-end-line="300" selection-end-column="13" />
+          <folding>
+            <element signature="e#8916#8954#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="80" column="20" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/Core/menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="e#1193#1217#0#Twig" expanded="true" />
+            <element signature="e#1484#1507#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/fiche.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="80" lean-forward="false" selection-start-line="13" selection-start-column="80" selection-end-line="13" selection-end-column="80" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/Core/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
