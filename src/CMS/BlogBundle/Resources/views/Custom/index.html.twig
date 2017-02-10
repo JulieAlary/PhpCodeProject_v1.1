@@ -16,15 +16,25 @@
 
             <div class="panel-flip bg-info">
                 <ul>
-                    <li>Ici vous avez la possibilité de choisir et customizer l'entete de votre site (Nom + Description
-                        facultative)
+                    <li>Dans la rubrique "Identité du blog vous pouvez choisir un titre, une description ainsi qu'une
+                        thème.
+                    </li>
+                    <li>Une fois ces options choisies, vous ne pourrez les modifier quand dans l'entete qui se créera
+                        avec vos informations
+                    </li>
+                    <li>Vous allez pouvoir également créer et afficher un carousel ou slider qui se mettra en place sur
+                        votre page d'accueil
                     </li>
                 </ul>
             </div>
 
             <ul>
-                <li><a href="{{ path('cms_custom') }}">Identité du blog &nbsp;&nbsp;<i
-                                class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+                {% if theme == null %}
+                    <li><a href="{{ path('cms_custom') }}">Identité du blog &nbsp;&nbsp;<i
+                                    class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+                {% else %}
+                    <li title="Un seul thème à la fois!" class="pointer">Identité du blog &nbsp;&nbsp;</li>
+                {% endif %}
                 <li><a href="{{ path('cms_custom_carousel') }}">Carousel&nbsp;&nbsp;<i
                                 class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
             </ul>
