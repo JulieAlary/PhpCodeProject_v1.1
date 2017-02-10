@@ -1,0 +1,34 @@
+{% extends "CMSBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Supprimer une photo - {{ parent() }}
+{% endblock %}
+
+{% block cms_body %}
+
+    <h2>Supprimer Une photo/image</h2>
+
+    <p>
+        Etes-vous certain de vouloir supprimer l'image "{{ gallery.alt }}" ?
+    </p>
+
+    <img src="{{ asset(gallery.uploadDir ~ '/' ~ gallery.id ~ '.' ~ gallery.url) }}"
+         alt="{{ gallery.alt }}"
+         width="400px"
+         class="img-responsive center-block"
+    />
+    <br>
+
+
+    <form action="{{ path('cms_custom_carousel_delete_gallery', {'id': gallery.id}) }}" method="post">
+        <a href="{{ path('cms_custom_carousel') }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour aux paramètres
+        </a>
+        {# Ici j'ai écrit le bouton de soumission à la main #}
+        <input type="submit" value="Supprimer" class="btn btn-danger"/>
+        {# Ceci va générer le champ CSRF #}
+        {{ form_rest(form) }}
+    </form>
+
+{% endblock %}

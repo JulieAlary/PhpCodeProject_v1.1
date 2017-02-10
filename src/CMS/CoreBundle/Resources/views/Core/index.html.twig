@@ -6,16 +6,16 @@
 
 {% block body %}
 
-    <h2>Actualités</h2>
+    {{ render(controller('CMSBlogBundle:Carousel:isPublished')) }}
 
     {# On affiche tous les messages flash dont le nom est « info » #}
-    {% for message in app.session.flashbag.get('info') %}
-        <div class="alert alert-info">Message flash : {{ message }}</div>
-    {% endfor %}
+    {#{% for message in app.session.flashbag.get('info') %}#}
+        {#<div class="alert alert-info">Message flash : {{ message }}</div>#}
+    {#{% endfor %}#}
 
-     Pour afficher les dernières annonces, on réutilise le contrôleur menu du PlatformBundle
-    <h3>Derniers articles</h3>
-    {{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}
+     {#Pour afficher les dernières annonces, on réutilise le contrôleur menu du PlatformBundle#}
+    {#<h3>Derniers articles</h3>#}
+    {#{{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}#}
 
 
 {% endblock %}

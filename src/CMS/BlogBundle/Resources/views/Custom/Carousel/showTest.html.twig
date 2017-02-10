@@ -1,4 +1,6 @@
-{% block stylesheets %}
+{% extends('CMSBlogBundle::layout.html.twig') %}
+
+{% block stylesheets %}{{ parent() }}
     <style>
         .carousel .item {
             max-height: 300px;
@@ -22,7 +24,7 @@
 
 {% block cms_body %}
 
-    <br><br><br>
+    <br>
 
     <div class="bs-example">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -41,7 +43,9 @@
                                  alt="{{ img.alt }}"/>
                             <div class="carousel-caption">
                                 {% if img.description is not null %}
-                                    <i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;&nbsp; {{ img.description }}&nbsp;&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i>
+                                    <i class="fa fa-quote-left"
+                                       aria-hidden="true"></i>&nbsp;&nbsp; {{ img.description }}&nbsp;&nbsp;<i
+                                        class="fa fa-quote-right" aria-hidden="true"></i>
                                 {% endif %}
                             </div>
                         </div>
@@ -51,7 +55,9 @@
                                  alt="{{ img.alt }}"/>
                             <div class="carousel-caption">
                                 {% if img.description is not null %}
-                                    <i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;&nbsp;{{ img.description }}&nbsp;&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i>
+                                    <i class="fa fa-quote-left"
+                                       aria-hidden="true"></i>&nbsp;&nbsp;{{ img.description }}&nbsp;&nbsp;<i
+                                        class="fa fa-quote-right" aria-hidden="true"></i>
                                 {% endif %}
                             </div>
                         </div>
@@ -69,7 +75,7 @@
     </div>
 {% endblock %}
 
-{% block javascripts %}
+{% block javascripts %}{{ parent() }}
     <script type="text/javascript">
         $(document).ready(function () {
             $("#myCarousel").carousel({

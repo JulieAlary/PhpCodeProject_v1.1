@@ -171,6 +171,13 @@ class CarouselController extends Controller
         );
     }
 
+    /**
+     * To delete a carousel
+     *
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     public function deleteCarouselAction($id, Request $request)
     {
 
@@ -212,6 +219,7 @@ class CarouselController extends Controller
 
 
     /**
+     * To display carousel on index page
      *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -237,5 +245,127 @@ class CarouselController extends Controller
         );
 
     }
+
+    /**
+     * To display carousel on Test/brouillon page
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function isNoPublishedTestAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
+        // To display the carousel
+        $carousel = $em->getRepository('CMSBlogBundle:Carousel')->findBy(
+            array('published' => true),
+            array()
+        );
+
+        $gallery = $em->getRepository('CMSBlogBundle:Gallery')->findAll();
+
+        return $this->render(
+            'CMSBlogBundle:Custom/Carousel:showTest.html.twig',
+            [
+                'carousel' => $carousel,
+                'gallery' => $gallery,
+                'custom' => $custom
+            ]
+        );
+    }
+
+    /**
+     * To delete an image on the carousel
+     *
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function deleteGalleryAction($id, Request $request)
+    {
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
+        // On récupérère l'article par son id
+        $gallery = $em->getRepository('CMSBlogBundle:Gallery')->find($id);
+
+        if ($gallery === null) {
+            throw new NotFoundHttpException("L'image d'id : " . $id . " n'existe pas .");
+        }
+
+        // On crée un formulaire vide, qui ne contiendra que le champ CSRF
+        // Cela permet de protéger la suppression d'annonce contre cette faille
+        $form = $this->get('form.factory')->create();
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em->remove($gallery);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('info', "L'article a bien été supprimé.");
+
+            return $this->redirectToRoute('cms_custom_carousel');
+        }
+
+        return $this->render(
+            'CMSBlogBundle:Custom/Gallery:delete.html.twig',
+            [
+                'gallery' => $gallery,
+                'form' => $form->createView(),
+                'custom' => $custom
+            ]
+        );
+    }
+
+    /**
+     * To edit the selectionned Gallery
+     *
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function editGalleryAction($id, Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
+        // o recup l'annonce en question
+        $gallery = $em->getRepository('CMSBlogBundle:Gallery')->find($id);
+
+        if ($gallery === null) {
+            throw new NotFoundHttpException("L'image " . $id . " n'existe pas.");
+        }
+
+        $form = $this->get('form.factory')->create(GalleryType::class, $gallery);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('notice', 'L\'image a bien été modifiée.');
+
+            return $this->redirectToRoute(
+                'cms_custom_carousel'
+            );
+        }
+
+        return $this->render(
+            'CMSBlogBundle:Custom/Gallery:edit.html.twig',
+            [
+                'gallery' => $gallery,
+                'form' => $form->createView(),
+                'custom' => $custom
+            ]
+        );
+    }
+
 
 }

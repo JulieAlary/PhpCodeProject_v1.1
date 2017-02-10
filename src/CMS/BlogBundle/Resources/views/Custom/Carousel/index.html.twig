@@ -36,7 +36,7 @@
                         class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
         </div>
         <div class="col-md-6 col-xs-6">
-            <a href="{{ path('cms_custom_carousel_show') }}">Test Slider&nbsp;&nbsp;<i
+            <a href="{{ path('cms_custom_carousel_show_test') }}">Test Slider&nbsp;&nbsp;<i
                         class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
         </div>
     </div>
@@ -56,7 +56,6 @@
                 {% endif %}
             {% endfor %}
 
-
             {% for key, galleries in gallery %}
                 <div class="col-md-3 col-xs-4">
                     <div class="thumbnail">
@@ -67,8 +66,8 @@
 
                             <div class="caption">
                                 <p>
-                                    <a href="#" class="btn btn-primary btn-xs" role="button">Button</a>
-                                    <a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+                                    <a href="{{ path('cms_custom_carousel_edit_gallery', {'id': galleries.id}) }}" class="btn btn-warning btn-xs" role="button"><i class="glyphicon glyphicon-edit"></i></a>
+                                    <a href="{{ path('cms_custom_carousel_delete_gallery', {'id': galleries.id}) }}" class="btn btn-danger btn-xs" role="button"><i class="glyphicon glyphicon-trash"></i></a>
                                 </p>
                             </div>
                         {% endif %}
@@ -76,32 +75,27 @@
                 </div>
             {% endfor %}
 
-
         {% endif %}
         </div>
         <div class="row">
             <p>
                 {% if is_granted('ROLE_AUTEUR') %}
-                    <a href="{{ path('cms_custom_index') }}" class="btn btn-success">
+                    <a href="{{ path('cms_custom_index') }}" class="btn btn-success btn-sm">
                         <i class="glyphicon glyphicon-edit"></i>
                         Retour à la page précédente
                     </a>
                     {% if carousels.id not in newArray %}
                         {% set newArray = newArray|merge([carousels.id]) %}
                         <a href="{{ path('cms_custom_carousel_edit', { 'id': carousels.id } ) }}"
-                           class="btn btn-warning">
+                           class="btn btn-warning btn-sm">
                             <i class="glyphicon glyphicon-edit"></i>
                             Modifier le carousel
                         </a>
-                        <a href="{{ path('cms_custom_carousel_delete', { 'id': carousels.id }) }}" class="btn btn-danger">
+                        <a href="{{ path('cms_custom_carousel_delete', { 'id': carousels.id }) }}" class="btn btn-danger btn-sm">
                             <i class="glyphicon glyphicon-trash"></i>
                             Supprimer le carousel
                         </a>
                     {% endif %}
-
-
-
-
                 {% endif %}
             </p>
         </div>

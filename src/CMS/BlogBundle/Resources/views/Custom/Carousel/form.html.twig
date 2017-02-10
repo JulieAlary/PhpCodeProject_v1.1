@@ -3,8 +3,44 @@
 <div class="well">
         {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
-        {# Les erreurs générales du formulaire. #}
-        {{ form_errors(form) }}
+    {% if form.file is defined %}
+        {# Génération manuelle et éclatée : #}
+            <div class="form-group">
+                {# Génération du label. #}
+                {{ form_label(form.file, "", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                    <div class="col-md-6">
+                        {{ form_errors(form.file) }}
+                        {{ form_widget(form.file, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+            </div>
+    {% endif %}
+
+    {% if form.description is defined %}
+        {# Génération manuelle et éclatée : #}
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.description, "", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            <div class="col-md-6">
+                {{ form_errors(form.description) }}
+                {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if form.carousel is defined %}
+        {# Génération manuelle et éclatée : #}
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.carousel, "", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            <div class="col-md-6">
+                {{ form_errors(form.carousel) }}
+                {{ form_widget(form.carousel, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+    {% endif %}
+
+
+
 
         {# Génération automatique des champs pas encore écrits.
            Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)

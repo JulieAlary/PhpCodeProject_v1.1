@@ -6,6 +6,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,8 +21,11 @@ class GalleryType extends AbstractType
         $builder
             ->add('file', FileType::class, array(
                 'attr' => array('class' => 'btn btn-file'),
+                'label' => 'Choisir une image'
+            ))
+            ->add('description', TextareaType::class, array(
+                'label' => 'Saisir une description',
                 'required' => false,
-                'label' => false
             ))
             ->add('carousel', EntityType::class,
                 [

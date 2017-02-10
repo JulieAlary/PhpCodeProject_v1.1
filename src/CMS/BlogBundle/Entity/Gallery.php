@@ -44,6 +44,12 @@ class Gallery
     private $carousel;
 
     /**
+     * @var string
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     */
+    private $description;
+
+    /**
      * @var UploadedFile
      */
     private $file;
@@ -241,5 +247,29 @@ class Gallery
     public function getCarousel()
     {
         return $this->carousel;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Gallery
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }
