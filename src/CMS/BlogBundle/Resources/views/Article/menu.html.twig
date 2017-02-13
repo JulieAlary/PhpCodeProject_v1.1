@@ -1,6 +1,6 @@
 {% for article in listArticles %}
     {% if article.published == true %}
-        <div class="col-md-4">
+        <div class="col-md-3">
             <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}">
                 <p class="text-center"><strong>{{ article.title|capitalize }}</strong></p>
             </a>

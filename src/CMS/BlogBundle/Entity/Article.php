@@ -97,7 +97,7 @@ class Article
 
     /**
      * @var Comment[]|ArrayCollection
-     * @ORM\OneToMany(targetEntity="Comment", mappedBy="article")
+     * @ORM\OneToMany(targetEntity="Comment",cascade={"persist", "remove"}, mappedBy="article")
      *
      */
     private $comments;

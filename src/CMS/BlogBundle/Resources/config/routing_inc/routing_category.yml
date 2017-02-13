@@ -1,0 +1,14 @@
+cms_category_list:
+    path: /category/list
+    defaults:
+        _controller: CMSBlogBundle:Category:list
+
+cms_category_add:
+    path: /category/add
+    defaults:
+        _controller: CMSBlogBundle:Category:add
+
+cms_category_delete:
+    path: /category/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Category:delete

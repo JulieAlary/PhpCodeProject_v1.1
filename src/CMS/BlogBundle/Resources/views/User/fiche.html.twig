@@ -10,22 +10,27 @@
     <div class="container-fluid well span6">
         <div class="row-fluid">
 
-            <div class="row">
-                <div class="span2 pull-right" style="margin-right: 150px;">
-                    <div class="btn-group">
-                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                            Action
-                            <span class="icon-cog icon-white"></span><span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ path('cms_user_edit', {'id': users.id}) }}"><span class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                                    Modifier un rôle</a></li>
-                            <li><a href="{{ path('cms_user_del', {'id': users.id}) }}"><span class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-                                    Supprimer un utilisateur</a></li>
-                        </ul>
+            {% if users.id == app.user.id or is_granted('ROLE_ADMIN') %}
+                <div class="row">
+                    <div class="span2 pull-right" style="margin-right: 150px;">
+                        <div class="btn-group">
+                            <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                Action
+                                <span class="icon-cog icon-white"></span><span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path('cms_user_edit', {'id': users.id}) }}"><span
+                                                class="btn btn-warning"><i class="fa fa-pencil-square-o"
+                                                                           aria-hidden="true"></i></span>
+                                        Modifier un rôle</a></li>
+                                <li><a href="{{ path('cms_user_del', {'id': users.id}) }}"><span class="btn btn-danger"><i
+                                                    class="fa fa-trash-o" aria-hidden="true"></i></span>
+                                        Supprimer un utilisateur</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
 
 
             <div class="col-md-4">

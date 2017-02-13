@@ -23,25 +23,28 @@
 {% block cms_body %}
 
     <br><br><br>
+    {% for img in gallery %}
+        {% if img.carousel.published == 1 %}
+            <div class="bs-example">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
 
-    <div class="bs-example">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Carousel indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <!-- Wrapper for carousel items -->
-            <div class="carousel-inner">
-                {% for img in gallery %}
                     {% if loop.index == 1 %}
                         <div class="item active">
                             <img src="{{ asset(img.uploadDir ~ '/' ~ img.id ~ '.' ~ img.url) }}"
                                  alt="{{ img.alt }}"/>
                             <div class="carousel-caption">
                                 {% if img.description is not null %}
-                                    <i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;&nbsp; {{ img.description }}&nbsp;&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i>
+                                    <i class="fa fa-quote-left"
+                                       aria-hidden="true"></i>&nbsp;&nbsp; {{ img.description }}&nbsp;&nbsp;<i
+                                        class="fa fa-quote-right" aria-hidden="true"></i>
                                 {% endif %}
                             </div>
                         </div>
@@ -51,21 +54,26 @@
                                  alt="{{ img.alt }}"/>
                             <div class="carousel-caption">
                                 {% if img.description is not null %}
-                                    <i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;&nbsp;{{ img.description }}&nbsp;&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i>
+                                    <i class="fa fa-quote-left"
+                                       aria-hidden="true"></i>&nbsp;&nbsp;{{ img.description }}&nbsp;&nbsp;<i
+                                        class="fa fa-quote-right" aria-hidden="true"></i>
                                 {% endif %}
                             </div>
                         </div>
                     {% endif %}
-                {% endfor %}
+
+                </div>
+                <!-- Carousel controls -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+
             </div>
-            <!-- Carousel controls -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div>
+        {% endif %}
+    {% endfor %}
     </div>
 {% endblock %}
 

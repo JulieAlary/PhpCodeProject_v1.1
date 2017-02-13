@@ -1,0 +1,69 @@
+#Main
+cms_custom_index:
+    path: custom/index
+    defaults:
+        _controller: CMSBlogBundle:Custom:index
+
+cms_custom:
+    path: custom
+    defaults:
+        _controller: CMSBlogBundle:Custom:addCustom
+
+cms_custom_names_edit:
+    path: custom/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:Custom:editBlogNames
+
+cms_custom_names_delete:
+    path: custom/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Custom:delete
+
+# Custom Carousel
+cms_custom_carousel:
+    path: custom/carousel
+    defaults:
+        _controller: CMSBlogBundle:Carousel:index
+
+cms_custom_carousel_add:
+    path: custom/carousel/add
+    defaults:
+        _controller: CMSBlogBundle:Carousel:add
+
+cms_custom_carousel_edit:
+    path: custom/carousel/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:Carousel:editCarousel
+
+cms_custom_carousel_delete:
+    path: custom/carousel/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Carousel:deleteCarousel
+
+# Custom Carousel display
+cms_custom_carousel_show:
+   path: custom/carousel/show
+   defaults:
+       _controller: CMSBlogBundle:Carousel:isPublished
+
+cms_custom_carousel_show_test:
+   path: custom/carousel/show/test
+   defaults:
+       _controller: CMSBlogBundle:Carousel:isNoPublishedTest
+
+
+# Custom Carousel Gallery
+cms_custom_carousel_add_gallery:
+    path: custom/carousel/gallery/add
+    defaults:
+        _controller: CMSBlogBundle:Carousel:addGallery
+
+cms_custom_carousel_delete_gallery:
+    path: custom/carousel/gallery/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Carousel:deleteGallery
+
+cms_custom_carousel_edit_gallery:
+    path: custom/carousel/gallery/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:Carousel:editGallery

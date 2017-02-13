@@ -29,16 +29,16 @@ class CoreController extends Controller
         );
     }
 
-    /**
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
-    public function contactAction(Request $request)
-    {
-        $session = $request->getSession();
-
-        $session->getFlashbag()->add('info', 'La page de contact n\'est pas encore dispo');
-
-        return $this->redirectToRoute('cms_core_home');
-    }
+//    /**
+//     * @param Request $request
+//     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+//     */
+//    public function contactAction(Request $request)
+//    {
+//        $session = $request->getSession();
+//
+//        $session->getFlashbag()->add('info', 'La page de contact n\'est pas encore dispo');
+//
+//        return $this->redirectToRoute('cms_core_home');
+//    }
 }

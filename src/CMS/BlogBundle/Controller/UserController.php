@@ -9,6 +9,9 @@ use CMS\UserBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/*Utilisé en annotation*/
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 class UserController extends Controller
 {
@@ -16,6 +19,8 @@ class UserController extends Controller
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function listAction(Request $request)
     {
@@ -42,6 +47,8 @@ class UserController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_USER')")
      */
     public function ficheAction($id, Request $request)
     {
@@ -70,6 +77,8 @@ class UserController extends Controller
      * @param User $user
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_USER')")
      */
     public function deleteUserAction(User $user, Request $request)
     {
@@ -114,6 +123,8 @@ class UserController extends Controller
      * @param User $user
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function updateUserRoleAction(User $user, Request $request)
     {

@@ -8,9 +8,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/*Utilisé en annotation*/
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 class CategoryController extends Controller
 {
 
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function listAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -30,6 +39,12 @@ class CategoryController extends Controller
         );
     }
 
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function addAction(Request $request)
     {
 
@@ -64,6 +79,13 @@ class CategoryController extends Controller
         );
     }
 
+    /**
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function deleteAction($id, Request $request)
     {
 

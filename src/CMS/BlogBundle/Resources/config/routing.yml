@@ -1,125 +1,21 @@
-# Articles
-cms_blog_home:
-    path: /{page}
-    defaults:
-        _controller: CMSBlogBundle:Article:index
-        page: 1
-    requirements:
-        page: \d*
+cms_article:
+    resource: "@CMSBlogBundle/Resources/config/routing_inc/routing_article.yml"
 
-cms_blog_fiche:
-    path: /article/{id}
-    defaults:
-        _controller: CMSBlogBundle:Article:fiche
+cms_user:
+    resource: "@CMSBlogBundle/Resources/config/routing_inc/routing_user.yml"
 
-    requirements:
-        id: \d+
+cms_category:
+    resource: "@CMSBlogBundle/Resources/config/routing_inc/routing_category.yml"
 
-cms_blog_add:
-    path: /article/add
-    defaults:
-        _controller: CMSBlogBundle:Article:add
+cms_menu:
+    resource: "@CMSBlogBundle/Resources/config/routing_inc/routing_menu.yml"
 
-cms_blog_edit:
-    path: /article/edit/{id}
-    defaults:
-        _controller: CMSBlogBundle:Article:edit
-    requirements:
-        id: \d+
+cms_contact:
+    resource: "@CMSBlogBundle/Resources/config/routing_inc/routing_contact.yml"
 
-cms_blog_delete:
-    path: /article/delete/{id}
-    defaults:
-        _controller: CMSBlogBundle:Article:delete
+cms_custom:
+    resource: "@CMSBlogBundle/Resources/config/routing_inc/routing_custom.yml"
 
-cms_article_list:
-    path: /article/liste
-    defaults:
-        _controller: CMSBlogBundle:Article:list
-
-# User
-cms_user_list:
-    path: /list
-    defaults:
-        _controller: CMSBlogBundle:User:list
-
-cms_user_fiche:
-    path: /fiche/{id}
-    defaults:
-        _controller: CMSBlogBundle:User:fiche
-    requirements:
-        id: \d+
-
-cms_user_del:
-    path:    /fiche/delete/{id}
-    defaults:
-        _controller: CMSBlogBundle:User:deleteUser
-
-cms_user_edit:
-    path: /fiche/edit/{id}
-    defaults:
-        _controller: CMSBlogBundle:User:updateUserRole
-    requirements:
-        id: \d+
-
-#cms_compte_index:
-#    path: /compte/index/{id}
-#    defaults:
-#        _controller: CMSBlogBundle:Compte:index
-#    requirements:
-#        id: \d+
-
-# Category
-cms_category_list:
-    path: /category/list
-    defaults:
-        _controller: CMSBlogBundle:Category:list
-
-cms_category_add:
-    path: /category/add
-    defaults:
-        _controller: CMSBlogBundle:Category:add
-
-cms_category_delete:
-    path: /category/delete/{id}
-    defaults:
-        _controller: CMSBlogBundle:Category:delete
-
-# Menu
-cms_menu_index:
-    path: /menu/index
-    defaults:
-        _controller: CMSBlogBundle:Menu:index
-
-cms_menu_add:
-    path: /menu/addname
-    defaults:
-        _controller: CMSBlogBundle:Menu:addName
-
-cms_menu_listcate:
-    path: /menu/listcate/{id}
-    defaults:
-        _controller: CMSBlogBundle:Menu:listCateByMenu
-
-#cms_menu_menu:
-#    path: /menu/menu
-#    defaults:
-#        _controller: CMSBlogBundle:Menu:isPublished
-
-cms_menu_show_article:
-    path: /menu/show/article/{id}
-    defaults:
-        _controller: CMSBlogBundle:Menu:showArticleByMenu
-
-cms_menu_delete:
-    path: /menu/delete/{id}
-    defaults:
-        _controller: CMSBlogBundle:Menu:deleteMenu
-
-cms_menu_edit:
-    path: /menu/edit/{id}
-    defaults:
-        _controller: CMSBlogBundle:Menu:edit
 
 # Commentaire
 cms_comment_delete:
@@ -127,103 +23,9 @@ cms_comment_delete:
     defaults:
         _controller: CMSBlogBundle:Comment:delete
 
-#contact
-cms_contact_index:
-    path: blog/contact
-    defaults:
-        _controller: CMSBlogBundle:Contact:index
-
-cms_contact_add_fa:
-    path: blog/contact/fa
-    defaults:
-        _controller: CMSBlogBundle:Contact:fontAwesome
-
-cms_contact_page_fa:
-    path: blog/page/contact
-    defaults:
-        _controller: CMSBlogBundle:Contact:viewFontAwesomePage
-
-cms_contact_page_fa_edit:
-    path: blog/page/fa/edit/{id}
-    defaults:
-        _controller: CMSBlogBundle:Contact:editContactFa
-
-cms_contact_page_fa_delete:
-    path: blog/page/fa/delete/{id}
-    defaults:
-        _controller: CMSBlogBundle:Contact:deleteContactFa
 
 
-# Custom
 
-cms_custom_index:
-    path: custom/index
-    defaults:
-        _controller: CMSBlogBundle:Custom:index
-
-cms_custom:
-    path: custom
-    defaults:
-        _controller: CMSBlogBundle:Custom:addCustom
-
-cms_custom_names_edit:
-    path: custom/edit/{id}
-    defaults:
-        _controller: CMSBlogBundle:Custom:editBlogNames
-
-cms_custom_names_delete:
-    path: custom/delete/{id}
-    defaults:
-        _controller: CMSBlogBundle:Custom:delete
-
-# Custom Carousel
-cms_custom_carousel:
-    path: custom/carousel
-    defaults:
-        _controller: CMSBlogBundle:Carousel:index
-
-cms_custom_carousel_add:
-    path: custom/carousel/add
-    defaults:
-        _controller: CMSBlogBundle:Carousel:add
-
-cms_custom_carousel_edit:
-    path: custom/carousel/edit/{id}
-    defaults:
-        _controller: CMSBlogBundle:Carousel:editCarousel
-
-cms_custom_carousel_delete:
-    path: custom/carousel/delete/{id}
-    defaults:
-        _controller: CMSBlogBundle:Carousel:deleteCarousel
-
-# Custom Carousel display
-cms_custom_carousel_show:
-   path: custom/carousel/show
-   defaults:
-       _controller: CMSBlogBundle:Carousel:isPublished
-
-cms_custom_carousel_show_test:
-   path: custom/carousel/show/test
-   defaults:
-       _controller: CMSBlogBundle:Carousel:isNoPublishedTest
-
-# Custom Carousel Gallery
-
-cms_custom_carousel_add_gallery:
-    path: custom/carousel/gallery/add
-    defaults:
-        _controller: CMSBlogBundle:Carousel:addGallery
-
-cms_custom_carousel_delete_gallery:
-    path: custom/carousel/gallery/delete/{id}
-    defaults:
-        _controller: CMSBlogBundle:Carousel:deleteGallery
-
-cms_custom_carousel_edit_gallery:
-    path: custom/carousel/gallery/edit/{id}
-    defaults:
-        _controller: CMSBlogBundle:Carousel:editGallery
 
 
 

@@ -1,0 +1,23 @@
+cms_user_list:
+    path: /list
+    defaults:
+        _controller: CMSBlogBundle:User:list
+
+cms_user_fiche:
+    path: /fiche/{id}
+    defaults:
+        _controller: CMSBlogBundle:User:fiche
+    requirements:
+        id: \d+
+
+cms_user_del:
+    path:    /fiche/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:User:deleteUser
+
+cms_user_edit:
+    path: /fiche/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:User:updateUserRole
+    requirements:
+        id: \d+

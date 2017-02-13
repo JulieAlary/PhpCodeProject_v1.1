@@ -1,0 +1,32 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<h2 class="text-center">Enregistrez-vous pour pouvoir commenter ou même publier des articles</h2>
+
+
+<div class="form-group col-md-8 col-md-offset-2 well col-xs-6 col-xs-offset-3">
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+    {{ form_errors(form) }}
+
+    {{ form_label(form.username) }}
+    {{ form_widget(form.username) }}
+    {{ form_errors(form.username) }}
+
+    {{ form_label(form.email) }}
+    {{ form_widget(form.email) }}
+    {{ form_errors(form.email) }}
+
+    {{ form_label(form.plainPassword.first) }}
+    {{ form_widget(form.plainPassword.first) }}
+    {{ form_errors(form.plainPassword.first) }}
+
+    {{ form_label(form.plainPassword.second) }}
+    {{ form_widget(form.plainPassword.second) }}
+
+    {{ form_rest(form) }}
+
+    <br>
+    <button class="btn btn-primary" type="submit"
+            value="{{ 'registration.submit'|trans }}">{{ 'registration.submit'|trans }}</button>
+
+    {{ form_end(form) }}
+</div>

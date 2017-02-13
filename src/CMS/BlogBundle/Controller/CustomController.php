@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/*Utilisé en annotation*/
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 class CustomController extends Controller
 {
 
@@ -16,6 +19,8 @@ class CustomController extends Controller
      * To Display the main page custom
      *
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function indexAction(Request $request)
     {
@@ -42,6 +47,8 @@ class CustomController extends Controller
      *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function addCustomAction(Request $request)
     {
@@ -109,6 +116,8 @@ class CustomController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function editBlogNamesAction($id, Request $request)
     {
@@ -155,6 +164,8 @@ class CustomController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteAction($id, Request $request)
     {

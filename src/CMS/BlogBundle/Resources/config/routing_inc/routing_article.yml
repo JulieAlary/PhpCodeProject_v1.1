@@ -1,0 +1,37 @@
+#cms_blog_home:
+#    path: /{page}
+#    defaults:
+#        _controller: CMSBlogBundle:Article:index
+#        page: 1
+#    requirements:
+#        page: \d*
+
+cms_blog_fiche:
+    path: /article/{id}
+    defaults:
+        _controller: CMSBlogBundle:Article:fiche
+
+    requirements:
+        id: \d+
+
+cms_blog_add:
+    path: /article/add
+    defaults:
+        _controller: CMSBlogBundle:Article:add
+
+cms_blog_edit:
+    path: /article/edit/{id}
+    defaults:
+        _controller: CMSBlogBundle:Article:edit
+    requirements:
+        id: \d+
+
+cms_blog_delete:
+    path: /article/delete/{id}
+    defaults:
+        _controller: CMSBlogBundle:Article:delete
+
+cms_article_list:
+    path: /article/liste
+    defaults:
+        _controller: CMSBlogBundle:Article:list

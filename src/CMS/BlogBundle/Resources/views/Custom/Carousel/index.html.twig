@@ -65,11 +65,9 @@
 
 
     {% for key, carousels in carousel %}
-        {% if carousels.published == true %}
+        {% if carousels %}
             <div class="row">
             <h3>Carousel existant</h3>
-
-
 
             {% for key, galleries in gallery %}
                 {% if galleries.carousel.nom not in newArray %}

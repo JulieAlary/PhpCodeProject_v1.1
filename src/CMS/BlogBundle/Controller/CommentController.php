@@ -6,9 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/*Utilisé en annotation*/
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 /**
  * L'affichage et l'ajout de comment a été intégré avec le controller
- * Article, TODO tout basculer ici....
+ * Article, TODO tout basculer ici.... avec un rendercontroller
  *
  * Class CommentController
  * @package CMS\BlogBundle\Controller
@@ -21,6 +24,8 @@ class CommentController extends Controller {
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteAction($id, Request $request) {
 

@@ -26,4 +26,6 @@ _Mise en place de divers outils sans utiliser_
 
 - route cms_blog_home ne matche plus vers rien c le core qui prend le relais a travaailler
 
+- brider le delete des autres joueurs dans les vues pour les users simple
+
 - - great tips : http://craftcms.stackexchange.com/a/5220

@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/*Utilisé en annotation*/
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 class MenuController extends Controller
 {
 
@@ -17,6 +20,8 @@ class MenuController extends Controller
      *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function indexAction(Request $request)
     {
@@ -83,6 +88,8 @@ class MenuController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteMenuAction($id, Request $request)
     {
@@ -127,6 +134,8 @@ class MenuController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function editAction($id, Request $request)
     {

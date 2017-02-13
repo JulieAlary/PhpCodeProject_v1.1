@@ -10,6 +10,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/*Utilisé en annotation*/
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
+
 class CarouselController extends Controller
 {
 
@@ -17,6 +21,8 @@ class CarouselController extends Controller
      * To display main page with published carousel existant
      *
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function indexAction(Request $request)
     {
@@ -46,6 +52,8 @@ class CarouselController extends Controller
      *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function addAction(Request $request)
     {
@@ -88,6 +96,8 @@ class CarouselController extends Controller
      *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function addGalleryAction(Request $request)
     {
@@ -132,6 +142,8 @@ class CarouselController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function editCarouselAction($id, Request $request)
     {
@@ -177,6 +189,8 @@ class CarouselController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteCarouselAction($id, Request $request)
     {
@@ -223,6 +237,7 @@ class CarouselController extends Controller
      *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
+     *
      */
     public function isPublishedAction(Request $request)
     {
@@ -283,6 +298,8 @@ class CarouselController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteGalleryAction($id, Request $request)
     {
@@ -328,6 +345,8 @@ class CarouselController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function editGalleryAction($id, Request $request)
     {

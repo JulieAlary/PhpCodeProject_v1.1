@@ -9,6 +9,9 @@ use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/*Utilisé en annotation*/
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 class ContactController extends Controller
 {
 
@@ -16,6 +19,8 @@ class ContactController extends Controller
      * To display the main contact page admin
      *
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function indexAction(Request $request)
     {
@@ -52,6 +57,8 @@ class ContactController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function editContactFaAction($id, Request $request)
     {
@@ -63,8 +70,6 @@ class ContactController extends Controller
 
         // on recup la page créee en question
         $contactPage = $em->getRepository('CMSBlogBundle:Contact')->find($id);
-
-        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
         if ($contactPage === null) {
             throw new NotFoundHttpException("La page de contact d'id " . $id . " n'existe pas.");
@@ -101,6 +106,8 @@ class ContactController extends Controller
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteContactFaAction($id, Request $request)
     {
@@ -146,6 +153,8 @@ class ContactController extends Controller
      *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function fontAwesomeAction(Request $request)
     {

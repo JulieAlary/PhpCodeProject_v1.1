@@ -200,6 +200,8 @@ class ArticleController extends Controller
      * @param $id
      * @param Request $request
      * @return Response
+     *
+     * @Security("has_role('ROLE_AUTEUR')")
      */
     public function editAction($id, Request $request)
     {
@@ -245,6 +247,8 @@ class ArticleController extends Controller
     /**
      * @param $id
      * @return Response
+     *
+     * @Security("has_role('ROLE_AUTEUR')")
      */
     public function deleteAction($id, Request $request)
     {
@@ -272,7 +276,7 @@ class ArticleController extends Controller
 
             $request->getSession()->getFlashBag()->add('info', "L'article a bien été supprimé.");
 
-            return $this->redirectToRoute('cms_blog_home');
+            return $this->redirectToRoute('cms_article_list');
         }
 
         return $this->render(
@@ -314,6 +318,9 @@ class ArticleController extends Controller
      *
      * @param $articleId
      * @return Response
+     *
+     * @Security("has_role('ROLE_AUTEUR')")
+     *
      */
     public function editImageAction($articleId)
     {
