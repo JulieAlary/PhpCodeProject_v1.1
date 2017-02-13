@@ -29,13 +29,14 @@
 
                 <div class="col-md-8">
                     <h3>{{ user.username|capitalize }}</h3>
-                    <h6>Email: {{ user.email }}</h6>
-                    <h6>Role: {{ user.roles|join(' , ') }}</h6>
-                    <h6>Ville</h6>
-                    <h6>Inscrit le</h6>
-                    <h6>Dernière connexion le: {{ user.lastlogin|date('d/m/Y') }}</h6>
-                    <h6>Participation</h6>
-                    <h6><a href="#">Lien</a></h6>
+                    <p>Email: {{ user.email }}</p>
+                    <p>Role: {{ user.roles|join(' , ') }}</p>
+                    <p>Ville: {{ user.city }}</p>
+                    <p>Inscrit le: </p>
+                    <p>Age: {{ user.age }}</p>
+                    <p>Dernière connexion le: {{ user.lastlogin|date('d/m/Y') }}</p>
+                    <p>Participation: </p>
+                    <p><a href="{{ user.url }}">Site Perso</a></p>
                 </div>
             </div>
 

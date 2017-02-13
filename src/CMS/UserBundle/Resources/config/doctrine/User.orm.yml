@@ -15,4 +15,10 @@ CMS\UserBundle\Entity\User:
         avatar:
             type: string
             nullable: true
+        city:
+            type: string
+            nullable: true
+        url:
+            type: string
+            nullable: true
     lifecycleCallbacks: {  }

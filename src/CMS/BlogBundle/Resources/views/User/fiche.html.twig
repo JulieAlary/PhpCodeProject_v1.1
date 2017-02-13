@@ -39,13 +39,14 @@
             {% if users is defined %}
             <div class="col-md-8">
                 <h3>{{ users.username|capitalize }}</h3>
-                <h6>Email: {{ users.email }}</h6>
-                <h6>Role: {{ users.roles|join(' , ') }}</h6>
-                <h6>Ville</h6>
-                <h6>Inscrit le</h6>
-                <h6>Dernière connexion le: {{ users.lastlogin|date('d/m/Y') }}</h6>
-                <h6>Participation</h6>
-                <h6><a href="#">Lien</a></h6>
+                <p>Email: {{ users.email }}</p>
+                <p>Role: {{ users.roles|join(' , ') }}</p>
+                <p>Ville: {{ users.city|capitalize }}</p>
+                <p>Inscrit le</p>
+                <p>Age: {{ users.age }}</p>
+                <p>Dernière connexion le: {{ users.lastlogin|date('d/m/Y') }}</p>
+                <p>Participation</p>
+                <p><a href="{{ users.url }}">Site Perso</a></p>
             </div>
 
         </div>

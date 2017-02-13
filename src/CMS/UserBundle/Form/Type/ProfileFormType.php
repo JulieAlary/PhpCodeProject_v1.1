@@ -4,8 +4,11 @@ namespace CMS\UserBundle\Form\Type;
 
 use CMS\UserBundle\CMSUserBundle;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,10 +23,11 @@ class ProfileFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email')
-            ->add('age', TextType::class)
-            ->add('avatar', FileType::class, array('data_class' => null))
-            ;
+            ->add('email', EmailType::class)
+            ->add('age', IntegerType::class)
+            ->add('avatar', FileType::class, array('data_class' => null, 'required' => false))
+            ->add('city', TextType::class)
+            ->add('url', UrlType::class);
     }
 
     /**
