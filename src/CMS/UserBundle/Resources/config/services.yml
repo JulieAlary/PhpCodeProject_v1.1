@@ -8,3 +8,9 @@ services:
             class: CMS\UserBundle\Form\Type\ProfileFormType
             tags:
                 - { name: form.type, alias: cms_user_profile }
+
+    cms.form.register.type:
+            class: CMS\UserBundle\Form\Type\RegistrationFormType
+            parent: fos_user.registration.form.type
+            tags:
+                - { name: form.type, alias: cms_user_registration }

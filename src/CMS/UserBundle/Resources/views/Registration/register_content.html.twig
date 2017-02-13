@@ -1,4 +1,3 @@
-{% trans_default_domain 'FOSUserBundle' %}
 <h2 class="text-center">Enregistrez-vous pour pouvoir commenter ou même publier des articles</h2>
 
 
@@ -7,26 +6,44 @@
 
     {{ form_errors(form) }}
 
-    {{ form_label(form.username) }}
-    {{ form_widget(form.username) }}
-    {{ form_errors(form.username) }}
+    <label for="username"> {{ form_label(form.username) }}</label>
+    <div class="input-group">
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-user"
+                                                                                   aria-hidden="true"></i></span>
+        {{ form_widget(form.username) }}
+    </div>
 
-    {{ form_label(form.email) }}
-    {{ form_widget(form.email) }}
-    {{ form_errors(form.email) }}
+    <label for="email">{{ form_label(form.email) }}</label>
+    <div class="input-group">
+        <span class="input-group-addon" style="background-color: black;"><i style="color:white;" class="fa fa-envelope-o" aria-hidden="true"></i></span>
+        {{ form_widget(form.email) }}
+    </div>
 
-    {{ form_label(form.plainPassword.first) }}
-    {{ form_widget(form.plainPassword.first) }}
-    {{ form_errors(form.plainPassword.first) }}
+    <label for="password">{{ form_label(form.plainPassword.first) }}</label>
+    <div class="input-group">
+                 <span class="input-group-addon" style="background-color: black;"><i style="color:white;" class="fa fa-unlock-alt"
+                                                                                            aria-hidden="true"></i>
+</span>
+        {{ form_widget(form.plainPassword.first) }}
+        {{ form_errors(form.plainPassword.first) }}
+    </div>
 
-    {{ form_label(form.plainPassword.second) }}
-    {{ form_widget(form.plainPassword.second) }}
+    <label for="password">{{ form_label(form.plainPassword.second) }}</label>
+    <div class="input-group">
+                 <span class="input-group-addon" style="background-color: black;"><i style="color:white;" class="fa fa-unlock-alt"
+                                                                                            aria-hidden="true"></i>
+</span>
+        {{ form_widget(form.plainPassword.second) }}
+        {{ form_errors(form.plainPassword.second) }}
+    </div>
+
 
     {{ form_rest(form) }}
 
     <br>
     <button class="btn btn-primary" type="submit"
-            value="{{ 'registration.submit'|trans }}">{{ 'registration.submit'|trans }}</button>
+            value="{{ 'registration.submit'|trans }}">Créer son compte
+    </button>
 
     {{ form_end(form) }}
 </div>
