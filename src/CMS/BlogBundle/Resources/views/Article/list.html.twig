@@ -4,6 +4,13 @@
 
     <h2>Tableau des Articles</h2>
     <br>
+
+    {#On affiche tous les messages flash dont le nom est « info » #}
+    {% for message in app.session.flashbag.get('info') %}
+        <div class="alert alert-info">Message flash : {{ message }}</div>
+    {% endfor %}
+
+
     <div class="row">
         <div class="flip">
             <h3>

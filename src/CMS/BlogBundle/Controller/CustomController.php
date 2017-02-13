@@ -31,7 +31,6 @@ class CustomController extends Controller
 
         // o recup l'annonce en question
         $theme = $em->getRepository('CMSBlogBundle:Custom')->findAll();
-        dump($theme);
 
         return $this->render(
             'CMSBlogBundle:Custom:index.html.twig',
@@ -71,7 +70,7 @@ class CustomController extends Controller
             $em->persist($blogName);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Nom du blog bien enregistrée.');
+            $request->getSession()->getFlashBag()->add('info', 'Nom du blog bien enregistré.');
 
             return $this->redirectToRoute(
                 'cms_custom_index'
@@ -140,7 +139,7 @@ class CustomController extends Controller
 
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Custom bien modifié.');
+            $request->getSession()->getFlashBag()->add('info', 'Custom bien modifié.');
 
             return $this->redirectToRoute(
                 'cms_custom_index',

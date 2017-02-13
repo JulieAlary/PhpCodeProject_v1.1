@@ -76,12 +76,13 @@
         </div>
     </div>
 
-    <hr>
-
-    <footer>
-        <p> Developed by Julie ALARY {{ 'now'|date('Y') }} </p>
-    </footer>
+    <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
 </div>
+<footer class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_bg{% endfor %}{% endif %}">
+    <div class="container-fluid">
+        <p class="text-center"> Developed by Julie ALARY {{ 'now'|date('Y') }} </p>
+    </div>
+</footer>
 
 {% block javascripts %}
 

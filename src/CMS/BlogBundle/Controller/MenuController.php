@@ -32,7 +32,6 @@ class MenuController extends Controller
 
         $listMenus = $em->getRepository('CMSBlogBundle:Menu')->findAll();
 
-
         return $this->render(
             'CMSBlogBundle:Menu:index.html.twig',
             [
@@ -65,7 +64,7 @@ class MenuController extends Controller
             $em->persist($menu);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Menu bien enregistrée.');
+            $request->getSession()->getFlashBag()->add('info', 'Menu bien enregistré.');
 
             return $this->redirectToRoute(
                 'cms_menu_index'

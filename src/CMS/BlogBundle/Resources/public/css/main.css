@@ -77,6 +77,11 @@ div.navbar-header > a {
 .color_red_bg {
     background-color: lightcoral !important;
 }
+.color_red_hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(240,128, 128), rgba(0, 0, 0, 0));
+}
 
 /**** 2.2 yellow ****/
 .color_yellow {
@@ -86,6 +91,12 @@ div.navbar-header > a {
 
 .color_yellow_bg {
     background-color: lightyellow !important;
+}
+
+.color_yellow_hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(165,42,42), rgba(0, 0, 0, 0));
 }
 
 /**** 2.3 grey ****/
@@ -98,6 +109,13 @@ div.navbar-header > a {
     background-color: lightgrey !important;
 }
 
+.color_grey_hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(128,0,128), rgba(0, 0, 0, 0));
+}
+
+
 /**** 2.4 green ****/
 .color_green {
     color: lightgreen;
@@ -107,6 +125,14 @@ div.navbar-header > a {
 .color_green_bg {
     background-color: lightgreen !important;
 }
+
+.color_green_hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255,165,0), rgba(0, 0, 0, 0));
+}
+
+/**/
 
 #menu > ul.nav.nav-pills.nav-stacked {
     border-radius: 5px;

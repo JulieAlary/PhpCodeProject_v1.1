@@ -98,12 +98,12 @@ class UserController extends Controller
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $userManager->deleteUser($user);
-            $request->getSession()->getFlashBag()->add('notice', 'User supprimé avec succès.');
+            $request->getSession()->getFlashBag()->add('info', 'User supprimé avec succès.');
 
             if ($user->hasRole('ROLE_ADMIN') || $user->hasRole('SUPER_ADMIN')) {
                 return $this->redirectToRoute('cms_user_list');
             } else {
-                return $this->redirectToRoute('cms_blog_home');
+                return $this->redirectToRoute('cms_core_home');
             }
 
         }

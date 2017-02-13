@@ -178,7 +178,7 @@ class ContactController extends Controller
             $em->persist($contact_fa);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Icône(s) bien enregistré(e)s.');
+            $request->getSession()->getFlashBag()->add('info', 'Icône(s) bien enregistrée(s).');
 
             return $this->redirectToRoute(
                 'cms_contact_index'

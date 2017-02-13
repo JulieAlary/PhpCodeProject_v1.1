@@ -63,7 +63,7 @@ class CategoryController extends Controller
             $em->persist($category);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Catégorie bien enregistrée.');
+            $request->getSession()->getFlashBag()->add('info', 'Catégorie bien enregistrée.');
 
             return $this->redirectToRoute(
                 'cms_category_list'

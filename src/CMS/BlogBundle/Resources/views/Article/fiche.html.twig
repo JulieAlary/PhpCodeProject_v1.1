@@ -6,11 +6,21 @@
 {% endblock %}
 
 {% block cms_body %}
+
+    {#On affiche tous les messages flash dont le nom est « info » #}
+    {% for message in app.session.flashbag.get('info') %}
+        <div class="alert alert-info">Message flash : {{ message }}</div>
+    {% endfor %}
+
+
     {% if article.published == true or is_granted('ROLE_AUTEUR') %}
         <div style="float: left; margin-right: 1em;">
             {% if article.image is not null %}
-                <a href="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}" alt="{{ article.image.alt }}"
-                   class="html5lightbox"><img src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}" alt="{{ article.image.alt }}" height="60"></a>
+                <a href="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
+                   alt="{{ article.image.alt }}"
+                   class="html5lightbox"><img
+                            src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
+                            alt="{{ article.image.alt }}" height="60"></a>
             {% endif %}
         </div>
 

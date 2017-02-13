@@ -175,7 +175,7 @@ class ArticleController extends Controller
             $em->flush();
 
 
-            $request->getSession()->getFlashBag()->add('notice', 'Article bien aenregistrée.');
+            $request->getSession()->getFlashBag()->add('info', 'Article bien enregistré.');
 
             return $this->redirectToRoute(
                 'cms_blog_fiche',
@@ -224,7 +224,7 @@ class ArticleController extends Controller
 
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Article bien modifé.');
+            $request->getSession()->getFlashBag()->add('info', 'Article bien modifié.');
 
             return $this->redirectToRoute(
                 'cms_blog_fiche',

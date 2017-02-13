@@ -21,6 +21,7 @@
 
                                         {% if article.image is not null %}
                                             {% if article.image not in newArray %}
+                                                <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
                                                 {% set newArray = newArray|merge([article.image]) %}
                                                 <img src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                                                      alt="{{ article.image.alt }}"
@@ -32,12 +33,14 @@
                                     </div>
                                     <div class="col-md-8">
                                         {% if article.title not in newArray %}
+                                            <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
                                             {% set newArray = newArray|merge([article.title]) %}
                                             <h2>{{ article.title|capitalize }}</h2>
                                         {% endif %}
                                     </div>
                                     <div class="col-md-8 col-md-offset-4">
                                         {% if article.content not in newArray %}
+
                                             {% set newArray = newArray|merge([article.content]) %}
                                             {{ article.content|striptags|truncate(400)|raw }}
                                         {% endif %}
