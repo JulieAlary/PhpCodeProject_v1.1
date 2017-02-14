@@ -10,7 +10,6 @@ cms_blog_fiche:
     path: /article/{id}
     defaults:
         _controller: CMSBlogBundle:Article:fiche
-
     requirements:
         id: \d+
 

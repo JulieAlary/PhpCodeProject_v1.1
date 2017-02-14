@@ -13,20 +13,15 @@ _Mise en place de divers outils sans utiliser_
  - gestionnaire d'évenment , bigbrother ...
  
  - finir les translations
- 
- - to do select2 pour modif theme
- 
- - lien vers fiche user pour chaque user
- 
+   
  - registration form -> date enregistrement
  
  - retrouver les participations par fiche user
  
- # amélioration commentaire css et conditionnmeent
  # amélioration datatbles css
- # amélioration tinymce plugin
  
- #important basculer le css dans public !!!
+ 
+ #tiny mce image ne fonctionne pas sous chrome
 
  
  # facultatif

@@ -24,3 +24,32 @@
 
 {% endblock %}
 
+{% block javascripts %}{{ parent() }}
+    {# Utilisation du select2 pour affichage des couleur dans le form#}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        /* To display Font Awezome colorized in ChoiceType */
+        function formatState(state) {
+            if (!state.id) {
+                return state.text;
+            }
+            var $state = $(
+                '<span><i class="fa fa-circle' + ' ' + state.element.value.toLowerCase() + '"> ' + state.text + '</i></span>'
+            );
+            return $state;
+        }
+
+        /* Initializing select-2 */
+        $('select').select2({
+            /*To hide the search module*/
+            minimumResultsForSearch: Infinity,
+            /*To display function on top : named formatstate*/
+            templateResult: formatState
+
+        });
+
+    });
+</script>
+{% endblock %}
+

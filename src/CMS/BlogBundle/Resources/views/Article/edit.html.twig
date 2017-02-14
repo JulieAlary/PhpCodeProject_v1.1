@@ -1,5 +1,16 @@
 {% extends "CMSBlogBundle::layout.html.twig" %}
 
+{% block javascripts_head %}{{ parent() }}
+    <script>
+        tinymce.init({
+            selector: '.tinymce',
+            language_url: '{{ asset('bundles/stfalcontinymce/vendor/tinymce/langs/fr_FR.js') }}',
+            plugins: 'link, emoticons, codesample, table image textcolor fullscreen print',
+            toolbar: "emoticons codesample image forecolor backcolor fullscreen print"
+        });
+    </script>
+{% endblock %}
+
 {% block title %}
     Modifier un artcile - {{ parent() }}
 {% endblock %}

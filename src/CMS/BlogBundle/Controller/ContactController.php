@@ -80,7 +80,7 @@ class ContactController extends Controller
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Page de contact bien modifée.');
+            $request->getSession()->getFlashBag()->add('info', 'Page de contact bien modifée.');
 
             return $this->redirectToRoute(
                 'cms_contact_index',
