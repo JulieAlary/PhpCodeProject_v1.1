@@ -260,8 +260,6 @@ class MenuController extends Controller
             ->getRepository('CMSBlogBundle:Article')
             ->findBy(array(), array('date' => 'desc'));
 
-        dump($listArticles);
-
         $listM = $em->getRepository('CMSBlogBundle:Menu')->findBy(
             array('published' => true),
             array()

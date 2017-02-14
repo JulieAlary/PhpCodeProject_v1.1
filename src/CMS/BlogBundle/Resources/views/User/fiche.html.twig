@@ -46,7 +46,9 @@
                 <p>Age: {{ users.age }}</p>
                 <p>Dernière connexion le: {{ users.lastlogin|date('d/m/Y') }}</p>
                 <p>Participation</p>
-                <p><a href="{{ users.url }}">Site Perso</a></p>
+                {% if users.url is not null %}
+                    <p><a href="{{ users.url }}">Site Perso</a></p>
+                {% endif %}
             </div>
 
         </div>

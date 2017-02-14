@@ -1,5 +1,21 @@
 {% extends "CMSBlogBundle::layout.html.twig" %}
 
+{% block stylesheets %}{{ parent() }}
+{% endblock %}
+
+
+{% block javascripts_head %}{{ parent() }}
+
+    <script>
+        tinymce.init({
+            selector: '.tinymce',
+            plugins: 'link, emoticons codesample',
+            toolbar: "emoticons codesample"
+        });
+
+    </script>
+{% endblock %}
+
 {% block title %}
     Ajouter un article - {{ parent() }}
 {% endblock %}
@@ -33,6 +49,3 @@
 
 {% endblock %}
 
-{% block javascripts %}{{ parent() }}
-    {{ tinymce_init() }}
-{% endblock %}

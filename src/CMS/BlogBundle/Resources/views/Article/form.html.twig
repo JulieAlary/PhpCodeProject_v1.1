@@ -1,7 +1,9 @@
 {# cette vue n'herite de presonne car elle sera incluse dans d'autres vue #}
 
 <div class="well">
-    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    {{ form_start(form, {'attr': {'class': 'form-horizontal','novalidate': 'novalidate'}}) }}
+
+
 
     {# Les erreurs générales du formulaire. #}
     {{ form_errors(form) }}

@@ -7,6 +7,8 @@
     <title>{% block title %}CMS{% endblock %}</title>
 
     {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/prism/prism.css') }}">
+
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
@@ -18,6 +20,12 @@
 
         <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
         {% endstylesheets %}
+    {% endblock %}
+
+    {% block javascripts_head %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+        <script src="{{ asset('bundles/prism/prism.js') }}"></script>
+        <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=oagoq9aplbp8bn23llgmnkfzf8n7nnrdxxaj51q4p9av2mi6"></script>
     {% endblock %}
 </head>
 
