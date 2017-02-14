@@ -21,4 +21,8 @@ CMS\UserBundle\Entity\User:
         url:
             type: string
             nullable: true
+        dateInscription:
+            type: datetime
+            nullable: true
+
     lifecycleCallbacks: {  }

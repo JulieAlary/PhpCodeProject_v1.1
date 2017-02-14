@@ -42,7 +42,9 @@
                 <p>Email: {{ users.email }}</p>
                 <p>Role: {{ users.roles|join(' , ') }}</p>
                 <p>Ville: {{ users.city|capitalize }}</p>
-                <p>Inscrit le</p>
+                {% if users.dateInscription|date('d/m/Y') is not null %}
+                    <p>Inscrit le: {{ users.dateInscription|date('d/m/Y') }}</p>
+                {% endif %}
                 <p>Age: {{ users.age }}</p>
                 <p>Dernière connexion le: {{ users.lastlogin|date('d/m/Y') }}</p>
                 <p>Participation</p>

@@ -40,6 +40,7 @@ class User extends BaseUser
      */
     protected $city;
 
+
     /**
      * @ORM\Column(type="string", nullable=true)
      */
@@ -49,6 +50,8 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+
+        $this->dateInscription = New \DateTime();
     }
 
 
@@ -146,5 +149,36 @@ class User extends BaseUser
     public function getUrl()
     {
         return $this->url;
+    }
+
+
+    /**
+     * @var \DateTime
+     */
+    private $dateInscription;
+
+
+    /**
+     * Set dateInscription
+     *
+     * @param \DateTime $dateInscription
+     *
+     * @return User
+     */
+    public function setDateInscription($dateInscription)
+    {
+        $this->dateInscription = $dateInscription;
+
+        return $this;
+    }
+
+    /**
+     * Get dateInscription
+     *
+     * @return \DateTime
+     */
+    public function getDateInscription()
+    {
+        return $this->dateInscription;
     }
 }

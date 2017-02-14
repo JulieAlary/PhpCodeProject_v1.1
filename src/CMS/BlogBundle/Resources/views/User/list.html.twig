@@ -31,7 +31,7 @@
         <tr>
             <th>Pseudo</th>
             <th>Email</th>
-            <th>Actif/inactif</th>
+            <th>Date d'inscription</th>
             <th>Dernière Connexion</th>
             <th>Role</th>
         </tr>
@@ -41,7 +41,7 @@
             <tr href="{{ path('cms_user_fiche', {'id': util.id}) }}" class="pointer">
                 <td>{{ util.username|title }}</td>
                 <td>{{ util.email }}</td>
-                <td>{{ util.enabled }}</td>
+                <td>{{ util.dateInscription|date('d/m/Y') }}</td>
                 <td>{{ util.lastlogin|date('d/m/Y') }}</td>
                 <td>{{ util.roles|join(' , ') }}</td>
             </tr>

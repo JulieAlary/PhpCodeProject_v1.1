@@ -91,6 +91,10 @@ fos_user:
         form:
             type: CMS\UserBundle\Form\Type\ProfileFormType
 
+    registration:
+        form:
+            type: CMS\UserBundle\Form\Type\RegistrationFormType
+
 # Assetic configuration
 assetic:
     debug:          '%kernel.debug%'

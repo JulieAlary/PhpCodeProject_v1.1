@@ -13,9 +13,7 @@ _Mise en place de divers outils sans utiliser_
  - gestionnaire d'évenment , bigbrother ...
  
  - finir les translations
-   
- - registration form -> date enregistrement
- 
+    
  - retrouver les participations par fiche user
  
  # amélioration datatbles css
