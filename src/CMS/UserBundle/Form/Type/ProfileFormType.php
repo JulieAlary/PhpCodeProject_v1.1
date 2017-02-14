@@ -24,10 +24,10 @@ class ProfileFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class)
-            ->add('age', IntegerType::class)
+            ->add('age', IntegerType::class, array('required' => false))
             ->add('avatar', FileType::class, array('data_class' => null, 'required' => false))
-            ->add('city', TextType::class)
-            ->add('url', UrlType::class);
+            ->add('city', TextType::class, array('required' => false))
+            ->add('url', UrlType::class, array('required' => false));
     }
 
     /**
