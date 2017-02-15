@@ -14,7 +14,12 @@ _Mise en place de divers outils sans utiliser_
  
  - finir les translations
      
- # amélioration datatbles css
+ # amélioration datatables css
+ 
+ # avatar user
+  
+ #amélioration
+ - to do messagerie interne
  
  
  #tiny mce image ne fonctionne pas sous chrome
@@ -25,10 +30,6 @@ _Mise en place de divers outils sans utiliser_
 - requete affichage des articles par catgéories
 - amélioration page de contact dans corebundle
 
-
-
-#amélioration
-- to do messagerie interne
 
 #tips
 - - great tips : http://craftcms.stackexchange.com/a/5220

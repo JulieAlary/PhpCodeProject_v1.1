@@ -87,6 +87,7 @@ div.navbar-header > a {
 .color_yellow {
     color: yellow;
     font-weight: bold;
+    background-color: lightgrey;
 }
 
 .color_yellow_bg {

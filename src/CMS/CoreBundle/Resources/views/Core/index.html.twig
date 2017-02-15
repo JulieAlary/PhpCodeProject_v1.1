@@ -17,9 +17,9 @@
     <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
 
 
-    <div class="container">
-        {{ render(controller("CMSBlogBundle:Article:menu", {'limit': 4})) }}
-    </div>
+
+        {{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}
+
 
 {% endblock %}
 

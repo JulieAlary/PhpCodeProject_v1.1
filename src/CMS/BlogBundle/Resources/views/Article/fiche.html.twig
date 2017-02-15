@@ -22,7 +22,7 @@
         </div>
 
         <h2>{{ article.title|capitalize|raw }}</h2>
-        <i>Par <a href="{{ path('cms_user_fiche', {'id': article.author.id}) }}">{{ article.author|capitalize }}</a>, le {{ article.date|date('d/m/Y') }}</i>
+        <i>Par <a href="{{ path('cms_user_fiche', {'id': article.author.id}) }}" class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}{% endfor %}{% endif %}">{{ article.author|capitalize }}</a>, le {{ article.date|date('d/m/Y') }}</i>
 
         <div class="well">
             {{ article.content|raw }}
@@ -41,9 +41,7 @@
             <div class="well">
                 <p>Cet article est paru dans les catégories suivantes:
                     {% for category in article.categories %}
-                        <a
-                        href="{{ path('cms_menu_show_article', {'id': category.id} ) }}">{{ category.name }}&nbsp;&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
-                        </a>{% if not loop.last %}, {% endif %}
+                        <a href="{{ path('cms_menu_show_article', {'id': category.id} ) }}" class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}{% endfor %}{% endif %}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 </p>
             </div>
