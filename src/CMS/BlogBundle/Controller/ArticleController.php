@@ -90,10 +90,10 @@ class ArticleController extends Controller
 //        $ArticleBycateId = $listArticles[0]->getId();
 //        dump($listArticles);
 
-
         // Récupération des commentaires par article
         $comments = $em->getRepository('CMSBlogBundle:Comment')
             ->getCommentForArticle($article->getId());
+
 
         if ($article === null) {
             throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");

@@ -22,10 +22,12 @@ _Mise en place de divers outils sans utiliser_
  - to do messagerie interne
  
  
+ 
  # facultatif
 - amélioration beaucoup de répétions dans l'affichage des fa, possiblité d'optimiser en tamplate par exemple
 - requete affichage des articles par catgéories
 - amélioration page de contact dans corebundle
+- galerie d'image
 
 
 #tips

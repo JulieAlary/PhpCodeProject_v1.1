@@ -11,7 +11,6 @@ class BlogAntispam
     /**
      * BlogAntispam constructor.
      * @param \Swift_Mailer $mailer
-     * @param $locale
      * @param $minLength
      */
     public function __construct(\Swift_Mailer $mailer, $minLength)

@@ -2,6 +2,8 @@
 
 namespace CMS\UserBundle\Form\Type;
 
+use CMS\BlogBundle\Form\AvatarType;
+use CMS\BlogBundle\Form\ImageType;
 use CMS\UserBundle\CMSUserBundle;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -25,7 +27,7 @@ class ProfileFormType extends AbstractType
         $builder
             ->add('email', EmailType::class)
             ->add('age', IntegerType::class, array('required' => false))
-            ->add('avatar', FileType::class, array('data_class' => null, 'required' => false))
+            ->add('avatar', AvatarType::class,array('required' => false))
             ->add('city', TextType::class, array('required' => false))
             ->add('url', UrlType::class, array('required' => false));
     }

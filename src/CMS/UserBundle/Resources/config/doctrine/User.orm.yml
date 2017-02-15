@@ -12,9 +12,6 @@ CMS\UserBundle\Entity\User:
         age:
             type: integer
             nullable: true
-        avatar:
-            type: string
-            nullable: true
         city:
             type: string
             nullable: true
@@ -24,5 +21,13 @@ CMS\UserBundle\Entity\User:
         dateInscription:
             type: datetime
             nullable: true
+    oneToOne:
+        avatar:
+            targetEntity: CMS\BlogBundle\Entity\Avatar
+            joinColumn:
+                name: avatar_id
+                referencedColumnName: id
+                onDelete: CASCADE
+            cascade: ["persist", "merge"]
 
     lifecycleCallbacks: {  }

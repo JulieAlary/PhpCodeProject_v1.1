@@ -7,7 +7,15 @@
         <div class="container-fluid well span6">
             <div class="row-fluid">
                 <div class="col-md-4">
+                    {% if user.avatar.url == null %}
                     <img src="http://s9.postimg.org/uylsxjghr/people_dialer_photo.png" class="img-circle">
+                        {% else %}
+                            <a href="{{ asset(user.avatar.uploadDir ~ '/' ~ user.avatar.id ~ '.' ~ user.avatar.url) }}"
+                               alt="{{ user.avatar.alt }}"
+                               class="html5lightbox"><img
+                                        src="{{ asset(user.avatar.uploadDir ~ '/' ~ user.avatar.id ~ '.' ~ user.avatar.url) }}"
+                                        alt="{{ user.avatar.alt }}" width="200"></a>
+                    {% endif %}
                 </div>
 
                 <div class="span2 pull-right" style="margin-right: 150px;">

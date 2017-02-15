@@ -30,10 +30,6 @@ class User extends BaseUser
      */
     protected $age;
 
-    /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    protected $avatar;
 
     /**
      * @ORM\Column(type="string", nullable=true)
@@ -45,6 +41,11 @@ class User extends BaseUser
      * @ORM\Column(type="string", nullable=true)
      */
     protected $url;
+
+    /**
+     * @ORM\OneToOne(targetEntity="CMS\BlogBundle\Entity\Avatar", cascade={"persist", "remove"})
+     */
+    protected $avatar;
 
 
     public function __construct()
@@ -77,30 +78,6 @@ class User extends BaseUser
         $this->age = $age;
 
         return $this;
-    }
-
-    /**
-     * Set avatar
-     *
-     * @param string $avatar
-     *
-     * @return User
-     */
-    public function setAvatar($avatar)
-    {
-        $this->avatar = $avatar;
-
-        return $this;
-    }
-
-    /**
-     * Get avatar
-     *
-     * @return string
-     */
-    public function getAvatar()
-    {
-        return $this->avatar;
     }
 
     /**
@@ -180,5 +157,29 @@ class User extends BaseUser
     public function getDateInscription()
     {
         return $this->dateInscription;
+    }
+
+    /**
+     * Set avatar
+     *
+     * @param \CMS\BlogBundle\Entity\Avatar $avatar
+     *
+     * @return User
+     */
+    public function setAvatar(\CMS\BlogBundle\Entity\Avatar $avatar = null)
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    /**
+     * Get avatar
+     *
+     * @return \CMS\BlogBundle\Entity\Avatar
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
     }
 }
