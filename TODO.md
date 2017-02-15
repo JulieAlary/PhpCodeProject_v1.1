@@ -22,9 +22,6 @@ _Mise en place de divers outils sans utiliser_
  - to do messagerie interne
  
  
- #tiny mce image ne fonctionne pas sous chrome
-
- 
  # facultatif
 - amélioration beaucoup de répétions dans l'affichage des fa, possiblité d'optimiser en tamplate par exemple
 - requete affichage des articles par catgéories
