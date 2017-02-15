@@ -1,0 +1,137 @@
+{% extends 'CMSCoreBundle::layout.html.twig' %}
+
+{% block stylesheets %}{{ parent() }}
+    <link rel="stylesheet" src="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block title %}
+    Participation utilisateur
+{% endblock %}
+
+
+{% block body %}
+
+    <h2>Activité de {{ users.username|capitalize }}</h2>
+
+    <h4 class="text-center">Les articles publiés</h4>
+
+    <table cellpadding="0" cellspacing="0" border="0" class="display" id="myTable">
+        <thead>
+        <tr>
+            <th>Article</th>
+            <th>Catégorie</th>
+            <th>Date de publication</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for key, art in article %}
+            {% if art.author.id == users.id %}
+                <tr href="{{ path('cms_blog_fiche', {'id': art.id}) }}" class="pointer">
+                    <td>{{ art.title }}</td>
+                    <td>
+                        {% for category in art.categories %}
+                            {{ category.name }}
+                        {% endfor %}
+                    </td>
+                    <td>{{ art.date|date('d/m/Y') }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
+
+    <h4 class="text-center">Les commentaires publiés</h4>
+
+    <table cellpadding="0" cellspacing="0" border="0" class="display" id="mySecondTable">
+        <thead>
+        <tr>
+            <th>Comment</th>
+            <th>Article</th>
+            <th>Date de publication</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for key, co in comment %}
+            {% if co.author.id == users.id %}
+                <tr href="{{ path('cms_blog_fiche', {'id': co.article.id}) }}" class="pointer">
+                    <td>{{ co.content }}</td>
+                    <td>{{ co.article.title }}</td>
+                    <td>{{ co.publishedAt|date('d/m\Y') }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+{% endblock %}
+
+    {% block javascripts %}{{ parent() }}
+        <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#myTable').DataTable({
+                    "language": {
+                        "sProcessing": "Traitement en cours ...",
+                        "sLengthMenu": "Afficher _MENU_ lignes",
+                        "sZeroRecords": "Aucun résultat trouvé",
+                        "sEmptyTable": "Aucune donnée disponible",
+                        "sInfo": "Lignes _START_ à _END_ sur _TOTAL_",
+                        "sInfoEmpty": "Aucune ligne affichée",
+                        "sInfoFiltered": "(Filtrer un maximum de_MAX_)",
+                        "sInfoPostFix": "",
+                        "sSearch": "Chercher:",
+                        "sUrl": "",
+                        "sInfoThousands": ",",
+                        "sLoadingRecords": "Chargement...",
+                        "oPaginate": {
+                            "sFirst": "Premier", "sLast": "Dernier", "sNext": "Suivant", "sPrevious": "Précédent"
+                        },
+                        "oAria": {
+                            "sSortAscending": ": Trier par ordre croissant",
+                            "sSortDescending": ": Trier par ordre décroissant"
+                        }
+                    }
+                });
+            });
+
+            $('#myTable').on('click', 'tbody tr', function () {
+                window.location.href = $(this).attr('href');
+            });
+
+
+            $(document).ready(function () {
+                $('#mySecondTable').DataTable({
+                    "language": {
+                        "sProcessing": "Traitement en cours ...",
+                        "sLengthMenu": "Afficher _MENU_ lignes",
+                        "sZeroRecords": "Aucun résultat trouvé",
+                        "sEmptyTable": "Aucune donnée disponible",
+                        "sInfo": "Lignes _START_ à _END_ sur _TOTAL_",
+                        "sInfoEmpty": "Aucune ligne affichée",
+                        "sInfoFiltered": "(Filtrer un maximum de_MAX_)",
+                        "sInfoPostFix": "",
+                        "sSearch": "Chercher:",
+                        "sUrl": "",
+                        "sInfoThousands": ",",
+                        "sLoadingRecords": "Chargement...",
+                        "oPaginate": {
+                            "sFirst": "Premier", "sLast": "Dernier", "sNext": "Suivant", "sPrevious": "Précédent"
+                        },
+                        "oAria": {
+                            "sSortAscending": ": Trier par ordre croissant",
+                            "sSortDescending": ": Trier par ordre décroissant"
+                        }
+                    }
+                });
+            });
+
+            $('#mySecondTable').on('click', 'tbody tr', function () {
+                window.location.href = $(this).attr('href');
+            });
+        </script>
+    {% endblock %}

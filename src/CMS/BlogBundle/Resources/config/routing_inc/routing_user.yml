@@ -21,3 +21,10 @@ cms_user_edit:
         _controller: CMSBlogBundle:User:updateUserRole
     requirements:
         id: \d+
+
+cms_user_participation:
+    path: /fiche/participation/{id}
+    defaults:
+        _controller: CMSBlogBundle:User:showParticipation
+    requirements:
+        id: \d+

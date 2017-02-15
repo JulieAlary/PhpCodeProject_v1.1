@@ -17,6 +17,8 @@
                             <span class="icon-cog icon-white"></span><span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a href="{{ path('cms_user_participation', {'id': user.id}) }}"><span class="btn btn-primary"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    &nbsp;&nbsp;Participation</a></span></li>
                             <li><a href="{{ path('fos_user_profile_edit') }}"><span class="btn btn-warning"><i
                                                 class="fa fa-pencil-square-o"
                                                 aria-hidden="true"></i>&nbsp;&nbsp;Edition du profil</span></a>

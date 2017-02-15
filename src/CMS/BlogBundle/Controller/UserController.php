@@ -61,6 +61,8 @@ class UserController extends Controller
         // Pour le theme
         $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
+        $article = $em->getRepository('CMSBlogBundle:Article')->findAll();
+
         $users = $userManager->findUserBy(['id' => $id]);
 
         return $this->render(
@@ -68,7 +70,8 @@ class UserController extends Controller
             [
                 'id' => $id,
                 'users' => $users,
-                'custom' => $custom
+                'custom' => $custom,
+                'article' => $article
             ]
         );
     }
@@ -160,6 +163,35 @@ class UserController extends Controller
                 'user' => $user,
                 'form' => $form->createView(),
                 'custom' => $custom
+            ]
+        );
+    }
+
+    public function showParticipationAction($id, Request $request)
+    {
+
+        $userManager = $this->get('fos_user.user_manager');
+
+        // Initializing Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
+        // Pour le theme
+        $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
+        $article = $em->getRepository('CMSBlogBundle:Article')->findAll();
+
+        $comment = $em->getRepository('CMSBlogBundle:Comment')->findAll();
+
+        $users = $userManager->findUserBy(['id' => $id]);
+
+        return $this->render(
+            'CMSBlogBundle:User:participation.html.twig',
+            [
+                'id' => $id,
+                'users' => $users,
+                'custom' => $custom,
+                'article' => $article,
+                'comment' => $comment
             ]
         );
     }
