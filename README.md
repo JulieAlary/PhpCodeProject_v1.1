@@ -8,6 +8,7 @@ My first personnal CMS
 - Bootstrap
 - Fontawesome
 - select 2
+- prism.js
 
 
 

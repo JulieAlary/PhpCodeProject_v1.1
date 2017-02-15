@@ -5,11 +5,18 @@
          1.2 - Modal
          1.3 - Menu
          1.4 - Header
+         1.5 - Img
         2 - THEME
+         2.1 - red
+         2.2 - yellow
+         2.3 - grey
+         2.4 - green
 */
 /*---------------------------------------------------------------*/
 
-/*********** 1 - GENERAL ***********/
+
+
+/*---------------------- 1 - GENERAL ----------------------*/
 .pointer {
     cursor: pointer;
 }
@@ -18,20 +25,14 @@ a {
     text-decoration: none !important;
     color: black;
 }
-
-/*Pub lightbox*/
-#html5-watermark {
-    display: none !important;
-}
-
-/*********** 1.1 font awesome ****/
+/*********** 1.1 font awesome ***********/
 
 /*logo de connection*/
 .fa-sign-out, .fa-sign-in {
     color: white;
 }
 
-/*********** 1.2 modal ****/
+/*********** 1.2 modal ***********/
 
 .panel-flip, .flip {
     padding: 5px;
@@ -45,8 +46,8 @@ a {
     margin-top: -10px;
 }
 
-/*********** 1.3 - Menu ****/
-
+/*********** 1.3 - Menu ***********/
+/*Main Menu*/
 div.navbar-header > a {
     color: white !important;
 }
@@ -60,13 +61,33 @@ div.navbar-header > a {
     color: lightgreen !important;
 }
 
-/*********** 1.4 - Header ****/
+/* Menu pills stacked style */
+#menu > ul.nav.nav-pills.nav-stacked {
+    border-radius: 5px;
+}
+
+#menu > ul.nav.nav-pills.nav-stacked a:hover {
+    background-color: white;
+    border-radius: inherit;
+}
+
+/*********** 1.4 - Header ***********/
 
 #header.jumbotron {
     background-color: lightgreen;
 }
+/*********** 1.5 - Image ***********/
 
-/*********** 2 - Thèmes **********/
+/*Pub lightbox*/
+#html5-watermark {
+    display: none !important;
+}
+/*Display img by tinymce*/
+.well.article_content img {
+    max-width: 600px;
+}
+
+/*---------------------- 2 - Thèmes ----------------------*/
 
 /**** 2.1 red ****/
 .color_red {
@@ -131,15 +152,4 @@ div.navbar-header > a {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255,165,0), rgba(0, 0, 0, 0));
-}
-
-/**/
-
-#menu > ul.nav.nav-pills.nav-stacked {
-    border-radius: 5px;
-}
-
-#menu > ul.nav.nav-pills.nav-stacked a:hover {
-    background-color: white;
-    border-radius: inherit;
 }

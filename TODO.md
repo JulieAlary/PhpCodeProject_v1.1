@@ -16,7 +16,6 @@ _Mise en place de divers outils sans utiliser_
      
  # amélioration datatables css
  
- # avatar user
   
  #amélioration
  - to do messagerie interne

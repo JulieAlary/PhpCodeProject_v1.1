@@ -24,7 +24,7 @@
         <h2>{{ article.title|capitalize|raw }}</h2>
         <i>Par <a href="{{ path('cms_user_fiche', {'id': article.author.id}) }}" class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}{% endfor %}{% endif %}">{{ article.author|capitalize }}</a>, le {{ article.date|date('d/m/Y') }}</i>
 
-        <div class="well">
+        <div class="well article_content">
             {{ article.content|raw }}
         </div>
 
