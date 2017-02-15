@@ -36,8 +36,16 @@
 
 
             <div class="col-md-4">
-                <img src="http://s9.postimg.org/uylsxjghr/people_dialer_photo.png" class="img-circle">
-            </div>
+                {% if users.avatar.url is defined %}
+                    <a href="{{ asset(users.avatar.uploadDir ~ '/' ~ users.avatar.id ~ '.' ~ users.avatar.url) }}"
+                       alt="{{ users.avatar.alt }}"
+                       class="html5lightbox"><img
+                                src="{{ asset(users.avatar.uploadDir ~ '/' ~ users.avatar.id ~ '.' ~ users.avatar.url) }}"
+                                alt="{{ users.avatar.alt }}" width="200" height="200" class="img-circle"></a>
+                {% else %}
+                    <img src="http://s9.postimg.org/uylsxjghr/people_dialer_photo.png" class="img-circle">
+
+                {% endif %}            </div>
             {% if users is defined %}
             <div class="col-md-8">
                 <h3>{{ users.username|capitalize }}</h3>
