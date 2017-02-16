@@ -10,12 +10,15 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
+use FOS\MessageBundle\Model\ParticipantInterface;
+
+
 /**
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="CMS\UserBundle\Repository\UserRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-class User extends BaseUser
+class User extends BaseUser implements ParticipantInterface
 {
 
     /**

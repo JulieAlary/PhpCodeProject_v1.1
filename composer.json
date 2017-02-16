@@ -40,7 +40,8 @@
     "bmatzner/fontawesome-bundle": "~4.7",
     "symfony/proxy-manager-bridge": "^3.2",
     "ocramius/proxy-manager": "^1.0",
-    "stfalcon/tinymce-bundle": "2.0"
+    "stfalcon/tinymce-bundle": "2.0",
+    "friendsofsymfony/message-bundle": "^1.3"
 
 
   },

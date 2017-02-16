@@ -20,6 +20,8 @@ cms_core:
 #logout:
 #    path: /logout
 
+
+
 # Routing FOSUSER
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -43,3 +45,8 @@ fos_user_change_password:
 fos_user_group:
     resource: "@FOSUserBundle/Resources/config/routing/group.xml"
     prefix: /group
+
+# Routing FOSMessageBundle
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /message

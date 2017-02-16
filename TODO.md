@@ -3,23 +3,16 @@
 _Mise en place de divers outils sans utiliser_
 
 
-
 - Fonction sluggable en place: reste à l'utiliser.
 - fonction isFlood a utiliser pour les services commentaire + a rajouter les ip en bdd pour faire fonctionner le service
- 
   
- - module antispam
+- module antispam
  
- - gestionnaire d'évenment , bigbrother ...
+- gestionnaire d'évenment , bigbrother ...
  
- - finir les translations
+- finir les translations
      
- # amélioration datatables css
- 
-  
- #amélioration
- - to do messagerie interne
- 
+# amélioration datatables css
  
  
  # facultatif
