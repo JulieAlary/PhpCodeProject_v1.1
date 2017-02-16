@@ -43,7 +43,7 @@
                 <div class="col-md-8">
                     <h3>{{ user.username|capitalize }}</h3>
                     <p>Email: {{ user.email }}</p>
-                    <p>Role: {{ user.roles|join(' , ') }}</p>
+                    <p>Role: {{ user.roles|join(' , ')|lower }}</p>
                     <p>Ville: {{ user.city }}</p>
                     {% if user.dateInscription|date('d/m/Y') is not null %}
                         <p>Inscrit le: {{ user.dateInscription|date('d/m/Y') }} </p>

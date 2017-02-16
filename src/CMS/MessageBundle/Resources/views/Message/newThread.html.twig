@@ -1,0 +1,15 @@
+{% extends 'CMSCoreBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <h2 class="text-center">{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h2>
+
+    <div class="col-md-10 col-md-offset-1 well">
+        <form action="{{ url('fos_message_thread_new') }}" method="post">
+            {{ form_widget(form) }}
+
+            <button class="btn btn-primary btn-sm" type="submit">Envoyer &nbsp;&nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+{% endblock %}
