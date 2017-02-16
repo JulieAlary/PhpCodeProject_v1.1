@@ -12,5 +12,5 @@
     {# Fermeture de la balise <form> du formulaire HTML #}
     {{ form_end(form) }}
 {% else %}
-    <p>Enregistrez vous pour publier un commentaire <a href="{{  path('fos_user_registration_register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></p>
+    <p>Enregistrez vous pour publier un commentaire <a href="{{  path('fos_user_registration_register') }}"><i class="fa fa-user-plus {% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}{% endfor %}{% endif %}" aria-hidden="true"></i></a></p>
 {% endif %}

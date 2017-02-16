@@ -16,10 +16,7 @@
     <h3 class="text-center">Actus</h3>
     <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
 
-
-
         {{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}
-
 
 {% endblock %}
 

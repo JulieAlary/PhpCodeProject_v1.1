@@ -11,6 +11,7 @@
          2.2 - yellow
          2.3 - grey
          2.4 - green
+        3 - INBOX
 */
 /*---------------------------------------------------------------*/
 
@@ -154,7 +155,7 @@ div.navbar-header > a {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255,165,0), rgba(0, 0, 0, 0));
 }
 
-/* inbox style */
+/*---------------------- 3 - Inbox ----------------------*/
 .messenger_thread_message_body .pull-left {
     background-color: lightblue;
     border-radius: 15px;
