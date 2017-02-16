@@ -1,0 +1,13 @@
+{% extends 'CMSCoreBundle::layout.html.twig' %}
+
+{% block body %}
+    <h2>{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</h2>
+
+    <div class="row">
+        <a href="{{ url('fos_message_thread_new' ) }}"
+           class="btn btn-primary  pull-right"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Nouveau message</a>
+    </div>
+    <div class="row">
+        {% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
+    </div>
+{% endblock %}

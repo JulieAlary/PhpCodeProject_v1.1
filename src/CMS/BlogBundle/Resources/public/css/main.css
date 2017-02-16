@@ -153,3 +153,17 @@ div.navbar-header > a {
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255,165,0), rgba(0, 0, 0, 0));
 }
+
+/* inbox style */
+.messenger_thread_message_body .pull-left {
+    background-color: lightblue;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.messenger_thread_message_body .pull-right {
+    background-color: lightgreen;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}

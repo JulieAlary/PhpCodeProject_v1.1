@@ -1,0 +1,49 @@
+{% extends 'CMSCoreBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <div class="col-md-10 well">
+        <h2 class="text-center">{{ thread.subject|capitalize }}</h2>
+
+        {% for message in thread.messages %}
+            <div class="messenger_thread_message">
+                <div class="messenger_thread_message_info" {{ loop.index }}>
+                    {% if message.sender.id|first != message.sender.id %}
+                        <div class="pull-right">
+                            <small>{% trans with {'%sender%': message.sender|e|capitalize, '%date%': message.createdAt|date('d/m/Y')} from 'FOSMessageBundle' %}
+                                message_info{% endtrans %}</small>
+
+                        </div>
+                    {% elseif message.sender.id|first == message.sender.id %}
+                        <div class="pull-left">
+                            <small>{% trans with {'%sender%': message.sender|e|capitalize, '%date%': message.createdAt|date('d/m/Y')} from 'FOSMessageBundle' %}
+                                message_info{% endtrans %}</small>
+                        </div>
+                    {% endif %}
+
+                </div>
+                <br>
+                <div class="messenger_thread_message_body" id="message_{{ message.id }} {{ loop.index }}">
+
+                    {% if message.sender.id|first != message.sender.id %}
+                        <div class="pull-right">{{ message.body }}</div>
+                    {% elseif message.sender.id|first == message.sender.id %}
+                        <div class="pull-left">{{ message.body }}</div>
+                    {% endif %}
+
+                </div>
+                <br><br><br>
+            </div>
+        {% endfor %}
+        <br>
+
+        <h4 class="text-center">{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h4>
+        <div class="col-md-8 col-md-offset-2">
+            <form action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
+                {{ form_widget(form) }}
+                <button class="btn btn-primary btn-xs" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Envoyer
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
