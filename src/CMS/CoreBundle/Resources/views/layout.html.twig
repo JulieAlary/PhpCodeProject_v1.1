@@ -22,11 +22,6 @@
         {% endstylesheets %}
     {% endblock %}
 
-    {% block javascripts_head %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
-        <script src="{{ asset('bundles/prism/prism.js') }}"></script>
-        <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=oagoq9aplbp8bn23llgmnkfzf8n7nnrdxxaj51q4p9av2mi6"></script>
-    {% endblock %}
 </head>
 
 <body>
@@ -90,6 +85,12 @@
         <p class="text-center"> Developed by Julie ALARY {{ 'now'|date('Y') }} </p>
     </div>
 </footer>
+
+{% block javascripts_head %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+    <script src="{{ asset('bundles/prism/prism.js') }}"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=oagoq9aplbp8bn23llgmnkfzf8n7nnrdxxaj51q4p9av2mi6"></script>
+{% endblock %}
 
 {% block javascripts %}
 
