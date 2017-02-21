@@ -1,0 +1,170 @@
+/*-----------------------------INDEX------------------------------*/
+/*
+        1 - GENERAL
+         1.1 - Font awesome
+         1.2 - Modal
+         1.3 - Menu
+         1.4 - Header
+         1.5 - Img
+        2 - THEME
+         2.1 - red
+         2.2 - yellow
+         2.3 - grey
+         2.4 - green
+        3 - INBOX
+*/
+/*---------------------------------------------------------------*/
+
+
+
+/*---------------------- 1 - GENERAL ----------------------*/
+.pointer {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none !important;
+    color: black;
+}
+/*********** 1.1 font awesome ***********/
+
+/*logo de connection*/
+.fa-sign-out, .fa-sign-in {
+    color: white;
+}
+
+/*********** 1.2 modal ***********/
+
+.panel-flip, .flip {
+    padding: 5px;
+}
+
+.panel-flip {
+    display: none;
+}
+
+.flip {
+    margin-top: -10px;
+}
+
+/*********** 1.3 - Menu ***********/
+/*Main Menu*/
+div.navbar-header > a {
+    color: white !important;
+}
+
+#bs-example-navbar-collapse-1 > nav a {
+    color: white !important;
+    font-size: 1.1em;
+}
+
+#bs-example-navbar-collapse-1 > nav a:hover {
+    color: lightgreen !important;
+}
+
+/* Menu pills stacked style */
+#menu > ul.nav.nav-pills.nav-stacked {
+    border-radius: 5px;
+}
+
+#menu > ul.nav.nav-pills.nav-stacked a:hover {
+    background-color: white;
+    border-radius: inherit;
+}
+
+/*********** 1.4 - Header ***********/
+
+#header.jumbotron {
+    background-color: lightgreen;
+}
+/*********** 1.5 - Image ***********/
+
+/*Pub lightbox*/
+#html5-watermark {
+    display: none !important;
+}
+/*Display img by tinymce*/
+.well.article_content img {
+    max-width: 600px;
+}
+
+/*---------------------- 2 - Thèmes ----------------------*/
+
+/**** 2.1 red ****/
+.color_red {
+    color: lightcoral;
+    font-weight: bold;
+}
+
+.color_red_bg {
+    background-color: lightcoral !important;
+}
+.color_red_hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(240,128, 128), rgba(0, 0, 0, 0));
+}
+
+/**** 2.2 yellow ****/
+.color_yellow {
+    color: yellow;
+    font-weight: bold;
+    background-color: lightgrey;
+}
+
+.color_yellow_bg {
+    background-color: lightyellow !important;
+}
+
+.color_yellow_hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(165,42,42), rgba(0, 0, 0, 0));
+}
+
+/**** 2.3 grey ****/
+.color_grey {
+    color: grey;
+    font-weight: bold;
+}
+
+.color_grey_bg {
+    background-color: lightgrey !important;
+}
+
+.color_grey_hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(128,0,128), rgba(0, 0, 0, 0));
+}
+
+
+/**** 2.4 green ****/
+.color_green {
+    color: lightgreen;
+    font-weight: bold;
+}
+
+.color_green_bg {
+    background-color: lightgreen !important;
+}
+
+.color_green_hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255,165,0), rgba(0, 0, 0, 0));
+}
+
+/*---------------------- 3 - Inbox ----------------------*/
+.messenger_thread_message_body .pull-left {
+    background-color: lightblue;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.messenger_thread_message_body .pull-right {
+    background-color: lightgreen;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
