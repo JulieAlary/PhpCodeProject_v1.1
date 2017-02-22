@@ -4,9 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/src/CMS/BlogBundle/Controller/ArticleController.php" line="89" mnemonic="5" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e93321d-eb29-4745-84db-f52efa522f75" name="Default" comment="fix bug upload.. step">
+    <list default="true" id="8e93321d-eb29-4745-84db-f52efa522f75" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Menu/show.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Menu/show.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/html5lightbox/froogaloop2.min.js" afterPath="$PROJECT_DIR$/web/bundles/html5lightbox/froogaloop2.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/html5lightbox/readme.html" afterPath="$PROJECT_DIR$/web/bundles/html5lightbox/readme.html" />
     </list>
@@ -687,14 +686,7 @@
       <workItem from="1487277064282" duration="1174000" />
       <workItem from="1487684529626" duration="6592000" />
       <workItem from="1487756420961" duration="3516000" />
-      <workItem from="1487770561559" duration="1546000" />
-    </task>
-    <task id="LOCAL-00020" summary="ajout commentaire ok!&#10;&#10;">
-      <created>1485430788575</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1485430788575</updated>
+      <workItem from="1487770561559" duration="1559000" />
     </task>
     <task id="LOCAL-00021" summary="Surcharge entity and form FOSUserBundle ok!! test with fields age ok&#10;&#10;">
       <created>1485608898889</created>
@@ -1032,11 +1024,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487775079637</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="fix bug upload.. step 4">
+      <created>1487776197676</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1487776197676</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="405934000" />
+    <option name="totallyTimeSpent" value="405947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1119,7 +1118,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user can create carousel!! and display it!" />
     <MESSAGE value="quasi toutes fonctionnalités slider fonctionnent!" />
     <MESSAGE value="bridage affichage un theme, 1 carousel, 1 menu" />
     <MESSAGE value="accueil uniformisé + route logout" />
@@ -1144,7 +1142,8 @@
     <MESSAGE value="fix bug upload.. step 1" />
     <MESSAGE value="fix bug upload.. step 2 ok reste avatar" />
     <MESSAGE value="fix bug upload.. step 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug upload.. step 3" />
+    <MESSAGE value="fix bug upload.. step 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug upload.. step 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
