@@ -17,8 +17,8 @@
                                     <div class="col-md-4">
                                         {# si l'élement n'est pas dans le tableau alors on rajoute #}
 
-                                        {% if article.image is not null %}
-                                            {% if article.image not in newArray %}
+                                        {% if article.image.url is not null %}
+                                            {% if article.image.url not in newArray %}
                                                 <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
                                                 {% set newArray = newArray|merge([article.image]) %}
                                                 <img src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
@@ -27,6 +27,12 @@
                                                      class="center-block"
                                                 />
                                             {% endif %}
+                                        {% elseif article.image.altEnligne not in new Array %}
+                                            <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
+                                            {% set newArray = newArray|merge([article.image]) %}
+                                            <img src="{{ article.image.urlEnligne }}"
+                                                 alt="{{ article.image.altEnligne }}" height="60">
+
                                         {% endif %}
                                     </div>
                                     <div class="col-md-8">
