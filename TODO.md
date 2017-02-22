@@ -20,6 +20,7 @@ _Mise en place de divers outils sans utiliser_
 - requete affichage des articles par catgéories
 - amélioration page de contact dans corebundle
 - galerie d'image
+- Using the CmfSeoBundle
 
 
 #tips
