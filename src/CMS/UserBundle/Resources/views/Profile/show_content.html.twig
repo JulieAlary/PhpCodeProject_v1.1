@@ -13,6 +13,8 @@
                            class="html5lightbox"><img
                                     src="{{ asset(user.avatar.uploadDir ~ '/' ~ user.avatar.id ~ '.' ~ user.avatar.url) }}"
                                     alt="{{ user.avatar.alt }}" width="200" height="200" class="img-circle"></a>
+                    {% elseif user.avatar.urlEnligne is not null %}
+                        <img src="{{ user.avatar.urlEnligne }}" alt="{{ user.avatar.altEnligne }}" class="center-block img-responsive" style="max-height:160px;">
                     {% else %}
                         <img src="http://s9.postimg.org/uylsxjghr/people_dialer_photo.png" class="img-circle">
 

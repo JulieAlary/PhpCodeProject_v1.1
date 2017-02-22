@@ -28,9 +28,9 @@
                                                 />
                                             {% endif %}
                                         {% else %}
-                                            {% if article.image.urlEnligne not in newArray %}
+                                            {% if article.image.altEnligne not in newArray %}
                                             <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
-                                            {% set newArray = newArray|merge([article.image.urlEnligne]) %}
+                                            {% set newArray = newArray|merge([article.image.altEnligne]) %}
                                             <img src="{{ article.image.urlEnligne }}"
                                                  alt="{{ article.image.altEnligne }}" height="100"
                                                  class="center-block">
