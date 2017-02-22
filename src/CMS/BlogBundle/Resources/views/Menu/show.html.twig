@@ -20,19 +20,21 @@
                                         {% if article.image.url is not null %}
                                             {% if article.image.url not in newArray %}
                                                 <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
-                                                {% set newArray = newArray|merge([article.image]) %}
+                                                {% set newArray = newArray|merge([article.image.url]) %}
                                                 <img src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                                                      alt="{{ article.image.alt }}"
                                                      height="100"
                                                      class="center-block"
                                                 />
                                             {% endif %}
-                                        {% elseif article.image.altEnligne not in new Array %}
+                                        {% else %}
+                                            {% if article.image.urlEnligne not in newArray %}
                                             <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
-                                            {% set newArray = newArray|merge([article.image]) %}
+                                            {% set newArray = newArray|merge([article.image.urlEnligne]) %}
                                             <img src="{{ article.image.urlEnligne }}"
-                                                 alt="{{ article.image.altEnligne }}" height="60">
-
+                                                 alt="{{ article.image.altEnligne }}" height="100"
+                                                 class="center-block">
+{% endif %}
                                         {% endif %}
                                     </div>
                                     <div class="col-md-8">
