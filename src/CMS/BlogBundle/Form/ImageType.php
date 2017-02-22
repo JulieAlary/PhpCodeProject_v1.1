@@ -4,6 +4,7 @@ namespace CMS\BlogBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,10 +18,13 @@ class ImageType extends AbstractType
     {
         $builder
             ->add('file', FileType::class, array(
-                'attr' =>array('class' =>'btn btn-file'),
+                'attr' => array('class' => 'btn btn-file'),
                 'required' => false,
                 'label' => false
-            ));
+            ))
+            ->add('urlEnligne', TextType::class)
+            ->add('altEnligne', TextType::class);
+
     }
 
     /**

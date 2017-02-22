@@ -204,6 +204,7 @@ class ContactController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        // Display the theme
         $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
 

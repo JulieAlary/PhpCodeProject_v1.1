@@ -27,14 +27,14 @@ class Image
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=255)
+     * @ORM\Column(name="url", type="string", length=255, nullable=true)
      */
     private $url;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="alt", type="string", length=255)
+     * @ORM\Column(name="alt", type="string", length=255, nullable=true)
      */
     private $alt;
 
@@ -46,6 +46,18 @@ class Image
 
     // on ajoute une mémoire tampon
     private $tempFilename;
+
+    /**
+     * @var string
+     * @ORM\Column(name="url_enligne", type="string", length=255, nullable=true)
+     */
+    private $url_enligne;
+
+    /**
+     * @var string
+     * @ORM\Column(name="alt_enligne", type="string", length=255, nullable=true)
+     */
+    private $alt_enligne;
 
     /**
      * @param UploadedFile $file
@@ -218,4 +230,52 @@ class Image
     }
 
 
+
+    /**
+     * Set urlEnligne
+     *
+     * @param string $urlEnligne
+     *
+     * @return Image
+     */
+    public function setUrlEnligne($urlEnligne)
+    {
+        $this->url_enligne = $urlEnligne;
+
+        return $this;
+    }
+
+    /**
+     * Get urlEnligne
+     *
+     * @return string
+     */
+    public function getUrlEnligne()
+    {
+        return $this->url_enligne;
+    }
+
+    /**
+     * Set altEnligne
+     *
+     * @param string $altEnligne
+     *
+     * @return Image
+     */
+    public function setAltEnligne($altEnligne)
+    {
+        $this->alt_enligne = $altEnligne;
+
+        return $this;
+    }
+
+    /**
+     * Get altEnligne
+     *
+     * @return string
+     */
+    public function getAltEnligne()
+    {
+        return $this->alt_enligne;
+    }
 }

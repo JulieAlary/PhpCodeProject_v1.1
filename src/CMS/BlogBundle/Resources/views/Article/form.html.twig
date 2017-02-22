@@ -30,35 +30,40 @@
     {% endif %}
     {# Idem pour un autre champ. #}
     {% if form.content is defined %}
-    <div class="form-group">
-        {{ form_label(form.content, "Contenu de l'article", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-        {{ form_errors(form.title) }}
-        <div class="col-sm-10">
-            {{ form_widget(form.content, {'attr': {'class': 'tinymce'}}) }}
+        <div class="form-group">
+            {{ form_label(form.content, "Contenu de l'article", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.title) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.content, {'attr': {'class': 'tinymce'}}) }}
+            </div>
         </div>
-    </div>
     {% endif %}
     {% if form.author is defined %}
-    {{ form_row(form.author) }}
+        {{ form_row(form.author) }}
     {% endif %}
 
     {% if form.published is defined %}
         {{ form_row(form.published) }}
     {% endif %}
 
-    {% if form.image is defined %}
-    {{ form_row(form.image) }}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            {% if form.image is defined %}
+                {{ form_row(form.image) }}
+            {% endif %}
+        </div>
+    </div>
+    <div>
+        {% if form.categories is defined %}
+            {{ form_row(form.categories) }}
+        {% endif %}
+    </div>
+
+
+    {% if form.save is defined %}
+        {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
     {% endif %}
-
-    {% if form.categories is defined %}
-    {{ form_row(form.categories) }}
-    {% endif %}
-
-
-{% if form.save is defined %}
-    {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
-    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
-{% endif %}
 
     {# Génération automatique des champs pas encore écrits.
        Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)

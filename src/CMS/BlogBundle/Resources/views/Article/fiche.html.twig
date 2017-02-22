@@ -12,12 +12,14 @@
 
     {% if article.published == true or is_granted('ROLE_AUTEUR') %}
         <div style="float: left; margin-right: 1em;">
-            {% if article.image is not null %}
+            {% if article.image.alt is not null %}
                 <a href="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                    alt="{{ article.image.alt }}"
                    class="html5lightbox"><img
                             src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                             alt="{{ article.image.alt }}" height="60"></a>
+                {% else %}
+                <img src="{{ article.image.urlEnligne }}" alt="{{ article.image.altEnligne }}" height="60">
             {% endif %}
         </div>
 
