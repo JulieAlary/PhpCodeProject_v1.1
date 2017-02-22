@@ -86,6 +86,7 @@
       <library name="PHP" type="php">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/behat/transliterator" />
+          <root url="file://$MODULE_DIR$/vendor/bmatzner/fontawesome-bundle" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/coresphere/console-bundle" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
@@ -139,6 +140,7 @@
         </CLASSES>
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/behat/transliterator" />
+          <root url="file://$MODULE_DIR$/vendor/bmatzner/fontawesome-bundle" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/coresphere/console-bundle" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
