@@ -5403,68 +5403,47 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/cmsblog/js/main.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/js/init.jquery.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/js/init.standard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/js/ready.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/changelog.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/jquery.tinymce.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ar.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ar_SA.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/az.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/be.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/bg_BG.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/bn_BD.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/bs.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ca.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/cy.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/de.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/de_AT.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/dv.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/el.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/en_CA.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/en_GB.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/es.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/et.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/eu.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/fa.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/fa_IR.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/fo.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/fr_FR.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/gd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/gl.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/he_IL.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/hr.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/hu_HU.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/hy.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/id.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/is_IS.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/it.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ja.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ka_GE.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/kk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/km_KH.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ko_KR.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/lb.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/lv.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ml.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ml_IN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/mn_MN.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/nb_NO.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/nl.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/pl.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/pt_BR.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/pt_PT.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ro.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/si_LK.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/sk.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/sl_SI.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/sr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/sv_SE.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ta.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ta_IN.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/tg.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/th_TH.js" afterPath="" />
@@ -5473,9 +5452,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ug.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/uk.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/uk_UA.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/vi_VN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/zh_CN.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/zh_TW.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/license.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/advlist/plugin.min.js" afterPath="" />
@@ -5484,26 +5460,17 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/autoresize/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/autosave/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/bbcode/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/charmap/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/code/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/colorpicker/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/contextmenu/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/directionality/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-cool.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-cry.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-embarassed.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-foot-in-mouth.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-frown.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-innocent.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-kiss.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-laughing.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-money-mouth.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-sealed.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-smile.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-surprised.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-undecided.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-wink.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-yell.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/example/dialog.html" afterPath="" />
@@ -5511,24 +5478,15 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/example_dependency/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/fullpage/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/fullscreen/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/hr/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/image/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/importcss/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/insertdatetime/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/layer/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/legacyoutput/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/link/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/lists/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/media/moxieplayer.swf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/media/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/nonbreaking/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/noneditable/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/pagebreak/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/paste/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/preview/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/print/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/save/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/searchreplace/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/spellchecker/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/tabfocus/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/table/plugin.min.js" afterPath="" />
@@ -5540,31 +5498,25 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/visualchars/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/wordcount/plugin.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/content.inline.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/content.min.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/readme.md" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce-small.dev.svg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce-small.eot" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce-small.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce-small.ttf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce-small.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce.dev.svg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce.eot" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce.svg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce.woff" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/img/anchor.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/img/loader.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/img/object.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/img/trans.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/skin.ie7.min.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/skin.min.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/themes/modern/theme.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/tinymce.jquery.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/tinymce.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/fiche.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/fiche.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Menu/show.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Menu/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memo.md" afterPath="$PROJECT_DIR$/Memo.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/User/fiche.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/User/fiche.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/edit_content.html.twig" afterPath="$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/edit_content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/show_content.html.twig" afterPath="$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/show_content.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -5584,7 +5536,30 @@
     <favorites_list name="PhpCodeProject_v1.1" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="show_content.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/show_content.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="12" column="172" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="12" selection-end-column="172" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fiche.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/User/fiche.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-163">
+              <caret line="44" column="61" lean-forward="false" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
+              <folding>
+                <element signature="e#12#43#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -5608,7 +5583,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/list.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/User/list.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/config/routing_inc/routing_user.yml" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Controller/UserController.php" />
@@ -5619,7 +5593,6 @@
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Form/AvatarType.php" />
         <option value="$PROJECT_DIR$/src/CMS/UserBundle/Form/Type/ProfileFormType.php" />
         <option value="$PROJECT_DIR$/src/CMS/UserBundle/Resources/config/doctrine/User.orm.yml" />
-        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/User/fiche.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/add.html.twig" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
@@ -5655,10 +5628,12 @@
         <option value="$PROJECT_DIR$/app/config/parameters_production.php" />
         <option value="$PROJECT_DIR$/app/config/config_prod.yml" />
         <option value="$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/edit_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/show_content.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/menu.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/fiche.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Menu/show.html.twig" />
+        <option value="$PROJECT_DIR$/Memo.md" />
+        <option value="$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/show_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/User/fiche.html.twig" />
       </list>
     </option>
   </component>
@@ -5755,60 +5730,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -6005,6 +5926,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -6255,7 +6210,7 @@
       <workItem from="1487007525208" duration="5965000" />
       <workItem from="1487067930824" duration="28780000" />
       <workItem from="1487783321044" duration="988000" />
-      <workItem from="1487804774095" duration="4625000" />
+      <workItem from="1487804774095" duration="6093000" />
     </task>
     <task id="LOCAL-00015" summary="delete user ok : todo update currentuser amelioration&#10;&#10;">
       <created>1485299247247</created>
@@ -6604,7 +6559,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="392675000" />
+    <option name="totallyTimeSpent" value="394143000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -6619,13 +6574,13 @@
     <frame x="472" y="30" width="808" height="701" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.067885116" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2924282" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2955665" sideWeight="0.5169713" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.49229375" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24862486" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2955665" sideWeight="0.4830287" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2955665" sideWeight="0.4830287" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23798627" sideWeight="0.50653595" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.49646017" order="7" side_tool="false" content_ui="tabs" />
@@ -6687,7 +6642,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="entity contact delete update is published ok" />
     <MESSAGE value="entitiy + custom + premières customizations ok" />
     <MESSAGE value="css + modif menu" />
     <MESSAGE value="entite gallery + carousel + form ok!" />
@@ -6712,7 +6666,8 @@
     <MESSAGE value="test 2 heroku" />
     <MESSAGE value="final test 1 heroku" />
     <MESSAGE value="final test 2 heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="final test 2 heroku" />
+    <MESSAGE value="final test 3 heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="final test 3 heroku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -6721,13 +6676,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Controller/MessageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormModel/NewThreadMessage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -6957,17 +6905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Memo.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-522">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -7024,14 +6961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/show_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/edit_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -7075,6 +7004,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="31" column="78" lean-forward="false" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
+          <folding>
+            <element signature="e#12#43#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Memo.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="288">
+            <caret line="66" column="35" lean-forward="false" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="35" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/UserBundle/Resources/views/Profile/show_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="172" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="12" selection-end-column="172" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/User/fiche.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="44" column="61" lean-forward="false" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
           <folding>
             <element signature="e#12#43#0#Twig" expanded="true" />
           </folding>

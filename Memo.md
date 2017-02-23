@@ -63,3 +63,5 @@
  _http://localhost/PhpCodeProject_v1.1/web/app_dev.php/_console_
  
  /-----------------------------------------/
+ 
+ a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}

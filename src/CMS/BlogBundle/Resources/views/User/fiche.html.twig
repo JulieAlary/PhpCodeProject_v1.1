@@ -36,12 +36,14 @@
 
 
             <div class="col-md-4">
-                {% if users.avatar.url is defined %}
+                {% if users.avatar.url is not null %}
                     <a href="{{ asset(users.avatar.uploadDir ~ '/' ~ users.avatar.id ~ '.' ~ users.avatar.url) }}"
                        alt="{{ users.avatar.alt }}"
                        class="html5lightbox"><img
                                 src="{{ asset(users.avatar.uploadDir ~ '/' ~ users.avatar.id ~ '.' ~ users.avatar.url) }}"
                                 alt="{{ users.avatar.alt }}" width="200" height="200" class="img-circle"></a>
+                {% elseif users.avatar.urlEnligne is not null %}
+                    <img src="{{ users.avatar.urlEnligne }}" alt="{{ users.avatar.altEnligne }}" class="center-block img-responsive img-circle" style="max-height:160px;">
                 {% else %}
                     <img src="http://s9.postimg.org/uylsxjghr/people_dialer_photo.png" class="img-circle">
 

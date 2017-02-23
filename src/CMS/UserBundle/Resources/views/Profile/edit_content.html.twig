@@ -13,45 +13,53 @@
 
     <label for="email">{{ form_label(form.email) }}</label>
     <div class="input-group">
-    <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
-                                                                               class="fa fa-envelope-o"
-                                                                               aria-hidden="true"></i></span>
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
+                                                                                   class="fa fa-envelope-o"
+                                                                                   aria-hidden="true"></i></span>
         {{ form_widget(form.email) }}
     </div>
 
     <label for="age">{{ form_label(form.age) }}</label>
     <div class="input-group">
-    <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-user"
-                                                                               aria-hidden="true"></i></span>
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
+                                                                                   class="fa fa-user"
+                                                                                   aria-hidden="true"></i></span>
         {{ form_widget(form.age) }}
     </div>
 
     <label for="city">{{ form_label(form.city) }}</label>
     <div class="input-group">
-    <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-globe"
-                                                                               aria-hidden="true"></i></span>
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
+                                                                                   class="fa fa-globe"
+                                                                                   aria-hidden="true"></i></span>
         {{ form_widget(form.city) }}
     </div>
 
     <label for="url">{{ form_label(form.url) }}</label>
     <div class="input-group">
-    <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-link"
-                                                                               aria-hidden="true"></i></span>
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
+                                                                                   class="fa fa-link"
+                                                                                   aria-hidden="true"></i></span>
         {{ form_widget(form.url) }}
     </div>
 
-
-    <label for="avatar">{{ form_label(form.avatar) }}</label>
-    <div class="input-group">
-        {{ form_widget(form.avatar) }}
+    <div class="well row">
+        <div class="col-md-6 col-md-offset-1">
+            <label for="avatar">{{ form_label(form.avatar) }}</label>
+            <div class="input-group">
+                {{ form_widget(form.avatar) }}
+            </div>
+        </div>
     </div>
 
-    <label for="password">{{ form_label(form.current_password) }}</label>
-    <div class="input-group">
+    <div>
+        <label for="password">{{ form_label(form.current_password) }}</label>
+        <div class="input-group">
         <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
                                                                                    class="fa fa-unlock-alt"
                                                                                    aria-hidden="true"></i></span>
-        {{ form_widget(form.current_password) }}
+            {{ form_widget(form.current_password) }}
+        </div>
     </div>
 
 
