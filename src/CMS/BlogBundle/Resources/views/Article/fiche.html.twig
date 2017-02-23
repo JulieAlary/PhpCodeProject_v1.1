@@ -19,7 +19,7 @@
                             src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                             alt="{{ article.image.alt }}" height="60"></a>
                 {% else %}
-                <img src="{{ article.image.urlEnligne }}" alt="{{ article.image.altEnligne }}" height="60">
+                <img src="{% if article.image.urlEnligne is defined %}{{ article.image.urlEnligne }}{% endif %}" alt="{% if article.image.altEnligne is defined %}{{ article.image.altEnligne }}{% endif %}" height="60">
             {% endif %}
         </div>
 

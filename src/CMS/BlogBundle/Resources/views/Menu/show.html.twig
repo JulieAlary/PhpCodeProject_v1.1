@@ -28,13 +28,15 @@
                                                 />
                                             {% endif %}
                                         {% else %}
-                                            {% if article.image.altEnligne not in newArray %}
-                                            <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
-                                            {% set newArray = newArray|merge([article.image.altEnligne]) %}
-                                            <img src="{{ article.image.urlEnligne }}"
-                                                 alt="{{ article.image.altEnligne }}" height="100"
-                                                 class="center-block">
-{% endif %}
+                                            {% if article.image.altEnligne is defined %}
+                                                {% if article.image.altEnligne not in newArray %}
+                                                    <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
+                                                    {% set newArray = newArray|merge([article.image.altEnligne]) %}
+                                                    <img src="{{ article.image.urlEnligne }}"
+                                                         alt="{{ article.image.altEnligne }}" height="100"
+                                                         class="center-block">
+                                                {% endif %}
+                                            {% endif %}
                                         {% endif %}
                                     </div>
                                     <div class="col-md-8">
