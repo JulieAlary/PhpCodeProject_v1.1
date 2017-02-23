@@ -1,55 +1,62 @@
 {% for content in comment %}
-<div class="well">
-    <article class="row">
+    <div class="well">
+        <article class="row">
 
-        {% if content.author.avatar.url is defined %}
-        <div class="col-md-2 col-sm-2 hidden-xs">
-            <figure class="thumbnail">
-                <a href="{{ asset(content.author.avatar.uploadDir ~ '/' ~ content.author.avatar.id ~ '.' ~ content.author.avatar.url) }}"
-                   alt="{{ content.author.avatar.alt }}"
-                   class="html5lightbox img-responsive"><img
-                            src="{{ asset(content.author.avatar.uploadDir ~ '/' ~ content.author.avatar.id ~ '.' ~ content.author.avatar.url) }}"
-                            alt="{{ content.author.avatar.alt }}"></a>
-                <figcaption class="text-center">{{ content.author|capitalize }}</figcaption>
-            </figure>
-        </div>
+            {% if content.author.avatar.url is not null %}
+                <div class="col-md-2 col-sm-2 hidden-xs">
+                    <figure class="thumbnail">
+                        <a href="{{ asset(content.author.avatar.uploadDir ~ '/' ~ content.author.avatar.id ~ '.' ~ content.author.avatar.url) }}"
+                           alt="{{ content.author.avatar.alt }}"
+                           class="html5lightbox img-responsive"><img
+                                    src="{{ asset(content.author.avatar.uploadDir ~ '/' ~ content.author.avatar.id ~ '.' ~ content.author.avatar.url) }}"
+                                    alt="{{ content.author.avatar.alt }}"></a>
+                        <figcaption class="text-center">{{ content.author|capitalize }}</figcaption>
+                    </figure>
+                </div>
 
-        {% else %}
-        <div class="col-md-2 col-sm-2 hidden-xs">
-            <figure class="thumbnail">
+            {% elseif content.author.avatar.urlEnligne is not null %}
+                <div class="col-md-2 col-sm-2 hidden-xs">
+                    <figure class="thumbnail">
+                        <img src="{{ content.author.avatar.urlEnligne }}" alt="{{ content.author.avatar.altEnligne }}"
+                             class="img-responsive" style="max-height:160px;">
+                        <figcaption class="text-center">{{ content.author|capitalize }}</figcaption>
+                    </figure>
+                </div>
+            {% else %}
+                <div class="col-md-2 col-sm-2 hidden-xs">
+                    <figure class="thumbnail">
+                        <img class="img-responsive"
+                             src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg"/>
+                        <figcaption class="text-center">{{ content.author|capitalize }}</figcaption>
+                    </figure>
+                </div>
+            {% endif %}
 
-                <img class="img-responsive"
-                     src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg"/>
-                <figcaption class="text-center">{{ content.author|capitalize }}</figcaption>
-            </figure>
-        </div>
-        {% endif %}
-
-        <div class="col-md-10 col-sm-10">
-            <div class="panel panel-default arrow left">
-                <div class="panel-body">
-                    <header class="text-right">
-                        <time class="comment-date"><i
-                                    class="fa fa-clock-o"></i>{{ content.publishedAt|date('d/m/Y H:i:s') }}
-                        </time>
-                    </header>
-                    <div class="comment-post">
-                        <p>
-                            {{ content.content|capitalize }}
-                        </p>
+            <div class="col-md-10 col-sm-10">
+                <div class="panel panel-default arrow left">
+                    <div class="panel-body">
+                        <header class="text-right">
+                            <time class="comment-date"><i
+                                        class="fa fa-clock-o"></i>{{ content.publishedAt|date('d/m/Y H:i:s') }}
+                            </time>
+                        </header>
+                        <div class="comment-post">
+                            <p>
+                                {{ content.content|capitalize }}
+                            </p>
+                        </div>
+                        {% if is_granted('ROLE_AUTEUR') %}
+                            <a href="{{ path('cms_comment_delete', {'id': content.id}) }}"
+                               class="btn btn-danger btn-xs pull-right">
+                                <i class="glyphicon glyphicon-trash"></i>
+                                Supprimer le comment
+                            </a>
+                        {% endif %}
                     </div>
-                    {% if is_granted('ROLE_AUTEUR') %}
-                        <a href="{{ path('cms_comment_delete', {'id': content.id}) }}"
-                           class="btn btn-danger btn-xs pull-right">
-                            <i class="glyphicon glyphicon-trash"></i>
-                            Supprimer le comment
-                        </a>
-                    {% endif %}
                 </div>
             </div>
-        </div>
 
-    </article>
-</div>
+        </article>
+    </div>
 {% endfor %}
 
