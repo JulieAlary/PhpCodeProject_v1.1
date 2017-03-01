@@ -27,40 +27,45 @@
         </div>
     </div>
     <div class="row">
-        {% for key, carousels in carousel %}
-            {% if carousels.id is not defined %}
+
+        {% if carousel is empty or carousel is null %}
+            <div class="col-md-6 col-xs-6">
+                <a href="{{ path('cms_custom_carousel_add') }}">Ajouter un Carousel &nbsp;&nbsp;<i
+                            class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a><br>
+            </div>
+        {% else %}
+            <div class="col-md-6 col-xs-6">
+                <a title="Supprimer l'existant pour en créer un autre" class="pointer">Ajouter un Carousel</a>
+            </div>
+
+
+
+
+        {#{% for key, galleries in gallery %}#}
+        {% if gallery|length not in newArray %} {# je calcule la longueur de mon tableau et je groupe#}
+            {% set newArray = newArray|merge([gallery|length]) %}
+            {% if gallery|length <3 %}
                 <div class="col-md-6 col-xs-6">
-                    <a href="{{ path('cms_custom_carousel_add') }}">Ajouter un Carousel &nbsp;&nbsp;<i
-                                class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a><br>
+                    <a href="{{ path('cms_custom_carousel_add_gallery') }}">Ajouter des photos&nbsp;&nbsp;<i
+                                class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
                 </div>
             {% else %}
                 <div class="col-md-6 col-xs-6">
-                    <a title="Supprimer l'existant pour en créer un autre" class="pointer">Ajouter un Carousel</a>
+                    <a title="Vous ne pouvez mettre que 3 photos !" class="pointer">Ajouter des photos</a>
                 </div>
             {% endif %}
-        {% endfor %}
+        {% endif %}
+        {#{% endfor %}#}
 
-        {% for key, galleries in gallery %}
-            {% if gallery|length not in newArray %} {# je calcule la longueur de mon tableau et je groupe#}
-                {% set newArray = newArray|merge([gallery|length]) %}
-                {% if gallery|length <3 %}
-                    <div class="col-md-6 col-xs-6">
-                        <a href="{{ path('cms_custom_carousel_add_gallery') }}">Ajouter des photos&nbsp;&nbsp;<i
-                                    class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-                    </div>
-                {% else %}
-                    <div class="col-md-6 col-xs-6">
-                        <a title="Vous ne pouvez mettre que 3 photos !" class="pointer">Ajouter des photos</a>
-                    </div>
-                {% endif %}
-            {% endif %}
-        {% endfor %}
+            <div class="col-md-6 col-xs-6">
+                <a href="{{ path('cms_custom_carousel_show_test') }}">Test Slider&nbsp;&nbsp;<i
+                            class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+            </div>
+
+        {% endif %}
 
 
-        <div class="col-md-6 col-xs-6">
-            <a href="{{ path('cms_custom_carousel_show_test') }}">Test Slider&nbsp;&nbsp;<i
-                        class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-        </div>
+
     </div>
 
 
@@ -68,11 +73,10 @@
         {% if carousels %}
             <div class="row">
             <h3>Carousel existant</h3>
-
-            {% for key, galleries in gallery %}
-                {% if galleries.carousel.nom not in newArray %}
-                    {% set newArray = newArray|merge([galleries.carousel.nom]) %}
-                    <h4>Nom du carousel : {{ galleries.carousel.nom|capitalize }}</h4>
+            {% for key, carousels in carousel %}
+                {% if carousels.nom is not empty %}
+                        {% set newArray = newArray|merge([carousels.nom]) %}
+                        <h4>Nom du carousel : {{ carousels.nom|capitalize }}</h4>
                 {% endif %}
             {% endfor %}
 
