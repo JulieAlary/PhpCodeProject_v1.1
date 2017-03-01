@@ -33,8 +33,6 @@ class CarouselController extends Controller
 
         $carousel = $em->getRepository('CMSBlogBundle:Carousel')->findAll();
 
-        dump($carousel);
-
         $gallery = $em
             ->getRepository('CMSBlogBundle:Gallery')
             ->findAll();
