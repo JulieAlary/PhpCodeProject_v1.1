@@ -28,7 +28,7 @@
     </div>
     <div class="row">
         {% for key, carousels in carousel %}
-            {% if carousels.id is not defined or carousels.id is not null %}
+            {% if carousels.id is not defined %}
                 <div class="col-md-6 col-xs-6">
                     <a href="{{ path('cms_custom_carousel_add') }}">Ajouter un Carousel &nbsp;&nbsp;<i
                                 class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a><br>

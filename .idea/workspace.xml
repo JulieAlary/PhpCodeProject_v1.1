@@ -5,122 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e93321d-eb29-4745-84db-f52efa522f75" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/cmsblog/css/blog.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/cmsblog/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/cmsblog/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/js/init.jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/js/init.standard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/changelog.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ar_SA.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/az.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/be.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/bg_BG.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/de_AT.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/dv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/en_CA.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/en_GB.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/et.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/eu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/fa_IR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/fr_FR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/gd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/he_IL.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/hu_HU.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/hy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/is_IS.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ka_GE.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/kk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/lb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ml_IN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/nb_NO.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/pt_BR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/pt_PT.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/sl_SI.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ta_IN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/tg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/th_TH.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/tr_TR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/tt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/ug.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/uk_UA.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/langs/zh_TW.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/advlist/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/anchor/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/autolink/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/autoresize/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/autosave/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/bbcode/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/code/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/colorpicker/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-cool.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-cry.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-foot-in-mouth.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-frown.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-laughing.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-money-mouth.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-sealed.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-smile.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/img/smiley-yell.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/emoticons/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/example/dialog.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/example/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/example_dependency/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/fullpage/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/fullscreen/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/importcss/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/insertdatetime/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/link/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/lists/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/media/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/noneditable/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/paste/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/preview/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/save/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/spellchecker/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/tabfocus/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/table/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/template/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/textcolor/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/textpattern/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/visualblocks/css/visualblocks.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/visualblocks/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/visualchars/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/plugins/wordcount/plugin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/content.inline.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce-small.dev.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce-small.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce-small.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce-small.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/fonts/tinymce.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/img/anchor.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/img/object.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/skins/lightgray/skin.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/themes/modern/theme.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/tinymce.jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/stfalcontinymce/vendor/tinymce/tinymce.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -141,12 +27,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config_prod.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="165">
+              <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+              <folding>
+                <marker date="1486982521000" expanded="false" signature="1150:1173" ph="custom/carousel/add" />
+                <marker date="1486982521000" expanded="false" signature="1200:1206" ph=" " />
+                <marker date="1486982521000" expanded="false" signature="1206:1212" ph=" " />
+                <marker date="1486982521000" expanded="false" signature="1951:1982" ph="custom/carousel/gallery/add" />
+                <marker date="1486982521000" expanded="false" signature="2007:2013" ph=" " />
+                <marker date="1486982521000" expanded="false" signature="2013:2019" ph=" " />
+                <marker date="1486982521000" expanded="false" signature="2510:2539" ph="custom/carousel/show/test" />
+                <marker date="1486982521000" expanded="false" signature="2557:2563" ph=" " />
+                <marker date="1486982521000" expanded="false" signature="2563:2569" ph=" " />
+                <marker date="1486982521000" expanded="false" signature="3689:3721" ph="custom/carousel/gallery/edit/{id}" />
+                <marker date="1486982521000" expanded="false" signature="3981:4015" ph="custom/carousel/gallery/delete/{id}" />
+                <marker date="1486982521000" expanded="false" signature="4571:4587" ph="custom/index" />
+                <marker date="1486982521000" expanded="false" signature="4944:4968" ph="custom/carousel/edit/{id}" />
+                <marker date="1486982521000" expanded="false" signature="5248:5274" ph="custom/carousel/delete/{id}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -219,13 +120,13 @@
         <option value="$PROJECT_DIR$/src/CMS/CoreBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/showTest.html.twig" />
         <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Controller/CarouselController.php" />
-        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig" />
         <option value="$PROJECT_DIR$/app/config/parameters_production.php" />
         <option value="$PROJECT_DIR$/var/logs/prod.log" />
         <option value="$PROJECT_DIR$/web/app.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/config/config_prod.yml" />
         <option value="$PROJECT_DIR$/app/config/parameters.php" />
+        <option value="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig" />
       </list>
     </option>
   </component>
@@ -474,7 +375,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemId" value="BlogBundle" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -496,7 +397,109 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemId" value="BlogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Custom" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Custom" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carousel" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhpCodeProject_v1.1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogBundle" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -515,24 +518,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpCodeProject_v1.1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -680,7 +665,7 @@
       <workItem from="1488008481052" duration="286000" />
       <workItem from="1488281341625" duration="933000" />
       <workItem from="1488358388894" duration="6250000" />
-      <workItem from="1488372643759" duration="4091000" />
+      <workItem from="1488372643759" duration="4242000" />
     </task>
     <task id="LOCAL-00020" summary="ajout commentaire ok!&#10;&#10;">
       <created>1485430788575</created>
@@ -1029,7 +1014,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="416084000" />
+    <option name="totallyTimeSpent" value="416235000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1334,6 +1319,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="82" column="36" lean-forward="false" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+          <folding>
+            <element signature="e#937#961#1#PHP" expanded="true" />
+            <element signature="e#2384#2405#1#PHP" expanded="true" />
+            <element signature="e#6700#6748#0#PHP" expanded="true" />
+            <element signature="e#7493#7539#0#PHP" expanded="true" />
+            <element signature="e#8347#8397#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1362,24 +1354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="30" column="73" lean-forward="false" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="73" />
-          <folding>
-            <element signature="e#1178#1201#0#Twig" expanded="false" />
-            <element signature="e#1228#1234#0#HTML" expanded="false" />
-            <element signature="e#1234#1240#0#HTML" expanded="false" />
-            <element signature="e#1979#2010#0#Twig" expanded="false" />
-            <element signature="e#2035#2041#0#HTML" expanded="false" />
-            <element signature="e#2041#2047#0#HTML" expanded="false" />
-            <element signature="e#2538#2567#0#Twig" expanded="false" />
-            <element signature="e#2585#2591#0#HTML" expanded="false" />
-            <element signature="e#2591#2597#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1544,6 +1518,29 @@
         <state relative-caret-position="60">
           <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Custom/Carousel/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+          <folding>
+            <marker date="1486982521000" expanded="false" signature="1150:1173" ph="custom/carousel/add" />
+            <marker date="1486982521000" expanded="false" signature="1200:1206" ph=" " />
+            <marker date="1486982521000" expanded="false" signature="1206:1212" ph=" " />
+            <marker date="1486982521000" expanded="false" signature="1951:1982" ph="custom/carousel/gallery/add" />
+            <marker date="1486982521000" expanded="false" signature="2007:2013" ph=" " />
+            <marker date="1486982521000" expanded="false" signature="2013:2019" ph=" " />
+            <marker date="1486982521000" expanded="false" signature="2510:2539" ph="custom/carousel/show/test" />
+            <marker date="1486982521000" expanded="false" signature="2557:2563" ph=" " />
+            <marker date="1486982521000" expanded="false" signature="2563:2569" ph=" " />
+            <marker date="1486982521000" expanded="false" signature="3689:3721" ph="custom/carousel/gallery/edit/{id}" />
+            <marker date="1486982521000" expanded="false" signature="3981:4015" ph="custom/carousel/gallery/delete/{id}" />
+            <marker date="1486982521000" expanded="false" signature="4571:4587" ph="custom/index" />
+            <marker date="1486982521000" expanded="false" signature="4944:4968" ph="custom/carousel/edit/{id}" />
+            <marker date="1486982521000" expanded="false" signature="5248:5274" ph="custom/carousel/delete/{id}" />
+          </folding>
         </state>
       </provider>
     </entry>
