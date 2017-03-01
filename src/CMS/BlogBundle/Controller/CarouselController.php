@@ -33,6 +33,8 @@ class CarouselController extends Controller
 
         $carousel = $em->getRepository('CMSBlogBundle:Carousel')->findAll();
 
+        dump($carousel);
+
         $gallery = $em
             ->getRepository('CMSBlogBundle:Gallery')
             ->findAll();
@@ -75,10 +77,10 @@ class CarouselController extends Controller
             $em->persist($carousel);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Carousel enregistrée.');
+            $request->getSession()->getFlashBag()->add('notice', 'Carousel enregistré.');
 
             return $this->redirectToRoute(
-                'cms_custom_index'
+                'cms_custom_carousel'
             );
         }
 
@@ -166,7 +168,7 @@ class CarouselController extends Controller
 
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Article bien modifé.');
+            $request->getSession()->getFlashBag()->add('notice', 'Carousel bien modifié.');
 
             return $this->redirectToRoute(
                 'cms_custom_carousel'
@@ -276,7 +278,7 @@ class CarouselController extends Controller
 
         // To display the carousel
         $carousel = $em->getRepository('CMSBlogBundle:Carousel')->findBy(
-            array('published' => true),
+            array('published' => false),
             array()
         );
 
@@ -324,7 +326,7 @@ class CarouselController extends Controller
             $em->remove($gallery);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('info', "L'article a bien été supprimé.");
+            $request->getSession()->getFlashBag()->add('info', "L'image a bien été supprimée.");
 
             return $this->redirectToRoute('cms_custom_carousel');
         }
