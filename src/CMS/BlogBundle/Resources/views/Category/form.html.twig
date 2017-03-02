@@ -4,9 +4,17 @@
     {# Les erreurs générales du formulaire. #}
     {{ form_errors(form) }}
 
-    {% if form.save is defined %}
-        {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
-        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+    {% if form.name is defined %}
+        {# Génération manuelle et éclatée : #}
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.name, "Choisir un nom", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-md-6">
+                {{ form_errors(form.name) }}
+                {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
     {% endif %}
 
 
@@ -15,7 +23,7 @@
        et tous les champs cachés (type « hidden »). #}
     {{ form_rest(form) }}
 
-    <button class="btn btn-primary" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter</button>
+    <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter</button>
     {# Fermeture de la balise <form> du formulaire HTML #}
     {{ form_end(form) }}
 
