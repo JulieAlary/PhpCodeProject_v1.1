@@ -11,12 +11,12 @@
     {{ include("CMSBlogBundle:Custom:form.html.twig") }}
 
     <p>
-        <a href="{{ path('cms_custom_index') }}" class="btn btn-success">
+        <a href="{{ path('cms_custom_index') }}" class="btn btn-success btn-sm">
             <i class="glyphicon glyphicon-chevron-left"></i>
             Retour au menu
         </a>
 
-        <a href="{{ path('cms_custom_names_delete', {'id':blogNames.id}) }}" class="btn btn-danger">
+        <a href="{{ path('cms_custom_names_delete', {'id':blogNames.id}) }}" class="btn btn-danger btn-sm">
             <i class="glyphicon glyphicon-trash"></i>
             Supprimer les paramètres
         </a>

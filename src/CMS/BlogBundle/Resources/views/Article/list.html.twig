@@ -2,7 +2,7 @@
 
 {% block cms_body %}
 
-    <h2>Tableau des Articles</h2>
+    <h2>Liste des Articles</h2>
     <br>
 
     {# On affiche tous les messages flash #}
@@ -11,17 +11,17 @@
     <div class="row">
         <div class="flip">
             <h3>
-                <button class="btn btn-info pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                <button class="btn btn-info pull-right btn-sm" style="margin-right: 2em;"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
                 </button>
             </h3>
         </div>
         <div class="panel-flip">
-            <p class="bg-info">Ici vous pouvez gérer vos article en cliquant dessus ou bien en créer de nouveau
+            <p class="bg-info">Ici vous pouvez gérer vos articles en cliquant dessus ou bien en créer de nouveaux
             </p>
         </div>
 
         <a href="{{ path('cms_blog_add') }}">
-            <button class="btn btn-primary pull-left"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Créer
+            <button class="btn btn-primary pull-left btn-sm" style="margin-left: 2em;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Créer
                 un article
             </button>
         </a>

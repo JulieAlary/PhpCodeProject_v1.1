@@ -12,17 +12,33 @@
 {% endblock %}
 
 {% block title %}
-    Modifier un artcile - {{ parent() }}
+    Modifier un article - {{ parent() }}
 {% endblock %}
 
 {% block cms_body %}
 
     <h2>Modifier un article</h2>
 
+    <div class="row">
+        <div class="flip">
+            <h3>
+                <button class="btn btn-info pull-right btn-sm" style="margin-right: 2em;"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                </button>
+            </h3>
+        </div>
+
+        <div class="panel-flip bg-info">
+            <ul>
+                <li>Attention pour l'instant l'upload d'image n'est pas possible</li>
+            </ul>
+        </div>
+    </div>
+    <br><br>
+
     {{ include("CMSBlogBundle:Article:form.html.twig") }}
 
     <p>
-        <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" class="btn btn-success">
+        <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" class="btn btn-success btn-sm">
             <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à l'article
         </a>

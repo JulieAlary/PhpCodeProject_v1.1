@@ -46,29 +46,53 @@
         {{ form_row(form.published) }}
     {% endif %}
 
-    <div class="row">
-        <div class="col-md-6 col-md-offset-1">
-            {% if form.image is defined %}
-                {{ form_row(form.image) }}
-            {% endif %}
+
+    {% if form.image.file is defined %}
+        <div class="form-group">
+            {{ form_label(form.image.file, "Fichier Image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.image.file) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.image.file) }}
+            </div>
         </div>
-    </div>
-    <div>
-        {% if form.categories is defined %}
-            {{ form_row(form.categories) }}
-        {% endif %}
-    </div>
-
-
-    {% if form.save is defined %}
-        {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
-        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
     {% endif %}
+
+    {% if form.image.urlEnligne is defined %}
+        <div class="form-group">
+            {{ form_label(form.image.urlEnligne, "Url de l'image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.image.urlEnligne) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.image.urlEnligne) }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if form.image.altEnligne is defined %}
+        <div class="form-group">
+            {{ form_label(form.image.altEnligne, "Alt de l'image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.image.altEnligne) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.image.altEnligne) }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if form.categories is defined %}
+        <div class="form-group">
+            {{ form_label(form.categories, "Catégories", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.categories) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.categories) }}
+            </div>
+        </div>
+    {% endif %}
+
 
     {# Génération automatique des champs pas encore écrits.
        Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
        et tous les champs cachés (type « hidden »). #}
     {{ form_rest(form) }}
+    <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Ajouter</button>
 
     {# Fermeture de la balise <form> du formulaire HTML #}
     {{ form_end(form) }}

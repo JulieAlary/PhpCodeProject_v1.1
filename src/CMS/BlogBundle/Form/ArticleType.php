@@ -32,8 +32,7 @@ class ArticleType extends AbstractType
                     'choice_label' => 'name',
                     'multiple' => true
                 ]
-            )
-            ->add('save', SubmitType::class, array('label' => 'Sauvegarder'));
+            );
 
         // ajout d'un focntion qui va écouter un événement
         $builder->addEventListener(
