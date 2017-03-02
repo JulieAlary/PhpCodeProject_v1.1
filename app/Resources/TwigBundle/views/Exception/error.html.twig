@@ -3,14 +3,36 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Erreur : {{ status_text }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lobster');
+
+        body {
+            background-color: #0c0c0c;
+            color: yellow;
+            font-family: 'Lobster', cursive;
+        }
+    </style>
 </head>
 <body>
-<h1>Oops! Une erreur s'est produite durant le chargement de la page</h1>
-
-<h2>Notre application a retourné une erreur {{ status_code }} : {{ status_text }}.</h2>
-
-<div>
-    N'hésitez pas à contacter le webmaster du site pour corrger l'erreur.
+<div class="jumbotron" style="background-color: #0c0c0c!important;">
+    <h1 class="text-center"> Error : {{ status_code }}</h1>
+</div>
+<div class="row">
+    <h2 class="text-center">Ooooooooooopps!<br> Une erreur s'est produite durant le chargement de la page<br>Une souris pirate informatique, c'est sur!</h2>
+    <div class="col-md-8 col-md-offset-2">
+        <img class="center-block img-responsive"
+             src="http://cdn5.thr.com/sites/default/files/imagecache/scale_crop_768_433/2014/09/too_good_for_grumpy_cat.jpg">
+    </div>
+</div>
+<br><br>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+        <a href="{{ path('cms_core_home') }}">
+            <button class="btn" style="background-color:yellow!important;">Retour à l'accueil</button>
+        </a>
+    </div>
 </div>
 </body>
 </html>
