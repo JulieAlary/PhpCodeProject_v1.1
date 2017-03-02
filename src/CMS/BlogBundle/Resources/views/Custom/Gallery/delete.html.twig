@@ -6,28 +6,30 @@
 
 {% block cms_body %}
 
-    <h2>Supprimer Une photo/image</h2>
+    <h2>Supprimer une image</h2>
 
-    <p>
-        Etes-vous certain de vouloir supprimer l'image "{{ gallery.alt }}" ?
-    </p>
-
-    <img src="{{ asset(gallery.uploadDir ~ '/' ~ gallery.id ~ '.' ~ gallery.url) }}"
-         alt="{{ gallery.alt }}"
-         width="400px"
-         class="img-responsive center-block"
-    />
+    <div class="alert alert-warning">
+        <p>
+            Etes-vous certain de vouloir supprimer l'image "{{ gallery.alt }}" ?
+        </p>
+        <br>
+        <img src="{{ asset(gallery.uploadDir ~ '/' ~ gallery.id ~ '.' ~ gallery.url) }}"
+             alt="{{ gallery.alt }}"
+             width="400px"
+             class="img-responsive center-block"
+        />
+    </div>
     <br>
 
 
     <form action="{{ path('cms_custom_carousel_delete_gallery', {'id': gallery.id}) }}" method="post">
-        <a href="{{ path('cms_custom_carousel') }}" class="btn btn-success">
+        <a href="{{ path('cms_custom_carousel') }}" class="btn btn-success btn-sm">
             <i class="glyphicon glyphicon-chevron-left"></i>
             Retour aux paramètres
         </a>
         {# Ici j'ai écrit le bouton de soumission à la main #}
-        <input type="submit" value="Supprimer" class="btn btn-danger"/>
-        {# Ceci va générer le champ CSRF #}
+        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;Supprimer
+        </button> {# Ceci va générer le champ CSRF #}
         {{ form_rest(form) }}
     </form>
 

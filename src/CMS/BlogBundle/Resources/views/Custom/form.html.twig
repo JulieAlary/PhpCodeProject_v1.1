@@ -41,6 +41,24 @@
             </div>
         </div>
     {% endif %}
+    <div class="row">
+        {% if form.file is defined %}
+            {{ form_label(form.file, "Choisir une image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-md-6">
+                {{ form_widget(form.file) }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if form.carousel is defined %}
+            {{ form_label(form.carousel, "Choisir un carousel", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-md-6">
+                {{ form_widget(form.carousel) }}
+            </div>
+        {% endif %}
+    </div>
+    <br><br>
+
 
     {# Génération automatique des champs pas encore écrits.
        Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)

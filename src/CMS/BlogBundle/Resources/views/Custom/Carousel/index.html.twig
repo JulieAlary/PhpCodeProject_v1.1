@@ -9,12 +9,15 @@
     {% set newArray = [] %}
     <div class="row">
 
-        <div class="flip">
-            <h3>
-                <button class="btn btn-info btn-xs pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
-                </button>
-            </h3>
-        </div>
+        {% include('CMSCoreBundle:Core:flashbag.html.twig') %}
+
+            <div class="flip">
+                <h3>
+                    <button class="btn btn-info btn-xs pull-right" style="margin-right: 2em;"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                    </button>
+                </h3>
+
+
 
         <div class="panel-flip bg-info">
             <ul>
@@ -24,6 +27,7 @@
                 <li>Et pour finir le publier ou non et voir son brouillon...</li>
                 <li>Bientot possibilité sera faite de créer plusieurs carousels</li>
             </ul>
+        </div>
         </div>
     </div>
     <div class="row">
@@ -41,21 +45,21 @@
 
 
 
-        {#{% for key, galleries in gallery %}#}
-        {% if gallery|length not in newArray %} {# je calcule la longueur de mon tableau et je groupe#}
-            {% set newArray = newArray|merge([gallery|length]) %}
-            {% if gallery|length <3 %}
-                <div class="col-md-6 col-xs-6">
-                    <a href="{{ path('cms_custom_carousel_add_gallery') }}">Ajouter des photos&nbsp;&nbsp;<i
-                                class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-                </div>
-            {% else %}
-                <div class="col-md-6 col-xs-6">
-                    <a title="Vous ne pouvez mettre que 3 photos !" class="pointer">Ajouter des photos</a>
-                </div>
+            {#{% for key, galleries in gallery %}#}
+            {% if gallery|length not in newArray %} {# je calcule la longueur de mon tableau et je groupe#}
+                {% set newArray = newArray|merge([gallery|length]) %}
+                {% if gallery|length <3 %}
+                    <div class="col-md-6 col-xs-6">
+                        <a href="{{ path('cms_custom_carousel_add_gallery') }}">Ajouter des photos&nbsp;&nbsp;<i
+                                    class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+                    </div>
+                {% else %}
+                    <div class="col-md-6 col-xs-6">
+                        <a title="Vous ne pouvez mettre que 3 photos !" class="pointer">Ajouter des photos</a>
+                    </div>
+                {% endif %}
             {% endif %}
-        {% endif %}
-        {#{% endfor %}#}
+            {#{% endfor %}#}
 
             <div class="col-md-6 col-xs-6">
                 <a href="{{ path('cms_custom_carousel_show_test') }}">Test Slider&nbsp;&nbsp;<i
@@ -63,7 +67,6 @@
             </div>
 
         {% endif %}
-
 
 
     </div>
@@ -75,8 +78,8 @@
             <h3>Carousel existant</h3>
             {% for key, carousels in carousel %}
                 {% if carousels.nom is not empty %}
-                        {% set newArray = newArray|merge([carousels.nom]) %}
-                        <h4>Nom du carousel : {{ carousels.nom|capitalize }}</h4>
+                    {% set newArray = newArray|merge([carousels.nom]) %}
+                    <h4>Nom du carousel : {{ carousels.nom|capitalize }}</h4>
                 {% endif %}
             {% endfor %}
 

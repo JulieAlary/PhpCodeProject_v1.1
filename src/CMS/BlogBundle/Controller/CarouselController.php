@@ -83,7 +83,7 @@ class CarouselController extends Controller
         }
 
         return $this->render(
-            'CMSBlogBundle:Custom:add.html.twig',
+            'CMSBlogBundle:Custom/Carousel:add.html.twig',
             [
                 'form' => $form->createView(),
                 'custom' => $custom
