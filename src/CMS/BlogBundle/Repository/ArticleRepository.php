@@ -94,11 +94,11 @@ class ArticleRepository extends EntityRepository
     }
 
     /**
-     * Test affiche article par categories
-     *
+     *  Test affiche article par categories
+     * @param $categoryId
      * @return array
      */
-    public function getArticlesLessPage()
+    public function getArticlesByCategory($categoryId)
     {
 
         $query = $this->createQueryBuilder('a')
@@ -108,7 +108,9 @@ class ArticleRepository extends EntityRepository
             //jointure sur les catégories
             ->leftJoin('a.categories', 'c')
             ->addSelect('c')
-            ->orderBy('a.date', 'DESC');
+            ->where('c.id = :id' )
+            ->orderBy('a.date', 'DESC')
+            ->setParameter('id', $categoryId);
 
         return $query
             ->getQuery()

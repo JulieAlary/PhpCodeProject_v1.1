@@ -3,73 +3,34 @@
 {% block cms_body %}
     <div class="row">
 
-        {# Déclaration d'un tableau vide pour éviter les doublons #}
-        {% set newArray = [] %}
-
-        {% for article in listArticles %}
-            {% for a in article.categories %}
-                {% for m in listM %}
-                    {% if m.published == true %}
-                        {% if article.published != 0 %} {# si mon article est publié tu affiche sinon non#}
-                            {% for i in m.categories %}
-                                {% if a.id == id %}
-
-                                    <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}" title="Lire la suite"
-                                       style="text-decoration: none;color:black;">
-                                        <div class="col-md-4">
-                                            {# si l'élement n'est pas dans le tableau alors on rajoute #}
-
-                                            {% if article.image.url is not null %}
-                                                {% if article.image.url not in newArray %}
-                                                    <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
-                                                    {% set newArray = newArray|merge([article.image.url]) %}
-                                                    <img src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
-                                                         alt="{{ article.image.alt }}"
-                                                         height="100"
-                                                         class="center-block"
-                                                    />
-                                                {% endif %}
-                                            {% else %}
-                                                {% if article.image.altEnligne is defined %}
-                                                    {% if article.image.altEnligne not in newArray %}
-                                                        <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
-                                                        {% set newArray = newArray|merge([article.image.altEnligne]) %}
-                                                        <img src="{{ article.image.urlEnligne }}"
-                                                             alt="{{ article.image.altEnligne }}" height="100"
-                                                             class="center-block">
-                                                    {% endif %}
-                                                {% endif %}
-                                            {% endif %}
-                                        </div>
-                                        <div class="col-md-8">
-                                            {% if article.title not in newArray %}
-                                                <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
-                                                {% set newArray = newArray|merge([article.title]) %}
-                                                <h2>{{ article.title|capitalize }}</h2>
-                                            {% endif %}
-                                        </div>
-                                        <div class="col-md-8 col-md-offset-4">
-                                            {% if article.content not in newArray %}
-
-                                                {% set newArray = newArray|merge([article.content]) %}
-                                                {{ article.content|striptags|truncate(400)|raw }}
-                                            {% endif %}
-                                            {# fin de si #}
-                                        </div>
-                                    </a>
-                                {% endif %}
-
-                            {% endfor %}
-                            {% else %}
-                            <p class="text-center bg-info">Pas encore d'articles dans cette catégorie !</p>
-                        {% endif %}
+        {% for art in list %}
+            <a href="{{ path('cms_blog_fiche', {'id': art.id}) }}" title="Lire la suite"
+               style="text-decoration: none;color:black;">
+                <div class="col-md-4">
+                    {% if art.image.url is not null %}
+                        <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
+                        <img src="{{ asset(art.image.uploadDir ~ '/' ~ art.image.id ~ '.' ~ art.image.url) }}"
+                             alt="{{ art.image.alt }}"
+                             height="100"
+                             class="center-block"
+                        />
                     {% endif %}
-                {% endfor %}
-            {% endfor %}
+                </div>
+                <div class="col-md-8">
+                    {% if art.title is defined %}
+                        <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
+                        <h2>{{ art.title|capitalize }}</h2>
+                    {% endif %}
+                </div>
+                <div class="col-md-8 col-md-offset-4">
+                    {% if art.content is defined %}
+                        {{ art.content|striptags|truncate(400)|raw }}
+                    {% endif %}
+                </div>
+
+            </a>
 
         {% endfor %}
-
     </div>
-
 {% endblock %}
 

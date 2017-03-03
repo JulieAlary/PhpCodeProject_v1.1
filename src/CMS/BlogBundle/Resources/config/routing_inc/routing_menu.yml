@@ -14,7 +14,7 @@ cms_menu_listcate:
         _controller: CMSBlogBundle:Menu:listCateByMenu
 
 cms_menu_show_article:
-    path: /menu/show/article/{id}
+    path: /menu/show/category/{id}
     defaults:
         _controller: CMSBlogBundle:Menu:showArticleByMenu
 

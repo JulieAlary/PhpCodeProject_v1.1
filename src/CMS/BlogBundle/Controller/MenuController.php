@@ -260,16 +260,14 @@ class MenuController extends Controller
             ->getRepository('CMSBlogBundle:Article')
             ->findBy(array(), array('date' => 'desc'));
 
+        $listCate = $em->getRepository('CMSBlogBundle:Category')->find($id);
+
         $listM = $em->getRepository('CMSBlogBundle:Menu')->findBy(
             array('published' => true),
             array()
         );
 
-        $idMenu = $listM[0]->getId();
-//        dump($idMenu);
-
-        $list = $em->getRepository('CMSBlogBundle:Article')->getArticlesLessPage();
-//dump($list);
+        $list = $em->getRepository('CMSBlogBundle:Article')->getArticlesByCategory($listCate);
 
         return $this->render(
             'CMSBlogBundle:Menu:show.html.twig',
@@ -278,8 +276,8 @@ class MenuController extends Controller
                 'menu' => $menu,
                 'id' => $id,
                 'listM' => $listM,
+                'listCate' => $listCate,
                 'list' => $list,
-                'idMenu' => $idMenu,
                 'custom' => $custom
             ]
         );
