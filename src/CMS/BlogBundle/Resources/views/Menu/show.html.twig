@@ -4,6 +4,7 @@
     <div class="row">
 
         {% for art in list %}
+
             <a href="{{ path('cms_blog_fiche', {'id': art.id}) }}" title="Lire la suite"
                style="text-decoration: none;color:black;">
                 <div class="col-md-4">
@@ -16,12 +17,10 @@
                         />
                     {% else %}
                         {% if art.image.altEnligne is defined %}
-                            {% if art.image.altEnligne not in newArray %}
                                 <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
                                 <img src="{{ art.image.urlEnligne }}"
                                      alt="{{ art.image.altEnligne }}" height="100"
                                      class="center-block">
-                            {% endif %}
                         {% endif %}
                     {% endif %}
                 </div>
@@ -36,9 +35,7 @@
                         {{ art.content|striptags|truncate(400)|raw }}
                     {% endif %}
                 </div>
-
             </a>
-
         {% endfor %}
     </div>
 {% endblock %}

@@ -146,7 +146,7 @@ class UserController extends Controller
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
             $userManager->updateUser($user);
-            $request->getSession()->getFlashBag()->add('notice', 'User bien modifé.');
+            $request->getSession()->getFlashBag()->add('notice', 'User bien modifié.');
 
 
             return $this->redirectToRoute(

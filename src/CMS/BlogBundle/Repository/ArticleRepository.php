@@ -94,17 +94,14 @@ class ArticleRepository extends EntityRepository
     }
 
     /**
-     *  Test affiche article par categories
+     * Display articles par catégorie
+     *
      * @param $categoryId
      * @return array
      */
     public function getArticlesByCategory($categoryId)
     {
-
         $query = $this->createQueryBuilder('a')
-            //jointure avec les images
-            ->leftJoin('a.image', 'i')
-            ->addSelect('i')
             //jointure sur les catégories
             ->leftJoin('a.categories', 'c')
             ->addSelect('c')

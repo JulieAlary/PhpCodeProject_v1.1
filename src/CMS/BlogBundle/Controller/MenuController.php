@@ -247,35 +247,23 @@ class MenuController extends Controller
      */
     public function showArticleByMenuAction($id, Request $request)
     {
+        // Initializing entity manager
         $em = $this->getDoctrine()->getManager();
 
         // Pour le theme
         $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
-        $menu = $em->getRepository('CMSBlogBundle:Menu')->find($id);
-
-        $listArticles = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('CMSBlogBundle:Article')
-            ->findBy(array(), array('date' => 'desc'));
-
+        // Display category by id
         $listCate = $em->getRepository('CMSBlogBundle:Category')->find($id);
 
-        $listM = $em->getRepository('CMSBlogBundle:Menu')->findBy(
-            array('published' => true),
-            array()
-        );
-
+        // Display article with the re
         $list = $em->getRepository('CMSBlogBundle:Article')->getArticlesByCategory($listCate);
 
         return $this->render(
             'CMSBlogBundle:Menu:show.html.twig',
             [
-                'listArticles' => $listArticles,
-                'menu' => $menu,
+
                 'id' => $id,
-                'listM' => $listM,
                 'listCate' => $listCate,
                 'list' => $list,
                 'custom' => $custom
