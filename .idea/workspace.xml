@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8e93321d-eb29-4745-84db-f52efa522f75" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memo.md" afterPath="$PROJECT_DIR$/Memo.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/add.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/add.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/edit.html.twig" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Resources/views/Article/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMS/BlogBundle/Tests/Controller/BlogControllerTest.php" afterPath="$PROJECT_DIR$/src/CMS/BlogBundle/Tests/Controller/BlogControllerTest.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -606,14 +602,7 @@
       <workItem from="1488372643759" duration="4242000" />
       <workItem from="1488379604546" duration="29183000" />
       <workItem from="1488556122358" duration="12923000" />
-      <workItem from="1488710646048" duration="1396000" />
-    </task>
-    <task id="LOCAL-00034" summary="order by sur show article ok tout ok sauf mise en page">
-      <created>1486222798195</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1486222798195</updated>
+      <workItem from="1488710646048" duration="1445000" />
     </task>
     <task id="LOCAL-00035" summary="mise en place personnalisation page de contact">
       <created>1486225512054</created>
@@ -951,11 +940,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488579959459</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="assainissement détail">
+      <created>1488712298723</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1488712298724</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="459737000" />
+    <option name="totallyTimeSpent" value="459786000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1389,6 +1385,7 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="468">
             <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1405,6 +1402,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#157#209#0#PHP" expanded="false" />
+            <element signature="e#564#625#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
