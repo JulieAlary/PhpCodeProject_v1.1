@@ -7,7 +7,7 @@
         <div class="container-fluid well span6">
             <div class="row-fluid">
                 <div class="col-md-4">
-                    {% if user.avatar.url is defined %}
+                    {% if user.avatar.url is not null %}
                         <img src="{{ asset(user.avatar.uploadDir ~ '/' ~ user.avatar.id ~ '.' ~ user.avatar.url) }}" alt="{{ user.avatar.alt }}" width="200" height="200" class="img-circle">
                     {% elseif user.avatar.urlEnligne is defined %}
                         <img src="{{ user.avatar.urlEnligne }}" alt="{{ user.avatar.altEnligne }}" class="center-block img-responsive img-circle" style="max-height:160px;">
