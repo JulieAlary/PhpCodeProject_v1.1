@@ -4,6 +4,7 @@
 {% block cms_body %}
     <h2>Gestion des Menus</h2>
 
+
     {#On affiche tous les messages flash dont le nom est « info » #}
     {% for message in app.session.flashbag.get('info') %}
         <div class="alert alert-info">Message flash : {{ message }}</div>
@@ -12,22 +13,28 @@
     <div class="row">
         <div class="flip">
             <h3>
-                <button class="btn btn-info pull-right"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                <button class="btn btn-info pull-right btn-sm" style="margin-right:2em;"><i class="fa fa-info"
+                                                                                            aria-hidden="true"></i>&nbsp;&nbsp;Aide
                 </button>
             </h3>
         </div>
 
         <div class="panel-flip">
-            <p class="bg-info">Ici vous allez pouvoir consulter les menus déjà crées, et en créer</p>
-            <p class="bg-info">Attention un seul menu peu etre géré pour l'instant, pensez a bien suppimer votre menu
-                avant d'en mettre en ligne un nouveau</p>
+            <ul class="bg-info">
+                <li>Ici vous allez pouvoir consulter les menus déjà crées, et en créer</li>
+                <li>Attention un seul menu peu etre géré pour l'instant, pensez a bien suppimer votre menu
+                    avant d'en mettre en ligne un nouveau
+                </li>
+            </ul>
         </div>
 
         <a href="{{ path('cms_menu_add') }}">
-            <button class="btn btn-primary pull-left"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Créer un
+            <button class="btn btn-primary pull-left btn-sm"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Créer
+                un
                 menu
             </button>
         </a>
+
     </div>
 
     <h4>Liste des menus existants</h4>

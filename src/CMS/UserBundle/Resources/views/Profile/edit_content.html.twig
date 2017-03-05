@@ -1,3 +1,4 @@
+<h2 class="text-center">Modifier vos informations</h2>
 <div class="well col-md-8 col-md-offset-2">
 
     {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
@@ -42,7 +43,7 @@
                                                                                    aria-hidden="true"></i></span>
         {{ form_widget(form.url) }}
     </div>
-
+<br>
     <div class="well row">
         <div class="col-md-6 col-md-offset-1">
             <label for="avatar">{{ form_label(form.avatar) }}</label>
@@ -51,7 +52,7 @@
             </div>
         </div>
     </div>
-
+    <br>
     <div>
         <label for="password">{{ form_label(form.current_password) }}</label>
         <div class="input-group">

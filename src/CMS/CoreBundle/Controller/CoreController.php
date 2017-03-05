@@ -16,15 +16,20 @@ class CoreController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // Pour le theme
+       // Initializing entity manager
         $em = $this->getDoctrine()->getManager();
 
+        // Pour le theme
         $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
+
+        // To display new threads in sidebar
+        $threads = $em->getRepository('CMSMessageBundle:Thread')->findAll();
 
         return $this->render(
             'CMSCoreBundle:Core:index.html.twig',
             [
-                'custom' => $custom
+                'custom' => $custom,
+                'threads' => $threads
             ]
         );
     }

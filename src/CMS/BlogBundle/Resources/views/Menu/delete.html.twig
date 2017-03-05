@@ -8,18 +8,19 @@
 
     <h2>Supprimer un menu</h2>
 
-    <p>
+    <p class="alert alert-warning">
         Etes-vous certain de vouloir supprimer l'article "{{ menu.nom }}" ?
     </p>
 
     {# On met l'id de l'annonce dans la route de l'action du formulaire #}
     <form action="{{ path('cms_menu_delete', {'id': menu.id}) }}" method="post">
-        <a href="{{ path('cms_menu_index') }}" class="btn btn-success">
+        <a href="{{ path('cms_menu_index') }}" class="btn btn-success btn-sm">
             <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à la liste des menus
         </a>
         {# Ici j'ai écrit le bouton de soumission à la main #}
-        <input type="submit" value="Supprimer" class="btn btn-danger"/>
+        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;Supprimer
+        </button>
         {# Ceci va générer le champ CSRF #}
         {{ form_rest(form) }}
     </form>

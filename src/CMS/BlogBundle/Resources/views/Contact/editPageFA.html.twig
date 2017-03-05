@@ -6,12 +6,12 @@
 
 {% block cms_body %}
 
-    <h2>Modifier le page de contact</h2>
+    <h2>Modifier la page de contact</h2>
 
     {{ include("CMSBlogBundle:Contact:form.html.twig") }}
 
     <p>
-        <a href="{{ path('cms_contact_index') }}" class="btn btn-success">
+        <a href="{{ path('cms_contact_index') }}" class="btn btn-success btn-sm">
             <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à la rubrique
         </a>
@@ -19,6 +19,3 @@
 
 {% endblock %}
 
-{% block javascripts %}{{ parent() }}
-    {{ tinymce_init() }}
-{% endblock %}
