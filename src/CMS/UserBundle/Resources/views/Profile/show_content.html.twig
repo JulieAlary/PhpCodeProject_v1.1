@@ -7,7 +7,7 @@
         <div class="container-fluid well span6">
             <div class="row-fluid">
                 <div class="col-md-4">
-                    {% if user.avatar.url is not null %}
+                    {% if user.avatar.url is defined %}
                         <img src="{{ asset(user.avatar.uploadDir ~ '/' ~ user.avatar.id ~ '.' ~ user.avatar.url) }}" alt="{{ user.avatar.alt }}" width="200" height="200" class="img-circle">
                     {% elseif user.avatar.urlEnligne is defined %}
                         <img src="{{ user.avatar.urlEnligne }}" alt="{{ user.avatar.altEnligne }}" class="center-block img-responsive img-circle" style="max-height:160px;">
@@ -24,13 +24,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('cms_user_participation', {'id': user.id}) }}"><span
-                                            class="btn btn-primary"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                            class="btn btn-primary btn-sm"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
                                     &nbsp;&nbsp;Participation</span></a></li>
-                            <li><a href="{{ path('fos_user_profile_edit') }}"><span class="btn btn-warning"><i
+                            <li><a href="{{ path('fos_user_profile_edit') }}"><span class="btn btn-warning btn-sm"><i
                                                 class="fa fa-pencil-square-o"
                                                 aria-hidden="true"></i>&nbsp;&nbsp;Edition du profil</span></a>
                             </li>
-                            <li><a href="{{ path('cms_user_del', {'id': user.id}) }}"><span class="btn btn-danger"><i
+                            <li><a href="{{ path('cms_user_del', {'id': user.id}) }}"><span class="btn btn-danger btn-sm"><i
                                                 class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;Supprimer le profil</span></a>
                             </li>
                         </ul>

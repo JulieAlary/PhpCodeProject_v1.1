@@ -15,8 +15,6 @@
 */
 /*---------------------------------------------------------------*/
 
-
-
 /*---------------------- 1 - GENERAL ----------------------*/
 .pointer {
     cursor: pointer;
@@ -26,6 +24,13 @@ a {
     text-decoration: none !important;
     color: black;
 }
+
+.well {
+    border-radius: inherit !important;
+}
+
+
+
 /*********** 1.1 font awesome ***********/
 
 /*logo de connection*/
@@ -67,6 +72,10 @@ div.navbar-header > a {
     border-radius: 5px;
 }
 
+#menu > ul.nav.nav-pills {
+    border-radius: inherit !important;
+}
+
 #menu > ul.nav.nav-pills.nav-stacked a:hover {
     background-color: white;
     border-radius: inherit;
@@ -77,12 +86,14 @@ div.navbar-header > a {
 #header.jumbotron {
     background-color: lightgreen;
 }
+
 /*********** 1.5 - Image ***********/
 
 /*Pub lightbox*/
 #html5-watermark {
     display: none !important;
 }
+
 /*Display img by tinymce*/
 .well.article_content img {
     max-width: 600px;
@@ -99,17 +110,22 @@ div.navbar-header > a {
 .color_red_bg {
     background-color: lightcoral !important;
 }
+
 .color_red_hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(240,128, 128), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(154, 205, 50), rgba(0, 0, 0, 0));
+}
+
+.fa-5x.color_red:hover {
+    color: yellowgreen;
+    transition-delay: 0.1s;
 }
 
 /**** 2.2 yellow ****/
 .color_yellow {
     color: yellow;
     font-weight: bold;
-    background-color: lightgrey;
 }
 
 .color_yellow_bg {
@@ -119,7 +135,12 @@ div.navbar-header > a {
 .color_yellow_hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(165,42,42), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(165, 42, 42), rgba(0, 0, 0, 0));
+}
+
+.fa-5x.color_yellow:hover {
+    color: #A52A2A;
+    transition-delay: 0.1s;
 }
 
 /**** 2.3 grey ****/
@@ -135,9 +156,13 @@ div.navbar-header > a {
 .color_grey_hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(128,0,128), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(128, 0, 128), rgba(0, 0, 0, 0));
 }
 
+.fa-5x.color_grey:hover {
+    color: #800080;
+    transition-delay: 0.1s;
+}
 
 /**** 2.4 green ****/
 .color_green {
@@ -152,7 +177,12 @@ div.navbar-header > a {
 .color_green_hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255,165,0), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 165, 0), rgba(0, 0, 0, 0));
+}
+
+.fa-5x.color_green:hover {
+    color: #FFA500;
+    transition-delay: 0.1s;
 }
 
 /*---------------------- 3 - Inbox ----------------------*/
@@ -162,6 +192,7 @@ div.navbar-header > a {
     padding: 10px;
     margin-bottom: 10px;
 }
+
 .messenger_thread_message_body .pull-right {
     background-color: lightgreen;
     border-radius: 15px;

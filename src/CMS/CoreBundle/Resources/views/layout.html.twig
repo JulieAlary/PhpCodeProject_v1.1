@@ -63,7 +63,7 @@
                 <li><a href="{{ path('cms_core_home') }}"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Accueil</a>
                 </li>
                 {% if is_granted('ROLE_AUTEUR') %}
-                    <li><a href={{ path("cms_custom_index") }}> <i class="fa fa-cog" aria-hidden="true"></i></i>&nbsp;&nbsp;Paramètres
+                    <li><a href="{{ path("cms_custom_index") }}"> <i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Paramètres
                         </a></li>
                     <li><a href="{{ path('cms_article_list') }}"><i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;&nbsp;Gestion
                             des Articles</a></li>
@@ -82,10 +82,20 @@
                     <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle-o"
                                                                          aria-hidden="true"></i>&nbsp;&nbsp;Mon
                             Compte</a></li>
+                    {#<li><a><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;&nbsp;Messagerie</a></li>#}
+                    {#{% if threads is defined %}#}
+                        {#{% for thread in threads %}#}
+                            {#{% if not fos_message_is_read(thread) %}#}
+                                {#<a href="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}">#}
+                                    {#{{ thread.subject }}</a>#}
+                                {#({% trans from 'FOSMessageBundle' %}new{% endtrans %})#}
+                            {#{% endif %}#}
+                        {#{% endfor %}#}
+                    {#{% endif %}#}
                 {% endif %}
 
             </ul>
-            <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
+            {#<hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">#}
 
         </div>
         <div id="content" class="col-md-9">
@@ -102,7 +112,7 @@
 </div>
 <footer class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_bg{% endfor %}{% endif %}">
     <div class="container-fluid">
-        <p class="text-center"> Developed by Julie ALARY {{ 'now'|date('Y') }} </p>
+        <p class="text-center"> Developed with <i class="fa fa-heart" aria-hidden="true" style="color:indianred"></i> by <a href="http://juliealary.github.io/" target="_blank">Julie Alary</a> {{ 'now'|date('Y') }} </p>
     </div>
 </footer>
 
