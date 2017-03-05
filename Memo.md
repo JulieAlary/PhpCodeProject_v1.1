@@ -65,3 +65,6 @@
  /-----------------------------------------/
  
  a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}
+ /-----------------------------------------/
+ lancer un fichier jar en console  : merise
+ java -jar nomdubidule.jar

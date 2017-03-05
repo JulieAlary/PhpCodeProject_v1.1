@@ -2,7 +2,6 @@
 
 namespace CMS\BlogBundle\Tests\Controller;
 
-use CMS\BlogBundle\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class BlogControllerTest extends WebTestCase
