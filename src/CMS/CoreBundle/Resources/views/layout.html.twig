@@ -87,26 +87,6 @@
             </ul>
             <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
 
-            {#<div class="messagerie">#}
-                {#<p style="margin-left: 1.2em;"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;&nbsp;Messagerie#}
-                {#</p>#}
-
-                {#{% if threads is defined %}#}
-                    {#{% for thread in threads %}#}
-                        {#{% if not fos_message_is_read(thread) %}#}
-                            {#<a href="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}">#}
-                                {#{{ thread.subject }}#}
-                            {#</a>#}
-                            {#({% trans from 'FOSMessageBundle' %}new{% endtrans %})#}
-                            {#{% else %}#}
-                            {#<p>Pas de nouveau message !</p>#}
-                        {#{% endif %}#}
-                    {#{% endfor %}#}
-                {#{% endif %}#}
-            {#</div>#}
-
-            {#<h4>Derniers articles</h4>#}
-            {#{{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}#}
         </div>
         <div id="content" class="col-md-9">
             {% block body %}

@@ -4,17 +4,16 @@
 
     <div class="col-md-10 well">
         <h2 class="text-center">{{ thread.subject|capitalize }}</h2>
-
         {% for message in thread.messages %}
             <div class="messenger_thread_message">
                 <div class="messenger_thread_message_info" {{ loop.index }}>
-                    {% if message.sender.id|first != message.sender.id %}
+                    {% if thread.createdBy.id != message.sender.id %}
                         <div class="pull-right">
                             <small>{% trans with {'%sender%': message.sender|e|capitalize, '%date%': message.createdAt|date('d/m/Y')} from 'FOSMessageBundle' %}
                                 message_info{% endtrans %}</small>
 
                         </div>
-                    {% elseif message.sender.id|first == message.sender.id %}
+                    {% elseif thread.createdBy.id == message.sender.id %}
                         <div class="pull-left">
                             <small>{% trans with {'%sender%': message.sender|e|capitalize, '%date%': message.createdAt|date('d/m/Y')} from 'FOSMessageBundle' %}
                                 message_info{% endtrans %}</small>
@@ -23,11 +22,13 @@
 
                 </div>
                 <br>
-                <div class="messenger_thread_message_body" id="message_{{ message.id }} {{ loop.index }}">
 
-                    {% if message.sender.id|first != message.sender.id %}
+
+                <div class="messenger_thread_message_body" id="message_{{ message.id }}">
+
+                    {% if thread.createdBy.id != message.sender.id %}
                         <div class="pull-right">{{ message.body }}</div>
-                    {% elseif message.sender.id|first == message.sender.id %}
+                    {% elseif thread.createdBy.id == message.sender.id %}
                         <div class="pull-left">{{ message.body }}</div>
                     {% endif %}
 
