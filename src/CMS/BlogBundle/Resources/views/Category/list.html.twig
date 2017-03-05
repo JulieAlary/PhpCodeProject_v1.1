@@ -7,8 +7,28 @@
 {% block cms_body %}
     <h2>Toutes les catégories </h2>
 
-    <div class="pull-right">
-        <a href="{{ path('cms_category_add') }}"><button class="btn btn-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter une catégorie</button></a>
+    <div class="row">
+
+        <div class="flip">
+            <h3>
+                <button class="btn btn-info pull-right btn-sm" style="margin-right: 2em;"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;Aide
+                </button>
+            </h3>
+        </div>
+
+        <div class="panel-flip bg-info">
+            <ul>
+                <li>Vous pouvez consulter ici la liste des catégories créées, les supprimer, en ajouter.</li>
+                <li>Les caégories sont très importantes, elles permettent de créer des nouvelles pages et les ajouter au menu.</li>
+                <li>Le choix de leur nom est de ce fait très important.</li>
+                <li>Les articles pourront être attribués à une ou plusieurs catégories.</li>
+            </ul>
+        </div>
+
+        <div class="pull-left">
+            <a href="{{ path('cms_category_add') }}"><button class="btn btn-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter une catégorie</button></a>
+        </div>
+
     </div>
     <br><br>
 

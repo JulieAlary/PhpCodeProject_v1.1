@@ -1,17 +1,17 @@
 {% extends "CMSBlogBundle::layout.html.twig" %}
 
 {% block title %}
-    Modifier un user- {{ parent() }}
+    Modifier un utilisateur- {{ parent() }}
 {% endblock %}
 
 {% block cms_body %}
 
-    <h2>Modifier le rôle d'user</h2>
+    <h2>Modifier le rôle utilisateur</h2>
 
     {{ include("CMSBlogBundle:User:form.html.twig") }}
 
     <p>
-        <a href="{{ path('cms_user_fiche', {'id': user.id}) }}" class="btn btn-success">
+        <a href="{{ path('cms_user_fiche', {'id': user.id}) }}" class="btn btn-success btn-sm">
             <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à la fiche utilisateur
         </a>
