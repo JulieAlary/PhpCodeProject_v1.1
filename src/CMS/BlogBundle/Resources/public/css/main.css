@@ -188,14 +188,14 @@ div.navbar-header > a {
 /*---------------------- 3 - Inbox ----------------------*/
 .messenger_thread_message_body .pull-left {
     background-color: lightblue;
-    border-radius: 15px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 5px;
     margin-bottom: 10px;
 }
 
 .messenger_thread_message_body .pull-right {
     background-color: lightgreen;
-    border-radius: 15px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 5px;
     margin-bottom: 10px;
 }
