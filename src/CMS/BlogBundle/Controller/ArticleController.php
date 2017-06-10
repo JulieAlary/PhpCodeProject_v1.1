@@ -83,6 +83,7 @@ class ArticleController extends Controller
             array('published' => true),
             array()
         );
+
 //        $idMenu = $listM[0]->getId();
 
 //        // Pour Redirection de article vers liste des article / catégories

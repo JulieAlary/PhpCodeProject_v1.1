@@ -17,8 +17,6 @@
                     </button>
                 </h3>
 
-
-
         <div class="panel-flip bg-info">
             <ul>
                 <li>Ici vous pouvez créer un carousel</li>
@@ -41,9 +39,6 @@
             <div class="col-md-6 col-xs-6">
                 <a title="Supprimer l'existant pour en créer un autre" class="pointer">Ajouter un Carousel</a>
             </div>
-
-
-
 
             {#{% for key, galleries in gallery %}#}
             {% if gallery|length not in newArray %} {# je calcule la longueur de mon tableau et je groupe#}
@@ -68,9 +63,7 @@
 
         {% endif %}
 
-
     </div>
-
 
     {% for key, carousels in carousel %}
         {% if carousels %}
@@ -131,7 +124,6 @@
                 {% endif %}
             </p>
         </div>
-
 
     {% endfor %}
 {% endblock %}

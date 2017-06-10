@@ -45,6 +45,8 @@
                     {% endfor %}
                 </p>
             </div>
+            {% set url = "{{ path('cms_blog_fiche', {'id': 'article.id'}) }}" %}
+            {{ knp_disqus_render('Julie', {'identifier': 'url'}) }}
         {% endif %}
         <p>
             {% if is_granted('ROLE_AUTEUR') %}
@@ -62,6 +64,8 @@
                 </a>
             {% endif %}
         </p>
+
     {% endif %}
 {% endblock %}
+
 

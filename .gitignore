@@ -13,3 +13,11 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
+.idea/php.xml
+app/config/.DS_Store
+bin/.DS_Store
+phpunit.phar
+web/uploads/img/5.png
+web/uploads/img/6.png
+web/uploads/img/7.png
+.DS_Store
