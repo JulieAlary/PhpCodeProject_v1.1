@@ -29,14 +29,12 @@
         <div class="well article_content">
             {{ article.content|raw }}
         </div>
-
-            {{ include("CMSBlogBundle:Comment:listComment.html.twig") }}
+        {# Ancienne implémentation des commentaires #}
+            {#{{ include("CMSBlogBundle:Comment:listComment.html.twig") }}
 
         <div class="well">
             {{ include("CMSBlogBundle:Comment:addComment.html.twig") }}
-        </div>
-
-
+        </div>#}
         {% if not article.categories.empty %}
             <div class="well">
                 <p>Cet article est paru dans les catégories suivantes:
@@ -45,8 +43,25 @@
                     {% endfor %}
                 </p>
             </div>
-           {# {% set url = "{{ path('cms_blog_fiche', {'id': 'article.id'}) }}" %}
-            {{ knp_disqus_render('Julie', {'identifier': 'url'}) }}#}
+           {% set url = "{{ path('cms_blog_fiche', {'id': 'article.id'}) }}" %}
+            <div id="disqus_thread"></div>
+            <script>
+
+                 var disqus_config = function () {
+                 this.page.url = url;  // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = {{ article.id }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+
+                (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://phpcodeproject.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
         {% endif %}
         <p>
             {% if is_granted('ROLE_AUTEUR') %}
@@ -68,8 +83,8 @@
     {% endif %}
 {% endblock %}
 
-{% block javascripts %}
-
+{% block javascripts %}{{ parent() }}
+    <script id="dsq-count-scr" src="//phpcodeproject.disqus.com/count.js" async></script>
 {% endblock %}
 
 
