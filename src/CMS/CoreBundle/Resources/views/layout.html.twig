@@ -8,16 +8,13 @@
 
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('bundles/prism/prism.css') }}">
-
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" type="text/css"
-              href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.min.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.min.css') }}"/>
         {% stylesheets filter="cssrewrite, ?scssphp"
         'bundles/cmsblog/css/main.css'
         'bundles/cmsblog/css/blog.css' %}
-
         <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
         {% endstylesheets %}
     {% endblock %}
@@ -38,7 +35,6 @@
 
             ga('create', 'UA-92434318-1', 'auto');
             ga('send', 'pageview');
-
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
         <script src="{{ asset('bundles/prism/prism.js') }}"></script>
@@ -49,61 +45,27 @@
 <body>
 {{ include('CMSCoreBundle:Core:menu.html.twig') }}
 
-{# include the user menu behind! #}
-
-
 <div class="container-fluid">
     {{ render(controller('CMSBlogBundle:Custom:showBlogName')) }}
 
     <div class="row">
-        <div id="menu" class="col-md-3">
-
+        <div id="menu" {% if is_granted('ROLE_AUTEUR') %} class="col-md-3"{% else %}{% endif %}>
             <ul class="nav nav-pills nav-stacked {% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_bg{% endfor %}{% endif %}">
 
-                <li><a href="{{ path('cms_core_home') }}"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Accueil</a>
-                </li>
                 {% if is_granted('ROLE_AUTEUR') %}
-                    <li><a href="{{ path("cms_custom_index") }}"> <i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Paramètres
-                        </a></li>
-                    <li><a href="{{ path('cms_article_list') }}"><i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;&nbsp;Gestion
-                            des Articles</a></li>
-                    <li><a href="{{ path('cms_category_list') }}"><i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;Gestion
-                            des Catégories</a></li>
-                    <li><a href="{{ path('cms_user_list') }}"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;Gestion
-                            des Utilisateurs</a></li>
-                    <li><a href="{{ path('cms_menu_index') }}"><i class="fa fa-bars" aria-hidden="true"></i>
-                            &nbsp;&nbsp;Gestion des Menus</a></li>
-                    <li><a href="{{ path('cms_contact_index') }}"><i class="fa fa-address-book"
-                                                                     aria-hidden="true"></i></i>
-                            &nbsp;&nbsp;Gestion Page de Contact</a></li>
-
+                    <li><a href="{{ path("cms_custom_index") }}"> <i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Paramètres</a></li>
+                    <li><a href="{{ path('cms_article_list') }}"><i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;&nbsp;Gestion des Articles</a></li>
+                    <li><a href="{{ path('cms_category_list') }}"><i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;Gestion des Catégories</a></li>
+                    <li><a href="{{ path('cms_user_list') }}"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;Gestion des Utilisateurs</a></li>
+                    <li><a href="{{ path('cms_menu_index') }}"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;Gestion des Menus</a></li>
+                    <li><a href="{{ path('cms_contact_index') }}"><i class="fa fa-address-book" aria-hidden="true"></i>&nbsp;&nbsp;Gestion Page de Contact</a></li>
                 {% endif %}
-                {% if is_granted('ROLE_USER') %}
-                    <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle-o"
-                                                                         aria-hidden="true"></i>&nbsp;&nbsp;Mon
-                            Compte</a></li>
-                    {#<li><a><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;&nbsp;Messagerie</a></li>#}
-                    {#{% if threads is defined %}#}
-                        {#{% for thread in threads %}#}
-                            {#{% if not fos_message_is_read(thread) %}#}
-                                {#<a href="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}">#}
-                                    {#{{ thread.subject }}</a>#}
-                                {#({% trans from 'FOSMessageBundle' %}new{% endtrans %})#}
-                            {#{% endif %}#}
-                        {#{% endfor %}#}
-                    {#{% endif %}#}
-
-                    <li><a href="{{ path('fos_message_inbox') }}"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;Vous avez {{ fos_message_nb_unread() }} nouveau(x) message(s)</a></li>
-                {% endif %}
-
             </ul>
-            {#<hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">#}
-
         </div>
-        <div id="content" class="col-md-9">
+        <div id="content" {% if is_granted('ROLE_AUTEUR') %} class="col-md-9" {% else %}class="col-md-10 col-md-offset-1"{% endif %}>
             {% block body %}
                 {# message flas#}
-                {{ include('CMSCoreBundle:Core:flashbag.html.twig') }}
+                    {{ include('CMSCoreBundle:Core:flashbag.html.twig') }}
                 {#end message flash#}
                 {% block modal %}{% endblock %}
             {% endblock %}
@@ -112,21 +74,21 @@
 
     <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
 </div>
+
+
 <footer class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_bg{% endfor %}{% endif %}">
     <div class="container-fluid">
-        <p class="text-center"> Developed with <i class="fa fa-heart" aria-hidden="true" style="color:indianred"></i> by <a href="http://juliealary.github.io/" target="_blank">Julie Alary</a> {{ 'now'|date('Y') }} </p>
+        <p class="text-center"> Developed with <i class="fa fa-heart" aria-hidden="true" style="color:indianred"></i> by<a href="http://juliealary.github.io/" target="_blank">Julie Alary</a> {{ 'now'|date('Y') }} </p>
     </div>
 </footer>
 
 {% block javascripts %}
-
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('bundles/html5lightbox/html5lightbox.js') }}"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="{{ asset('bundles/cmsblog/js/main.js') }}"></script>
-
 {% endblock %}
 
 </body>

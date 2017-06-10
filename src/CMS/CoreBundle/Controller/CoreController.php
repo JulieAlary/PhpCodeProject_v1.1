@@ -22,14 +22,10 @@ class CoreController extends Controller
         // Pour le theme
         $custom = $em->getRepository('CMSBlogBundle:Custom')->findAll();
 
-        // To display new threads in sidebar
-        $threads = $em->getRepository('CMSMessageBundle:Thread')->findAll();
-
         return $this->render(
             'CMSCoreBundle:Core:index.html.twig',
             [
                 'custom' => $custom,
-                'threads' => $threads
             ]
         );
     }

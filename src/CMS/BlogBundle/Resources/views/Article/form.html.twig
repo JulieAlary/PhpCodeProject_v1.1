@@ -3,8 +3,6 @@
 <div class="well">
     {{ form_start(form, {'attr': {'class': 'form-horizontal','novalidate': 'novalidate'}}) }}
 
-
-
     {# Les erreurs générales du formulaire. #}
     {{ form_errors(form) }}
 
@@ -45,7 +43,6 @@
     {% if form.published is defined %}
         {{ form_row(form.published) }}
     {% endif %}
-
 
     {% if form.image.file is defined %}
         <div class="form-group">

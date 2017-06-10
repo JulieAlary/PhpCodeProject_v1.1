@@ -18,50 +18,57 @@
                    class="html5lightbox"><img
                             src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                             alt="{{ article.image.alt }}" height="60"></a>
-                {% else %}
-                <a class="html5lightbox" href="{% if article.image.urlEnligne is defined %}{{ article.image.urlEnligne }}{% endif %}" alt="{% if article.image.altEnligne is defined %}{{ article.image.altEnligne }}{% endif %}"><img src="{% if article.image.urlEnligne is defined %}{{ article.image.urlEnligne }}{% endif %}" alt="{% if article.image.altEnligne is defined %}{{ article.image.altEnligne }}{% endif %}" height="60"></a>
+            {% else %}
+                <a class="html5lightbox"
+                   href="{% if article.image.urlEnligne is defined %}{{ article.image.urlEnligne }}{% endif %}"
+                   alt="{% if article.image.altEnligne is defined %}{{ article.image.altEnligne }}{% endif %}"><img
+                            src="{% if article.image.urlEnligne is defined %}{{ article.image.urlEnligne }}{% endif %}"
+                            alt="{% if article.image.altEnligne is defined %}{{ article.image.altEnligne }}{% endif %}"
+                            height="60"></a>
             {% endif %}
         </div>
 
         <h2>{{ article.title|capitalize|raw }}</h2>
-        <i>Par <a href="{{ path('cms_user_fiche', {'id': article.author.id}) }}" class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}{% endfor %}{% endif %}">{{ article.author|capitalize }}</a>, le {{ article.date|date('d/m/Y') }}</i>
+        <i>Par <a href="{{ path('cms_user_fiche', {'id': article.author.id}) }}"
+                  class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}{% endfor %}{% endif %}">{{ article.author|capitalize }}</a>,
+            le {{ article.date|date('d/m/Y') }}</i>
 
         <div class="well article_content">
             {{ article.content|raw }}
         </div>
         {# Ancienne implémentation des commentaires #}
-            {#{{ include("CMSBlogBundle:Comment:listComment.html.twig") }}
+        {#{{ include("CMSBlogBundle:Comment:listComment.html.twig") }}
 
-        <div class="well">
-            {{ include("CMSBlogBundle:Comment:addComment.html.twig") }}
-        </div>#}
+    <div class="well">
+        {{ include("CMSBlogBundle:Comment:addComment.html.twig") }}
+    </div>#}
         {% if not article.categories.empty %}
             <div class="well">
                 <p>Cet article est paru dans les catégories suivantes:
                     {% for category in article.categories %}
-                        <a href="{{ path('cms_menu_show_article', {'id': category.id} ) }}" class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}{% endfor %}{% endif %}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                        <a href="{{ path('cms_menu_show_article', {'id': category.id} ) }}"
+                           class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}{% endfor %}{% endif %}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 </p>
             </div>
-           {% set url = "{{ path('cms_blog_fiche', {'id': 'article.id'}) }}" %}
+            {% set url = "{{ path('cms_blog_fiche', {'id': 'article.id'}) }}" %}
             <div id="disqus_thread"></div>
             <script>
 
-                 var disqus_config = function () {
-                 this.page.url = url;  // Replace PAGE_URL with your page's canonical URL variable
-                 this.page.identifier = {{ article.id }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                 };
+                var disqus_config = function () {
+                    this.page.url = url;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = {{ article.id }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
 
-                (function() { // DON'T EDIT BELOW THIS LINE
+                (function () { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
                     s.src = 'https://phpcodeproject.disqus.com/embed.js';
                     s.setAttribute('data-timestamp', +new Date());
                     (d.head || d.body).appendChild(s);
                 })();
             </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
         {% endif %}
         <p>
             {% if is_granted('ROLE_AUTEUR') %}
