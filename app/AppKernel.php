@@ -25,7 +25,6 @@ class AppKernel extends Kernel
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
             new CMS\MessageBundle\CMSMessageBundle(),
-            new Knp\Bundle\DisqusBundle\KnpDisqusBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

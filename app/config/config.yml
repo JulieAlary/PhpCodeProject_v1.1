@@ -111,10 +111,8 @@ assetic:
         scssphp:
             formatter: 'Leafo\ScssPhp\Formatter\Compressed'
 
-#disqus
-knp_disqus:
-    api_key: wdphMEAlSzL0PXrwDqTrGGdxamM8AKa743TqlRGBUtdb0njJF1eTsB1fDrWlcqZY
-    #secret_key: %knp_disqus.secret_key% # optional, for SSO auth only
+
+
 
 
 

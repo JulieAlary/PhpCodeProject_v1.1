@@ -78,6 +78,7 @@ class ArticleController extends Controller
         // Pour récup l'article par son ID
         $article = $em->getRepository('CMSBlogBundle:Article')->find($id);
 
+
         // Récuperation de l'id du menu publié
         $listM = $em->getRepository('CMSBlogBundle:Menu')->findBy(
             array('published' => true),
