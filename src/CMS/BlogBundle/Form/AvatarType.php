@@ -22,8 +22,12 @@ class AvatarType extends AbstractType
                 'required' => false,
                 'label' => false
             ))*/
-            ->add('urlEnligne', TextType::class)
-            ->add('altEnligne', TextType::class)
+            ->add('urlEnligne', TextType::class, [
+                'label' => "Url de l'image"
+            ])
+            ->add('altEnligne', TextType::class, [
+                'label' => "Nom de l'image"
+            ])
         ;
     }
 

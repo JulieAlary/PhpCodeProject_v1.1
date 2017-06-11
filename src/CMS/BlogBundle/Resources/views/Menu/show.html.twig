@@ -8,6 +8,7 @@
             <a href="{{ path('cms_blog_fiche', {'id': art.id}) }}" title="Lire la suite"
                style="text-decoration: none;color:black;">
                 <div class="col-md-4">
+                    {# Pb mémoire tampon
                     {% if art.image.url is not null %}
                         <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
                         <img src="{{ asset(art.image.uploadDir ~ '/' ~ art.image.id ~ '.' ~ art.image.url) }}"
@@ -15,22 +16,22 @@
                              height="100"
                              class="center-block"
                         />
-                    {% else %}
+                    {% else %}#}
                         {% if art.image.altEnligne is defined %}
                                 <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
                                 <img src="{{ art.image.urlEnligne }}"
                                      alt="{{ art.image.altEnligne }}" height="100"
                                      class="center-block">
                         {% endif %}
-                    {% endif %}
+                    {#{% endif %}#}
                 </div>
-                <div class="col-md-8">
+                <div {% if art.image.altEnligne is defined %}class="col-md-8"{% else %}class="col-md-10"{% endif %}>
                     {% if art.title is defined %}
                         <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
                         <h2>{{ art.title|capitalize }}</h2>
                     {% endif %}
                 </div>
-                <div class="col-md-8 col-md-offset-4">
+                <div {% if art.image.altEnligne is defined %}class="col-md-8 col-md-offset-4"{% else %}class="col-md-10"{% endif %}>
                     {% if art.content is defined %}
                         {{ art.content|striptags|truncate(400)|raw }}
                     {% endif %}

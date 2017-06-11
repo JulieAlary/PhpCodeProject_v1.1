@@ -17,13 +17,17 @@ class ImageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('file', FileType::class, array(
+            /*->add('file', FileType::class, array(
                 'attr' => array('class' => 'btn btn-file'),
                 'required' => false,
                 'label' => false
-            ))
-            ->add('urlEnligne', TextType::class)
-            ->add('altEnligne', TextType::class);
+            ))*/
+            ->add('urlEnligne', TextType::class, [
+                'label' => "Url de l'image"
+            ])
+            ->add('altEnligne', TextType::class, [
+                'label' => "Nommez l'image"
+            ]);
 
     }
 

@@ -12,20 +12,21 @@
 
     {% if article.published == true or is_granted('ROLE_AUTEUR') %}
         <div style="float: left; margin-right: 1em;">
-            {% if article.image.alt is not null %}
+         {#   ANCIENNE ligne pour l'upload d'image -> pb mémoire tampon
+         {% if article.image.alt is not null %}
                 <a href="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                    alt="{{ article.image.alt }}"
                    class="html5lightbox"><img
                             src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                             alt="{{ article.image.alt }}" height="60"></a>
-            {% else %}
+            {% else %}#}
                 <a class="html5lightbox"
                    href="{% if article.image.urlEnligne is defined %}{{ article.image.urlEnligne }}{% endif %}"
                    alt="{% if article.image.altEnligne is defined %}{{ article.image.altEnligne }}{% endif %}"><img
                             src="{% if article.image.urlEnligne is defined %}{{ article.image.urlEnligne }}{% endif %}"
                             alt="{% if article.image.altEnligne is defined %}{{ article.image.altEnligne }}{% endif %}"
                             height="60"></a>
-            {% endif %}
+            {#{% endif %}#}
         </div>
 
         <h2>{{ article.title|capitalize|raw }}</h2>

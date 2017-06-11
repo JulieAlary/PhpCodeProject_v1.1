@@ -4,13 +4,14 @@
             <a href="{{ path('cms_blog_fiche', {'id': article.id}) }}">
                 <p class="text-center"><strong>{{ article.title|capitalize }}</strong></p>
             </a>
-            {% if article.image.url is not null %}
+            {#{% if article.image.url is not null %}
                 <a href="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
                    alt="{{ article.image.alt }}"
                    class="html5lightbox"><img
                             src="{{ asset(article.image.uploadDir ~ '/' ~ article.image.id ~ '.' ~ article.image.url) }}"
-                            alt="{{ article.image.alt }}" class="center-block img-responsive" style="max-height:160px;"></a>
-            {% elseif article.image.urlEnligne is not null %}
+                            alt="{{ article.image.alt }}" class="center-block img-responsive" style="max-height:160px;"></a>#}
+            {# passage du elsif en if (pb mémoire tampon #}
+            {% if article.image.urlEnligne is defined %}
                 <img src="{{ article.image.urlEnligne }}" alt="{{ article.image.altEnligne }}" class="center-block img-responsive" style="max-height:160px;">
             {% else %}
                 <img src="{{ asset('assets/img/noimage.jpg') }}" class="center-block img-responsive">
