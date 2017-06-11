@@ -4,7 +4,7 @@
     <div class="row">
 
         {% for art in list %}
-
+            {% if art.published == true %}
             <a href="{{ path('cms_blog_fiche', {'id': art.id}) }}" title="Lire la suite"
                style="text-decoration: none;color:black;">
                 <div class="col-md-4">
@@ -37,6 +37,7 @@
                     {% endif %}
                 </div>
             </a>
+        {% endif %}
         {% endfor %}
     </div>
 {% endblock %}

@@ -96,7 +96,6 @@ class ArticleController extends Controller
         $comments = $em->getRepository('CMSBlogBundle:Comment')
             ->getCommentForArticle($article->getId());
 
-
         if ($article === null) {
             throw new NotFoundHttpException("L'article d'id " . $id . "n'existe pas.");
         }
