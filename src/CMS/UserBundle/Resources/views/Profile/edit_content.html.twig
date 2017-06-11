@@ -7,40 +7,31 @@
 
     <label for="username"> {{ form_label(form.username) }}</label>
     <div class="input-group">
-    <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-user"
-                                                                               aria-hidden="true"></i></span>
+    <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-user" aria-hidden="true"></i></span>
         {{ form_widget(form.username) }}
     </div>
 
     <label for="email">{{ form_label(form.email) }}</label>
     <div class="input-group">
-        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
-                                                                                   class="fa fa-envelope-o"
-                                                                                   aria-hidden="true"></i></span>
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-envelope-o" aria-hidden="true"></i></span>
         {{ form_widget(form.email) }}
     </div>
 
     <label for="age">{{ form_label(form.age) }}</label>
     <div class="input-group">
-        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
-                                                                                   class="fa fa-user"
-                                                                                   aria-hidden="true"></i></span>
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-user" aria-hidden="true"></i></span>
         {{ form_widget(form.age) }}
     </div>
 
     <label for="city">{{ form_label(form.city) }}</label>
     <div class="input-group">
-        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
-                                                                                   class="fa fa-globe"
-                                                                                   aria-hidden="true"></i></span>
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-globe" aria-hidden="true"></i></span>
         {{ form_widget(form.city) }}
     </div>
 
     <label for="url">{{ form_label(form.url) }}</label>
     <div class="input-group">
-        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
-                                                                                   class="fa fa-link"
-                                                                                   aria-hidden="true"></i></span>
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-link" aria-hidden="true"></i></span>
         {{ form_widget(form.url) }}
     </div>
 <br>
@@ -56,21 +47,15 @@
     <div>
         <label for="password">{{ form_label(form.current_password) }}</label>
         <div class="input-group">
-        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;"
-                                                                                   class="fa fa-unlock-alt"
-                                                                                   aria-hidden="true"></i></span>
+        <span class="input-group-addon" style="background-color: lightskyblue;"><i style="color:white;" class="fa fa-unlock-alt" aria-hidden="true"></i></span>
             {{ form_widget(form.current_password) }}
         </div>
     </div>
 
-
     {{ form_rest(form) }}
 
-
     <br>
-    <button class="btn btn-primary" type="submit"
-            value="{ 'profile.edit.submit'|trans }}">Modifier son profil
-    </button>
+    <button class="btn btn-primary" type="submit" value="{ 'profile.edit.submit'|trans }}">Modifier son profil</button>
 
     {{ form_end(form) }}
 </div>

@@ -7,9 +7,11 @@
         <div class="container-fluid well span6">
             <div class="row-fluid">
                 <div class="col-md-4">
-                    {% if user.avatar.url is not null %}
+                    {# TANT QUE PB mémoire non résolu on donne juste la possibilité de mettre des avatar déjà hébergés #}
+                  {#  {% if user.avatar.url is not null %}
                         <img src="{{ asset(user.avatar.uploadDir ~ '/' ~ user.avatar.id ~ '.' ~ user.avatar.url) }}" alt="{{ user.avatar.alt }}" width="200" height="200" class="img-circle">
-                    {% elseif user.avatar.urlEnligne is defined %}
+                        #}
+                    {% if user.avatar.urlEnligne is defined %}
                         <img src="{{ user.avatar.urlEnligne }}" alt="{{ user.avatar.altEnligne }}" class="center-block img-responsive img-circle" style="max-height:160px;">
                     {% else %}
                         <img src="http://s9.postimg.org/uylsxjghr/people_dialer_photo.png" class="img-circle">

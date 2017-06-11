@@ -13,7 +13,7 @@
 
     {{ render(controller('CMSBlogBundle:Carousel:isPublished')) }}
 
-    <h3 class="text-center">Actus</h3>
+    <h3 class="text-left">Dernières publications</h3>
     <hr class="{% if custom is defined %}{% for key, theme in custom %}{{ theme.theme }}_hr{% endfor %}{% endif %}">
 
         {{ render(controller("CMSBlogBundle:Article:menu", {'limit': 3})) }}

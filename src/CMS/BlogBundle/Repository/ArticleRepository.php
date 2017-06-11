@@ -52,7 +52,6 @@ class ArticleRepository extends EntityRepository
     {
 
         $qb = $this->createQueryBuilder('a');
-
         // Jointure avec l'entity catégorie avec pour alias C
         $qb
             ->innerJoin('a.categories', 'c')
