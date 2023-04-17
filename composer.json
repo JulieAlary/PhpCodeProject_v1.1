@@ -46,7 +46,7 @@
   "require-dev": {
     "sensio/generator-bundle": "^3.0",
     "symfony/phpunit-bridge": "^3.0",
-    "phpunit/phpunit": "5.6",
+    "phpunit/phpunit": "5.6.3",
     "behat/behat": "^3.3"
   },
   "scripts": {
